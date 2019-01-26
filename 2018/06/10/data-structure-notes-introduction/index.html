@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="data-structure-notes-introduction">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/06/10/data-structure-notes-introduction/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> data-structure-notes-introduction - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          data-structure-notes-introduction
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-06-10
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/data-structure-notes/">data-structure-notes</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础数据结构"><span class="toc-text">基础数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#数组"><span class="toc-text">数组</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#链表"><span class="toc-text">链表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#栈"><span class="toc-text">栈</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#队列"><span class="toc-text">队列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#树"><span class="toc-text">树</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#图"><span class="toc-text">图</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#堆"><span class="toc-text">堆</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#散列表"><span class="toc-text">散列表</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#高级数据结构"><span class="toc-text">高级数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#伸展树"><span class="toc-text">伸展树</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#红黑树"><span class="toc-text">红黑树</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#确定性跳跃表"><span class="toc-text">确定性跳跃表</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#AA树"><span class="toc-text">AA树</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#treap树"><span class="toc-text">treap树</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#k-d树"><span class="toc-text">k-d树</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#配对堆"><span class="toc-text">配对堆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基础算法"><span class="toc-text">基础算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#排序算法"><span class="toc-text">排序算法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#插入排序"><span class="toc-text">插入排序</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#希尔排序"><span class="toc-text">希尔排序</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#堆排序"><span class="toc-text">堆排序</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#归并排序"><span class="toc-text">归并排序</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#快速排序"><span class="toc-text">快速排序</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#桶排序"><span class="toc-text">桶排序</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#外部排序"><span class="toc-text">外部排序</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#图论算法"><span class="toc-text">图论算法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#最短路径算法"><span class="toc-text">最短路径算法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#贪婪算法"><span class="toc-text">贪婪算法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#分治算法"><span class="toc-text">分治算法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#动态规划"><span class="toc-text">动态规划</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#随机化算法"><span class="toc-text">随机化算法</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#回溯算法"><span class="toc-text">回溯算法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#摊还分析"><span class="toc-text">摊还分析</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#二项队列"><span class="toc-text">二项队列</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#斜堆"><span class="toc-text">斜堆</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#斐波那契堆"><span class="toc-text">斐波那契堆</span></a></li></ol></li>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>主要是明确数据结构系列课程的内容,完成时间等；有利于目标的可实现化(内容主要基于java)；同时能够借此整理JDK集合框架内容</p>
+<h3 id="基础数据结构"><a href="#基础数据结构" class="headerlink" title="基础数据结构"></a>基础数据结构</h3><h6 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h6><blockquote>
+<p>数组是由相同类型的元素（element）的集合所组成的数据结构，分配一块连续的内存来存储。利用元素的索引可以计算出该元素对应的存储地址</p>
+</blockquote>
+<h6 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h6><blockquote>
+<p>链表是一种常见的基础数据结构，是一种线性表，但是并不会按线性的顺序存储数据，而是在每一个节点里存到下一个节点的指针</p>
+</blockquote>
+<h6 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h6><blockquote>
+<p>栈是计算机科学中一种特殊的串列形式的抽象数据类型，其特殊之处在于只能允许在链表或数组的一端top进行push和pop的操作</p>
+</blockquote>
+<h6 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h6><blockquote>
+<p><strong>队列</strong>是先进先出的线性表。在具体应用中通常用[链表或者数组来实现。队列只允许在后端进行插入操作，在前端进行删除操作</p>
+</blockquote>
+<h6 id="树"><a href="#树" class="headerlink" title="树"></a>树</h6><h6 id="图"><a href="#图" class="headerlink" title="图"></a>图</h6><h6 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h6><h6 id="散列表"><a href="#散列表" class="headerlink" title="散列表"></a>散列表</h6><h3 id="高级数据结构"><a href="#高级数据结构" class="headerlink" title="高级数据结构"></a>高级数据结构</h3><h6 id="伸展树"><a href="#伸展树" class="headerlink" title="伸展树"></a>伸展树</h6><h6 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h6><h6 id="确定性跳跃表"><a href="#确定性跳跃表" class="headerlink" title="确定性跳跃表"></a>确定性跳跃表</h6><h6 id="AA树"><a href="#AA树" class="headerlink" title="AA树"></a>AA树</h6><h6 id="treap树"><a href="#treap树" class="headerlink" title="treap树"></a>treap树</h6><h6 id="k-d树"><a href="#k-d树" class="headerlink" title="k-d树"></a>k-d树</h6><h6 id="配对堆"><a href="#配对堆" class="headerlink" title="配对堆"></a>配对堆</h6><h3 id="基础算法"><a href="#基础算法" class="headerlink" title="基础算法"></a>基础算法</h3><h4 id="排序算法"><a href="#排序算法" class="headerlink" title="排序算法"></a>排序算法</h4><h6 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h6><h6 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h6><h6 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h6><h6 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h6><h6 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h6><h6 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h6><h6 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h6><h4 id="图论算法"><a href="#图论算法" class="headerlink" title="图论算法"></a>图论算法</h4><h6 id="最短路径算法"><a href="#最短路径算法" class="headerlink" title="最短路径算法"></a>最短路径算法</h6><h6 id="贪婪算法"><a href="#贪婪算法" class="headerlink" title="贪婪算法"></a>贪婪算法</h6><h6 id="分治算法"><a href="#分治算法" class="headerlink" title="分治算法"></a>分治算法</h6><h6 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h6><blockquote>
+<p>动态规划是通过把原问题分解为相对简单的子问题的方式求解复杂问题的方法；动态规划只能应用于有<strong>最优子结构</strong>的问题。最优子结构的意思是局部最优解能决定全局最优解。简单地说，问题能够分解成子问题来解决</p>
+</blockquote>
+<h6 id="随机化算法"><a href="#随机化算法" class="headerlink" title="随机化算法"></a>随机化算法</h6><h6 id="回溯算法"><a href="#回溯算法" class="headerlink" title="回溯算法"></a>回溯算法</h6><h4 id="摊还分析"><a href="#摊还分析" class="headerlink" title="摊还分析"></a>摊还分析</h4><h6 id="二项队列"><a href="#二项队列" class="headerlink" title="二项队列"></a>二项队列</h6><h6 id="斜堆"><a href="#斜堆" class="headerlink" title="斜堆"></a>斜堆</h6><h6 id="斐波那契堆"><a href="#斐波那契堆" class="headerlink" title="斐波那契堆"></a>斐波那契堆</h6>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/06/10/data-structure-notes-introduction/">https://jianjustin.github.io/blog/2018/06/10/data-structure-notes-introduction/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/06/10/员工自治/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">员工自治</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/06/10/reading-notes-自我与社会的平衡点/">
+        <span class="next-text nav-default">自我与社会的平衡点</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

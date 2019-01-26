@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="html-notes-introduction">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/05/05/html-notes-introduction/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> html-notes-introduction - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          html-notes-introduction
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-05
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/技术/">技术</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML概述"><span class="toc-text">HTML概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML主要内容"><span class="toc-text">HTML主要内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML基本元素"><span class="toc-text">HTML基本元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DOCTYPE"><span class="toc-text">DOCTYPE</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML"><span class="toc-text">HTML</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#head"><span class="toc-text">head</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#body"><span class="toc-text">body</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#head标签说明"><span class="toc-text">head标签说明</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#meta"><span class="toc-text">meta</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#body标签说明"><span class="toc-text">body标签说明</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#文本标签"><span class="toc-text">文本标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#链接标签"><span class="toc-text">链接标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#列表标签"><span class="toc-text">列表标签</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML标签归类"><span class="toc-text">HTML标签归类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#根元素"><span class="toc-text">根元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#文档元数据"><span class="toc-text">文档元数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#内容分区"><span class="toc-text">内容分区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#文本内容"><span class="toc-text">文本内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#内联文本语义"><span class="toc-text">内联文本语义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#图片与多媒体"><span class="toc-text">图片与多媒体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#内嵌内容"><span class="toc-text">内嵌内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#脚本"><span class="toc-text">脚本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#编辑标识"><span class="toc-text">编辑标识</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#表格"><span class="toc-text">表格</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#表单"><span class="toc-text">表单</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#交互元素"><span class="toc-text">交互元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#web组件"><span class="toc-text">web组件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#过时标签"><span class="toc-text">过时标签</span></a></li></ol></li>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>该文档主要参考<code>webplatform</code>网站进行记录，这个项目是由<code>Adobe</code>,<code>Apple</code>,<code>Facebook</code>,<code>Google</code>,<code>HP</code>,<code>Intel</code>,<code>Microsoft</code>,<code>Mozilla</code>,<code>Nokia</code>, and <code>Opera – collaborated</code> with <code>W3C</code>等科技公司合作完成的，主要发布有关如何使用运行Web的技术的最新信息。</p>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="HTML概述"><a href="#HTML概述" class="headerlink" title="HTML概述"></a>HTML概述</h3><p>HTML(Hypertext Markup Language)是对于web页面的描述性语言</p>
+<h3 id="HTML主要内容"><a href="#HTML主要内容" class="headerlink" title="HTML主要内容"></a>HTML主要内容</h3><ul>
+<li>HTML元素</li>
+<li>HTML元素属性</li>
+<li>HTML APIs</li>
+<li>HTML Entities</li>
+</ul>
+<h3 id="HTML基本元素"><a href="#HTML基本元素" class="headerlink" title="HTML基本元素"></a>HTML基本元素</h3><h5 id="DOCTYPE"><a href="#DOCTYPE" class="headerlink" title="DOCTYPE"></a><strong>DOCTYPE</strong></h5><blockquote>
+<p>文档类型说明,用于告诉浏览器如何解析web文档</p>
+</blockquote>
+<ul>
+<li>The HTML 4.01 strict doctype</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The HTML 4.01 transitional doctype</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The HTML 4.01 frameset doctypes</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"</span></span><br><span class="line"><span class="meta">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The XHTML 1.0 strict doctypes</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The XHTML 1.0 transitional doctypes</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"</span></span><br><span class="line"><span class="meta">    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The XHTML 1.0 frameset doctypes</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"</span></span><br><span class="line"><span class="meta">    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"&gt;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>The HTML5 doctype</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://webplatform.github.io/docs/guides/doctypes_and_markup_styles/" target="_blank" rel="noopener">参考</a></p>
+<h5 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h5><blockquote>
+<p>html标签是HTML文档的root标签，是除了&lt;!DOCTYPE&gt;外所有标签的容器</p>
+</blockquote>
+<h5 id="head"><a href="#head" class="headerlink" title="head"></a><strong>head</strong></h5><blockquote>
+<p>head标签主要用于表示meta数据集合</p>
+</blockquote>
+<p><strong>包含子标签</strong></p>
+<ul>
+<li><a href="https://webplatform.github.io/docs/html/elements/base" target="_blank" rel="noopener"><code>base</code></a></li>
+<li><a href="https://webplatform.github.io/docs/html/elements/link" target="_blank" rel="noopener"><code>link</code></a></li>
+<li><a href="https://webplatform.github.io/docs/html/elements/meta" target="_blank" rel="noopener"><code>meta</code></a></li>
+<li><a href="https://webplatform.github.io/docs/html/elements/script" target="_blank" rel="noopener"><code>script</code></a></li>
+<li><a href="https://webplatform.github.io/docs/html/elements/style" target="_blank" rel="noopener"><code>style</code></a></li>
+<li><a href="https://webplatform.github.io/docs/html/elements/title" target="_blank" rel="noopener"><code>title</code></a></li>
+</ul>
+<h5 id="body"><a href="#body" class="headerlink" title="body"></a><strong>body</strong></h5><blockquote>
+<p>body标签主要包含用于展示在HTML文档页面的实体元素标签</p>
+</blockquote>
+<h3 id="head标签说明"><a href="#head标签说明" class="headerlink" title="head标签说明"></a>head标签说明</h3><h5 id="meta"><a href="#meta" class="headerlink" title="meta"></a>meta</h5><ul>
+<li><p><code>name</code> - 设置HTML文档元数据</p>
+<blockquote>
+<p>包括<code>application-name</code> , <code>author</code>，<code>description</code>，<code>generator</code>，<code>keywords</code>等属性</p>
+</blockquote>
+</li>
+<li><p><code>content</code> - 用于设置HTML元数据或HTTP头部信息值</p>
+</li>
+<li><p><code>http-equiv</code> - 用于设置HTTP头部信息</p>
+<blockquote>
+<p>包括<code>content-language</code>，<code>content-type</code>，<code>default-style</code>，<code>refresh</code>等属性</p>
+</blockquote>
+</li>
+<li><p><code>charset</code> - 设置HTML文档编码格式</p>
+</li>
+</ul>
+<h3 id="body标签说明"><a href="#body标签说明" class="headerlink" title="body标签说明"></a>body标签说明</h3><h5 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h5><ul>
+<li><p>标题</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>Marking up textual content in HTML<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>段落</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>This is a very short paragraph. It only has two sentences.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">cite</span>=<span class="string">"http://www.w3.org/TR/html401/"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>This document obsoletes previous versions of HTML 4.0<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>预格式化文本</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span><span class="tag">&lt;<span class="name">code</span> <span class="attr">class</span>=<span class="string">"language-c"</span>&gt;</span></span><br><span class="line">    int main()&#123;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">code</span>&gt;</span><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>短文本引用</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">q</span> <span class="attr">lang</span>=<span class="string">"fr"</span>&gt;</span>c'est la vie<span class="tag">&lt;/<span class="name">q</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>文本强调</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">strong</span>&gt;</span>Warning!<span class="tag">&lt;/<span class="name">strong</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>小文本显示</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">small</span>&gt;</span>This content<span class="tag">&lt;/<span class="name">small</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>时间格式化</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">time</span> <span class="attr">datetime</span>=<span class="string">"1978-06-27"</span>&gt;</span>June 27 1978 - my birthday<span class="tag">&lt;/<span class="name">time</span>&gt;</span>.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="链接标签"><a href="#链接标签" class="headerlink" title="链接标签"></a>链接标签</h5><blockquote>
+<p>链接是指向其他文档或资源的路径</p>
+</blockquote>
+<ul>
+<li><p>链接标签案例</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"http://www.opera.com"</span>&gt;</span>Opera Software<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>链接属性</p>
+<ul>
+<li>href：存放目标资源链接地址或<strong>锚ID</strong>(用于页面内链接间跳转)</li>
+<li>id ：链接唯一标识,可用于css样式描述或锚ID</li>
+<li>class ：链接类名,可用于css样式描述</li>
+<li>title :链接内容描述,在链接获取焦点事件时获取</li>
+</ul>
+</li>
+<li><p>链接事件</p>
+<ul>
+<li>:link—–链接未被点击</li>
+<li>:visited–链接已被点击</li>
+<li>:hover—-鼠标悬停于链接</li>
+<li>:focus—-鼠标焦点聚焦于链接</li>
+<li>:active—链接被激活,于鼠标点击时刻</li>
+</ul>
+</li>
+</ul>
+<h5 id="列表标签"><a href="#列表标签" class="headerlink" title="列表标签"></a>列表标签</h5><ul>
+<li><p>无序列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>bread<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>coffee beans<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>butter<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有序列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>Gather ingredients<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>Mix ingredients together<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>Place ingredients in a baking dish<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>描述列表</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dd</span>&gt;</span>Value<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dd</span>&gt;</span>Value<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dt</span>&gt;</span>Name<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dd</span>&gt;</span>Value<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="HTML标签归类"><a href="#HTML标签归类" class="headerlink" title="HTML标签归类"></a>HTML标签归类</h3><h5 id="根元素"><a href="#根元素" class="headerlink" title="根元素"></a>根元素</h5><ul>
+<li><code>html</code></li>
+</ul>
+<h5 id="文档元数据"><a href="#文档元数据" class="headerlink" title="文档元数据"></a>文档元数据</h5><ul>
+<li><code>link</code></li>
+<li><code>meta</code></li>
+<li><code>style</code></li>
+</ul>
+<h5 id="内容分区"><a href="#内容分区" class="headerlink" title="内容分区"></a>内容分区</h5><ul>
+<li><code>header</code></li>
+<li><code>nav</code></li>
+<li><code>section</code></li>
+<li><code>aside</code></li>
+<li><code>footer</code></li>
+<li><code>h1~h6</code></li>
+<li><code>article</code></li>
+<li><code>address</code></li>
+<li><code>hgroup</code></li>
+</ul>
+<h5 id="文本内容"><a href="#文本内容" class="headerlink" title="文本内容"></a>文本内容</h5><ul>
+<li><code>main</code></li>
+<li><code>div</code></li>
+<li><code>p</code></li>
+<li><code>pre</code></li>
+<li><code>col</code></li>
+<li><code>ul</code></li>
+<li><code>li</code></li>
+<li><code>dl</code></li>
+<li><code>dt</code></li>
+<li><code>dd</code></li>
+<li><code>figure</code></li>
+<li><code>figcaption</code></li>
+<li><code>blockquote</code></li>
+<li><code>hr</code></li>
+</ul>
+<h5 id="内联文本语义"><a href="#内联文本语义" class="headerlink" title="内联文本语义"></a>内联文本语义</h5><ul>
+<li><code>span</code></li>
+<li><code>a</code></li>
+<li><code>strong</code></li>
+<li><code>em</code></li>
+<li><code>q</code></li>
+<li><code>br</code></li>
+<li><code>markcode</code></li>
+<li><code>abbr</code></li>
+<li><code>b</code></li>
+<li><code>bdi</code></li>
+<li><code>bdo</code></li>
+<li><code>sub</code></li>
+<li><code>sup</code></li>
+<li><code>time</code></li>
+<li><code>i</code></li>
+<li><code>u</code></li>
+<li><code>cite</code></li>
+<li><code>data</code></li>
+<li><code>kbd</code></li>
+<li><code>nobr</code></li>
+<li><code>s</code></li>
+<li><code>samp</code></li>
+<li><code>tt</code></li>
+<li><code>var</code></li>
+<li><code>wbr</code></li>
+<li><code>rp</code></li>
+<li><code>rt</code></li>
+<li><code>rtc</code></li>
+<li><code>ruby</code></li>
+</ul>
+<h5 id="图片与多媒体"><a href="#图片与多媒体" class="headerlink" title="图片与多媒体"></a>图片与多媒体</h5><ul>
+<li><code>img</code></li>
+<li><code>audio</code></li>
+<li><code>video</code></li>
+<li><code>track</code></li>
+<li><code>map</code></li>
+<li><code>area</code></li>
+</ul>
+<h5 id="内嵌内容"><a href="#内嵌内容" class="headerlink" title="内嵌内容"></a>内嵌内容</h5><ul>
+<li><code>iframe</code></li>
+<li><code>embed</code></li>
+<li><code>object</code></li>
+<li><code>param</code></li>
+<li><code>picture</code></li>
+<li><code>source</code></li>
+</ul>
+<h5 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h5><ul>
+<li><code>canvas</code></li>
+<li><code>noscript</code></li>
+<li><code>script</code></li>
+</ul>
+<h5 id="编辑标识"><a href="#编辑标识" class="headerlink" title="编辑标识"></a>编辑标识</h5><ul>
+<li><code>del</code></li>
+<li><code>Ins</code></li>
+</ul>
+<h5 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h5><ul>
+<li><code>table</code></li>
+<li><code>caption</code></li>
+<li><code>thead</code></li>
+<li><code>tbody</code></li>
+<li><code>tfoot</code></li>
+<li><code>tr</code></li>
+<li><code>col</code></li>
+<li><code>colgroup</code></li>
+<li><code>th</code></li>
+<li><code>td</code></li>
+</ul>
+<h5 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h5><ul>
+<li><code>form</code></li>
+<li><code>input</code></li>
+<li><code>textarea</code></li>
+<li><code>label</code></li>
+<li><code>button</code></li>
+<li><code>datalist</code></li>
+<li><code>fieldset</code></li>
+<li><code>legend</code></li>
+<li><code>meter</code></li>
+<li><code>optgroup</code></li>
+<li><code>option</code></li>
+<li><code>output</code></li>
+<li><code>progress</code></li>
+<li><code>select</code></li>
+</ul>
+<h5 id="交互元素"><a href="#交互元素" class="headerlink" title="交互元素"></a>交互元素</h5><ul>
+<li><code>details</code></li>
+<li><code>summary</code></li>
+<li><code>dialog</code></li>
+<li><code>menu</code></li>
+</ul>
+<h5 id="web组件"><a href="#web组件" class="headerlink" title="web组件"></a>web组件</h5><ul>
+<li><code>slot</code></li>
+<li><code>Template</code></li>
+</ul>
+<h5 id="过时标签"><a href="#过时标签" class="headerlink" title="过时标签"></a>过时标签</h5><ul>
+<li><code>acronym</code></li>
+<li><code>applet</code></li>
+<li><code>basefont</code></li>
+<li><code>bgsound</code></li>
+<li><code>big</code></li>
+<li><code>blink</code></li>
+<li><code>center</code></li>
+<li><code>command</code></li>
+<li><code>content</code></li>
+<li><code>dir</code></li>
+<li><code>element</code></li>
+<li><code>font</code></li>
+<li><code>frame</code></li>
+<li><code>frameset</code></li>
+<li><code>image</code></li>
+<li><code>isindex</code></li>
+<li><code>keygen</code></li>
+<li><code>listing</code></li>
+<li><code>marquee</code></li>
+<li><code>menuitem</code></li>
+<li><code>multicol</code></li>
+<li><code>nextid</code></li>
+<li><code>nobr</code></li>
+<li><code>noembed</code></li>
+<li><code>noframes</code></li>
+<li><code>plaintext</code></li>
+<li><code>spacer</code></li>
+<li><code>strike</code></li>
+<li><code>shadow</code></li>
+<li><code>tt</code></li>
+<li><code>xmp</code></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/05/05/html-notes-introduction/">https://jianjustin.github.io/blog/2018/05/05/html-notes-introduction/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/05/05/development tools learning notes/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">development tools learning notes</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/04/25/算法导读/">
+        <span class="next-text nav-default">算法导读</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

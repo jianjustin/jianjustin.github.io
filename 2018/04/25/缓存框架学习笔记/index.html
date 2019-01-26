@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="缓存框架学习笔记">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/04/25/缓存框架学习笔记/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 缓存框架学习笔记 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          缓存框架学习笔记
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-04-25
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/随笔/">随笔</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#redis"><span class="toc-text">redis</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#redis-server安装"><span class="toc-text">redis server安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#redis-client操作"><span class="toc-text">redis-client操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#redis数据类型"><span class="toc-text">redis数据类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#redis连接池"><span class="toc-text">redis连接池</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java操作redis"><span class="toc-text">java操作redis</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#redis持久化"><span class="toc-text">redis持久化</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#memcache"><span class="toc-text">memcache</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缓存框架比较"><span class="toc-text">缓存框架比较</span></a></li>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h2 id="redis"><a href="#redis" class="headerlink" title="redis"></a>redis</h2><h4 id="redis-server安装"><a href="#redis-server安装" class="headerlink" title="redis server安装"></a>redis server安装</h4><ol>
+<li>redis下载安装<br><br><code>wget http://download.redis.io/releases/redis-2.8.17.tar.gz</code> <br><br><code>tar xzf redis-2.8.17.tar.gz</code><br><br><code>cd redis-2.8.17</code><br><br><code>make</code></li>
+<li>redis配置进程启动<code>daemonize yes</code></li>
+<li>redis配置密钥认证<code>requirepass myPassword</code></li>
+<li>启动redis服务<code>./redis-server ./redis.conf</code></li>
+<li>查看redis进程<code>ps -ef|grep redis</code></li>
+<li>连接redis服务器<code>redis.exe -h ip_config -p port_config -a password_config</code> (基于window)</li>
+</ol>
+<h4 id="redis-client操作"><a href="#redis-client操作" class="headerlink" title="redis-client操作"></a>redis-client操作</h4><h4 id="redis数据类型"><a href="#redis数据类型" class="headerlink" title="redis数据类型"></a>redis数据类型</h4><ul>
+<li>String 字符串</li>
+<li>hash 哈希(可适用于存放对象)</li>
+<li>List 列表</li>
+<li>Set 集合</li>
+<li>zset 有序集合</li>
+</ul>
+<h4 id="redis连接池"><a href="#redis连接池" class="headerlink" title="redis连接池"></a>redis连接池</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">JedisPoolConfig config = new JedisPoolConfig();// 建立连接池配置参数</span><br><span class="line">config.setMaxActive(100);// 设置最大连接数</span><br><span class="line">config.setMaxWait(1000);// 设置最大阻塞时间，记住是毫秒数milliseconds</span><br><span class="line">config.setMaxIdle(10);// 设置空间连接</span><br><span class="line">pool = new JedisPool(config, &quot;127.0.0.1&quot;, 6379);</span><br></pre></td></tr></table></figure>
+<h4 id="java操作redis"><a href="#java操作redis" class="headerlink" title="java操作redis"></a>java操作redis</h4><ul>
+<li><p>数据清空 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 字符串操作</span><br></pre></td></tr></table></figure></p>
+<p>  jedis.set(“key1”,”value1”);<br>  jedis.get(“key1”);</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 列表操作</span><br></pre></td></tr></table></figure>
+<p>  jedis.lpush(“collections”, “HashSet”);//列表元素插入,从左侧插入<br>  jedis.lrange(“collections”, 0, -1);//获取列表元素<br>  jedis.sort(“sortedList”);//排序<br>  jedis.lrem(“collections”, 2, “HashMap”);//删除指定个数元素<br>  jedis.ltrim(“collections”, 0, 3);//删除0-3区间之外的元素<br>  jedis.lpop(“collections”);列表元素左侧出栈<br>  jedis.lset(“collections”, 1, “LinkedArrayList”);//修改指定下标元素</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 集合操作</span><br></pre></td></tr></table></figure>
+<p>  jedis.sadd(“eleSet”, “e6”);//元素添加<br>  jedis.srem(“eleSet”, “e0”);//元素删除<br>  jedis.smembers(“eleSet”);//获取元素列表<br>  jedis.sismember(“eleSet”, “e3”);//判断元素是否存在</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* 哈希操作</span><br></pre></td></tr></table></figure>
+<p>  jedis.hmset(“hash”,map);//hash对象设置<br>  jedis.hset(“hash”, “key5”, “value5”);//hash对象元素设置<br>  jedis.hexists(“hash”,”key2”);//元素是否存在<br>  jedis.hdel(“hash”, “key2”);//元素删除<br>  jedis.hmget(“hash”,”key3”,”key4”);//元素获取<br>  <code>`</code>        </p>
+</li>
+<li>有序集合操作</li>
+</ul>
+<h4 id="redis持久化"><a href="#redis持久化" class="headerlink" title="redis持久化"></a>redis持久化</h4><h2 id="memcache"><a href="#memcache" class="headerlink" title="memcache"></a>memcache</h2><h2 id="缓存框架比较"><a href="#缓存框架比较" class="headerlink" title="缓存框架比较"></a>缓存框架比较</h2>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/04/25/缓存框架学习笔记/">https://jianjustin.github.io/blog/2018/04/25/缓存框架学习笔记/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/04/25/算法导读/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">算法导读</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/04/25/数据库原理学习笔记/">
+        <span class="next-text nav-default">数据库原理笔记</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

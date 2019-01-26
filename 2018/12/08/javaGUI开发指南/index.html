@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="javaGUI开发指南">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/12/08/javaGUI开发指南/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> javaGUI开发指南 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          javaGUI开发指南
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-12-08
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/技术/">技术</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么使用javaGUI"><span class="toc-text">为什么使用javaGUI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javaGUI技术点"><span class="toc-text">javaGUI技术点</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#布局管理器"><span class="toc-text">布局管理器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#事件模型"><span class="toc-text">事件模型</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#swing组件"><span class="toc-text">swing组件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#可插拔UI"><span class="toc-text">可插拔UI</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#开源GUI库"><span class="toc-text">开源GUI库</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#样式自定义"><span class="toc-text">样式自定义</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="为什么使用javaGUI"><a href="#为什么使用javaGUI" class="headerlink" title="为什么使用javaGUI"></a>为什么使用javaGUI</h3><p>在网络发展越来越迅速的时代，我们可以通HTML+CSS+JavaScript构建一个漂亮的应用；但是程序不只是跑在web上，还需要跑在桌面，app，嵌入式设备中，这就可以通过java去实现跨平台的GUI应用</p>
+<h3 id="javaGUI技术点"><a href="#javaGUI技术点" class="headerlink" title="javaGUI技术点"></a>javaGUI技术点</h3><blockquote>
+<p>javaGUI开发主要包括java.awt包和javax.swing包</p>
+</blockquote>
+<ul>
+<li>布局管理器</li>
+<li>事件模型</li>
+<li>swing组件</li>
+<li>java swing标准库</li>
+<li>可插拔UI</li>
+<li>开源GUI库</li>
+<li>样式自定义</li>
+</ul>
+<h6 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h6><ul>
+<li><p>组件结构</p>
+<blockquote>
+<ul>
+<li>顶层容器<ul>
+<li>菜单栏</li>
+<li>中间容器<ul>
+<li>基本组件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h6 id="布局管理器"><a href="#布局管理器" class="headerlink" title="布局管理器"></a>布局管理器</h6><p><img src="https://jianjustin.github.io/blog/assets/img/picture/java-Layout.png" alt="java-layout"></p>
+<p>GUI布局方式主要包括：</p>
+<ol>
+<li><p>BorderLayout</p>
+<blockquote>
+<p>具有四个边框区域和中央区域的概念；并且是容器的默认布局方式</p>
+</blockquote>
+</li>
+<li><p>FlowLayout</p>
+<blockquote>
+<p>浮动布局</p>
+</blockquote>
+</li>
+<li><p>GridLayout</p>
+<blockquote>
+<p>网格布局，可设置行数和列数</p>
+</blockquote>
+</li>
+<li><p>GridBagLayout</p>
+</li>
+<li><p>BoxLayout</p>
+<blockquote>
+<p>盒子布局，可在水平或垂直方向控制组件位置，并控制组件间距</p>
+</blockquote>
+</li>
+<li><p>CardLayout</p>
+<blockquote>
+<p>卡片布局</p>
+</blockquote>
+</li>
+</ol>
+<h6 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h6><blockquote>
+<p>GUI事件的驱动主要通过监听器进行驱动的；下图是java.awt.event的类图</p>
+</blockquote>
+<p><img src="https://jianjustin.github.io/blog/assets/img/picture/java-event-class.png" alt="java-event"></p>
+<h6 id="swing组件"><a href="#swing组件" class="headerlink" title="swing组件"></a>swing组件</h6><ul>
+<li><p>按钮</p>
+<p><img src="https://jianjustin.github.io/blog/assets/img/picture/java-button-class.png" alt="java-button"></p>
+</li>
+</ul>
+<blockquote>
+<p>单选框可通过ButtonGroup实现排他性；而组合框则可以通过JComboBox实现</p>
+</blockquote>
+<ul>
+<li><p>图标</p>
+<blockquote>
+<p>包括Icon，ImageIcon两个类，并且可以和JLabel搭配使用</p>
+</blockquote>
+</li>
+<li><p>文本</p>
+<blockquote>
+<p>常见的文本类组件包括JTextField,JPasswordField,JTextArea</p>
+</blockquote>
+</li>
+<li><p>列表</p>
+<blockquote>
+<p>可通过JList实现简单表格，JTree实现树状列表，JTable实现表格状列表</p>
+</blockquote>
+</li>
+<li><p>消息框</p>
+<p>JOptionPane</p>
+</li>
+<li><p>菜单</p>
+<blockquote>
+<p>建立基本菜单可以使用JMenuBar，弹出式菜单可以使用JPopupMenu</p>
+</blockquote>
+</li>
+<li><p>面板</p>
+<blockquote>
+<p>JTabbedPane是页签式对话框，基本对话框可以使用JDialog，文件对话框可以使用JFileChooser</p>
+</blockquote>
+</li>
+<li><p>进度条</p>
+<blockquote>
+<p>可以通过JProgressBar或JSlider实现进度条效果</p>
+</blockquote>
+</li>
+<li><p>滚动条</p>
+</li>
+<li><p>画布</p>
+</li>
+<li><p>容器</p>
+<blockquote>
+<p>顶级容器包括JFrame和JDialog两类，中间轻量级容器包括：</p>
+<ul>
+<li>JPanel    一般轻量级面板容器组件</li>
+<li>JScrollPane    带滚动条的面板容器组件</li>
+<li>JSplitPane    分隔面板</li>
+<li>JTabbedPane    选项卡面板</li>
+<li>JLayeredPane    层级面板</li>
+<li>JMenuBar    菜单栏<br>2    JToolBar    工具栏<br>3    JPopupMenu    弹出菜单<br>4    JInternalFrame    内部窗口</li>
+</ul>
+</blockquote>
+</li>
+<li><p>表格</p>
+<p><img src="https://jianjustin.github.io/blog/assets/img/picture/java-table-class.png" alt="java-model"></p>
+</li>
+<li><p>其他</p>
+<ul>
+<li><p>图片</p>
+</li>
+<li><p>颜色选择器</p>
+<blockquote>
+<p>基本颜色选择器可以使用JColorChooser</p>
+</blockquote>
+</li>
+<li><p>文件选择器</p>
+<blockquote>
+<p>建立基本的文件选择器可以选择JFileChooser</p>
+</blockquote>
+</li>
+<li><p>时间选择器</p>
+<blockquote>
+<p>需要引入datepicker包进行使用</p>
+</blockquote>
+</li>
+<li><p>文本格式化</p>
+<p><img src="https://jianjustin.github.io/blog/assets/img/picture/java-model-class.png" alt="java-model"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="可插拔UI"><a href="#可插拔UI" class="headerlink" title="可插拔UI"></a>可插拔UI</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName)</span><br></pre></td></tr></table></figure>
+<h6 id="开源GUI库"><a href="#开源GUI库" class="headerlink" title="开源GUI库"></a>开源GUI库</h6><blockquote>
+<p>java内置GUI库中样式主要分为cross，motif，system(对UI层进行Mac，window系统选择)</p>
+</blockquote>
+<ul>
+<li><a href="http://insubstantial.github.io/insubstantial/substance/" target="_blank" rel="noopener">Substance</a></li>
+<li><a href="http://www.jtattoo.net/" target="_blank" rel="noopener">JTattoo</a></li>
+</ul>
+<h6 id="样式自定义"><a href="#样式自定义" class="headerlink" title="样式自定义"></a>样式自定义</h6>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/12/08/javaGUI开发指南/">https://jianjustin.github.io/blog/2018/12/08/javaGUI开发指南/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/12/17/Processing-learning-tutorial/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">Processing-learning-tutorial</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/12/07/详解C标准规范/">
+        <span class="next-text nav-default">详解C标准规范</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

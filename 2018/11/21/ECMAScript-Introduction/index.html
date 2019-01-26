@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="ECMAScript-Introduction">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/11/21/ECMAScript-Introduction/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> ECMAScript-Introduction - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          ECMAScript-Introduction
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-11-21
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/技术/">技术</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内容清单"><span class="toc-text">内容清单</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript特性"><span class="toc-text">JavaScript特性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#JavaScript数据类型"><span class="toc-text">JavaScript数据类型</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>该文章主要作为一个导读，对javaScript的学习知识点，ES6主要特性以及一些常用方式做大致了解;同时可以防止后续编码时忘记</p>
+<h3 id="内容清单"><a href="#内容清单" class="headerlink" title="内容清单"></a>内容清单</h3><ul>
+<li style="list-style: none"><input type="checkbox"> ECMAScript语法特性<ul>
+<li style="list-style: none"><input type="checkbox"> javaScript运行机制</li>
+</ul>
+</li>
+<li style="list-style: none"><input type="checkbox"> ECMAScript6特性</li>
+<li style="list-style: none"><input type="checkbox"> CommonJS规范</li>
+<li style="list-style: none"><input type="checkbox"> AMD规范</li>
+<li style="list-style: none"><input type="checkbox"> CMD规范</li>
+<li style="list-style: none"><input type="checkbox"> Node服务端编程</li>
+<li style="list-style: none"><input type="checkbox"> 源码阅读列表<ul>
+<li style="list-style: none"><input type="checkbox"> Dojo</li>
+<li style="list-style: none"><input type="checkbox"> SeaJS</li>
+<li style="list-style: none"><input type="checkbox"> base.js</li>
+<li style="list-style: none"><input type="checkbox"> jsoo</li>
+<li style="list-style: none"><input type="checkbox"> jquery</li>
+<li style="list-style: none"><input type="checkbox"> vue</li>
+<li style="list-style: none"><input type="checkbox"> Gatsby.js</li>
+</ul>
+</li>
+<li style="list-style: none"><input type="checkbox"> 书籍<ul>
+<li style="list-style: none"><input type="checkbox"> 基于MVC的javaScript富应用开发</li>
+<li style="list-style: none"><input type="checkbox"> javaScript语言精粹</li>
+</ul>
+</li>
+</ul>
+<h3 id="JavaScript特性"><a href="#JavaScript特性" class="headerlink" title="JavaScript特性"></a>JavaScript特性</h3><blockquote>
+<p>有人会问，为什么我要针对javaScript做一系列文章去描述它呢？原因有两个，一个是github关于javaScript的仓库越来越多了，说明了javaScript的蓬勃发展，虽然可能是ECMAScript和node所带来的；第二个则是因为javaScript的起源是脚本语言，这就奠定了它做出一点东西会比较快的基础</p>
+</blockquote>
+<p><img src="../assets/img/picture/Githut语言图.png" alt="Githut语言图"></p>
+<h5 id="JavaScript数据类型"><a href="#JavaScript数据类型" class="headerlink" title="JavaScript数据类型"></a>JavaScript数据类型</h5><blockquote>
+<p>编程语言都具有内建的数据结构，但各种编程语言的数据结构常有不同之处,JavaScript 是一种<strong>弱类型</strong>或者说<strong>动态</strong>语言。这意味着你不用提前声明变量的类型，在程序运行过程中，类型会被自动确定.</p>
+</blockquote>
+<blockquote>
+<p>本节主要通过<span style="color:red">原始类型</span>和<span style="color:red">原型对象</span>两个点，针对javaScript数据的一系列问题做一次详解，理解数据在javaScript内部的存储(<span style="color:red">前提是需要读者了解javascript基础的一些数据类型和高阶的数据类型</span>)：</p>
+<ol>
+<li>javaScript有哪些原始类型</li>
+<li>原型继承与原型链</li>
+<li>new 关键字的内部实现机制</li>
+<li>值类型和引用类型的区别</li>
+<li>== 与 ===, typeof 与 instanceof的区别</li>
+<li>map, reduce, filter 等高阶函数</li>
+<li>new 与构造函数, instanceof 与实例</li>
+<li>Object.create 和 Object.assign</li>
+<li>二进制, 十进制, 十六进制, 科学记数法</li>
+</ol>
+</blockquote>
+<ul>
+<li><p>javaScript有哪些原始类型</p>
+<p>javaScript中共有6种原始类型：<code>string</code>，<code>number</code>，<code>boolean</code>，<code>null</code>，<code>undefined</code>，<code>symbol</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">"abc"</span>; <span class="comment">//"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">String</span>(<span class="string">"abc"</span>); <span class="comment">//"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"abc"</span>); <span class="comment">//"object"</span></span><br><span class="line"><span class="keyword">typeof</span> (<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"abc"</span>)).valueOf(); <span class="comment">//"string"</span></span><br></pre></td></tr></table></figure>
+<p><span style="color:red"> <code>&quot;abc&quot;.length</code> 为什么会有返回值？</span></p>
+<p>因为javaScript在运算过程中会发生原始类型和对象之间强制转换</p>
+<p><span style="color:red"> 原始类型是否可添加属性进行访问？</span></p>
+<p>不可行，在向原始类型手动添加属性时，会将原始类型强制转换为对象，但是因为并没有引用指向对象，这导致对象在创建后会被垃圾回收导致不可用。</p>
+<p><a href="https://javascriptweblog.wordpress.com/2010/09/27/the-secret-life-of-javascript-primitives/" target="_blank" rel="noopener">参考链接</a></p>
+</li>
+<li><p>原型继承和原型链</p>
+<p>当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象都有一个私有属性指向它的原型对象（<strong>prototype</strong>）。该原型对象也有一个自己的原型对象，层层向上直到一个对象的原型对象为 <code>null</code>。同时对象可通过<code>Object.create</code>实现属性继承</p>
+</li>
+</ul>
+<p>  prototype属性： 每一个函数都有一个 <code>prototype</code> 属性</p>
+<p>  constructor属性：自定义构造函数，用于判断实例由哪个构造函数创建</p>
+<p>  <strong>proto</strong>属性：指向实例的原型对象</p>
+<ul>
+<li>new 关键字的内部实现机制<ul>
+<li>创建一个新对象；</li>
+<li>将构造函数的作用域赋值给新对象；</li>
+<li>执行构造函数中的代码；</li>
+<li>返回新对象</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;; <span class="comment">// 创建一个空对象</span></span><br><span class="line">obj.__proto__ = <span class="keyword">constructor</span>.prototype; // 添加__proto__属性，并指向构造函数的 prototype 属性。</span><br><span class="line"><span class="keyword">constructor</span>.call(this); // 绑定this</span><br><span class="line">return obj;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Object.create 和 Object.assign</p>
+<p>Object.create :使用现有的对象来提供新创建的对象的<strong>proto</strong></p>
+<p>Object.assign:所有可枚举属性的值从一个或多个源对象复制到目标对象</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/11/21/ECMAScript-Introduction/">https://jianjustin.github.io/blog/2018/11/21/ECMAScript-Introduction/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/11/29/什么是Docker/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">什么是Docker</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/11/12/电影心灵捕手小记/">
+        <span class="next-text nav-default">电影心灵捕手小记</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

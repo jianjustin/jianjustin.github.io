@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="css-notes-introduction">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/07/17/css-notes-introduction/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> css-notes-introduction - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          css-notes-introduction
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-07-17
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/技术/">技术</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS主要内容"><span class="toc-text">CSS主要内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS选择器"><span class="toc-text">CSS选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS属性组"><span class="toc-text">CSS属性组</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#背景"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#边框"><span class="toc-text">边框</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#文本"><span class="toc-text">文本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#超链接"><span class="toc-text">超链接</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#列表"><span class="toc-text">列表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#表格"><span class="toc-text">表格</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS布局"><span class="toc-text">CSS布局</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#CSS布局包括哪些技术"><span class="toc-text">CSS布局包括哪些技术</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CSS浮动-position"><span class="toc-text">CSS浮动 - position</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#什么是BFC"><span class="toc-text">什么是BFC</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CSS常见布局"><span class="toc-text">CSS常见布局</span></a></li></ol></li>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>CSS(Cascading style sheets)是用于描述网页内容的语言;是Open Web Platform的主要组件之一。文章主要针对CSS做一次整理，以达到能够对CSS有大致地了解</p>
+<h3 id="CSS主要内容"><a href="#CSS主要内容" class="headerlink" title="CSS主要内容"></a>CSS主要内容</h3><ul>
+<li>CSS选择器</li>
+<li>CSS属性</li>
+<li>CSS布局</li>
+<li>CSS函数</li>
+<li>CSS动画</li>
+<li>CSS At-rules</li>
+<li>媒体查询</li>
+</ul>
+<h3 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h3><h3 id="CSS属性组"><a href="#CSS属性组" class="headerlink" title="CSS属性组"></a>CSS属性组</h3><h5 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h5><ul>
+<li><code>background-attachment</code> - 设置背景图像是随对象内容滚动还是固定的</li>
+<li><code>background-clip</code> -  设置背景相对对象内容的裁剪方式</li>
+<li><code>background-color</code> - 设置背景颜色</li>
+<li><code>background-image</code> - 设置背景图片</li>
+<li><code>background-origin</code> - 设置背景的起始计算位置</li>
+<li><code>background-position</code> - 设置背景图片的位置</li>
+<li><code>background-repeat</code> - 设置背景图片是否平铺</li>
+<li><code>background-size</code> - 设置背景尺寸大小</li>
+</ul>
+<h5 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h5><ul>
+<li><code>border-bottom</code> - 边框底部样式(同顶部,左侧,右侧)</li>
+<li><code>border-color</code> - 边框颜色</li>
+<li><code>border-image</code> - 边框图片</li>
+<li><code>border-style</code> - 边框样式</li>
+<li><code>box-shadow</code> - 边框阴影样式</li>
+<li><code>border-radius</code> - 边框圆角样式</li>
+</ul>
+<h5 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h5><ul>
+<li><code>font-family</code> - 字体系列</li>
+<li><code>font-size</code> - 字号</li>
+<li><code>font-style</code> - 字体样式</li>
+<li><code>font-weight</code> - 字体粗细</li>
+<li><code>text-align</code> - 文本水平对齐方式</li>
+<li><code>text-decoration</code> - 文本装饰效果</li>
+<li><code>text-justify</code> - 文本对齐方式</li>
+<li><code>text-transtorm</code> - 文本大小写</li>
+<li><code>text-shadow</code> - 文字阴影</li>
+</ul>
+<h5 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h5><ul>
+<li><code>target</code> - 链接打开方式</li>
+</ul>
+<h5 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h5><ul>
+<li><code>list-style-image</code> - 列表项标记为图像</li>
+<li><code>list-style-type</code> - 列表标记类型</li>
+<li><code>list-style-position</code> - 列表标记放置位置</li>
+</ul>
+<h5 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h5><ul>
+<li><code>border-collapse</code> - 是否合并表格边框</li>
+<li><code>border-spacing</code> - 表格边框距离</li>
+<li><code>caption-side</code> - 表格标题位置</li>
+</ul>
+<h3 id="CSS布局"><a href="#CSS布局" class="headerlink" title="CSS布局"></a>CSS布局</h3><blockquote>
+<p>CSS页面布局技术允许我们拾取网页中的元素，并且控制它们相对正常布局流、周边元素、父容器或者主视口/窗口的位置</p>
+</blockquote>
+<h5 id="CSS布局包括哪些技术"><a href="#CSS布局包括哪些技术" class="headerlink" title="CSS布局包括哪些技术"></a><strong>CSS布局包括哪些技术</strong></h5><ul>
+<li>浮动</li>
+<li>定位</li>
+<li>CSS 表格</li>
+<li>弹性盒子</li>
+<li>网格</li>
+</ul>
+<h5 id="CSS浮动-position"><a href="#CSS浮动-position" class="headerlink" title="CSS浮动 - position"></a>CSS浮动 - position</h5><blockquote>
+<p>定义：用于设置元素在HTML文档的定位方式,最终的位置由<code>top</code>, <code>right</code>, <code>bottom</code>, and <code>left</code>决定</p>
+</blockquote>
+<p>​        position可选值：</p>
+<blockquote>
+<p>static  |  relative  |  absolute  |  sticky  |  fixed</p>
+</blockquote>
+<h5 id="什么是BFC"><a href="#什么是BFC" class="headerlink" title="什么是BFC"></a>什么是BFC</h5><h5 id="CSS常见布局"><a href="#CSS常见布局" class="headerlink" title="CSS常见布局"></a>CSS常见布局</h5><p><a href="https://devdocs.io" target="_blank" rel="noopener">API参考</a></p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/07/17/css-notes-introduction/">https://jianjustin.github.io/blog/2018/07/17/css-notes-introduction/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/08/17/如何使用Git&Github/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">如何使用Git&Github</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/07/15/趋势投资学习指南/">
+        <span class="next-text nav-default">趋势投资学习指南</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

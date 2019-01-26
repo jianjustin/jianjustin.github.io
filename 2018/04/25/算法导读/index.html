@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="算法导读">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/04/25/算法导读/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 算法导读 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          算法导读
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-04-25
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/algorithm-notes/">algorithm-notes</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Content"><span class="toc-text">Content</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>所谓算法就是定义良好的计算过程，它取一个或一组值作为输入，并产生一个或一组输出。</p>
+<h2 id="Content"><a href="#Content" class="headerlink" title="Content"></a>Content</h2><ul>
+<li><p><a href="#数据结构">数据结构</a></p>
+<ul>
+<li><p>链表</p>
+<ul>
+<li><strong>定义</strong>：链表是一种递归的数据结构，它或者为空（null），或者是指向一个结点（node）的引用，该节点还有一个元素和一个指向另一条链表的引用</li>
+<li><strong>概念</strong><ul>
+<li><code>首节点</code>：存放第一个有效数据的节点</li>
+<li><code>尾节点</code>：存放最后一个有效数据的节点</li>
+<li><code>头节点</code>：链表引用，用于方便链表操作</li>
+<li><code>头指针</code>：指向头节点的指针</li>
+<li><code>尾指针</code>：指向尾节点的指针</li>
+</ul>
+</li>
+<li><strong>结构</strong><ul>
+<li>单链表 – 包含两个域，一个信息域和一个指针域。这个链接指向列表中的下一个节点，而最后一个节点则指向一个空值</li>
+<li>双向链表 – 每个节点有两个连接：一个指向前一个节点，；而另一个指向下一个节点</li>
+<li>块状链表 – 块状链表本身是一个链表，但是链表储存的并不是一般的数据，而是由这些数据组成的顺序表</li>
+</ul>
+</li>
+<li><strong>问题</strong><ul>
+<li>输入一个链表，输出该链表中倒数第k个结点</li>
+<li>链表反转</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>栈</p>
+<ul>
+<li><strong>定义</strong>：是计算机科学中一种特殊的串列形式的抽象数据类型，其特殊之处在于只能允许在链表或数组的一端进行加入数据和输出数据的运算</li>
+<li><strong>操作</strong><ul>
+<li>推入(push)：将数据放入堆栈的顶端，堆栈顶端top指针加一。</li>
+<li>弹出(pop)：将顶端数据数据输出，堆栈顶端数据减一</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>队列</p>
+<ul>
+<li><strong>定义</strong>：是先进先出的线性表</li>
+<li><strong>结构</strong><ul>
+<li>单链队列</li>
+<li>循环队列</li>
+<li>阵列队列</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>树</p>
+<ul>
+<li><strong>定义</strong>：树是一种抽象数据结构类型，用来模拟具有树状结构性质的数据集合</li>
+<li><p><strong>概念</strong>：</p>
+<ul>
+<li><code>节点的度</code>：一个节点含有的子树的个数称为该节点的度</li>
+<li><code>树的度</code>：一棵树中，最大的节点的度称为树的度</li>
+<li><code>叶节点或终端节点</code>：度为零的节点</li>
+<li><code>非终端节点或分支节点</code>：度不为零的节点</li>
+<li><code>父亲节点或父节点</code>：若一个节点含有子节点，则这个节点称为其子节点的父节点</li>
+<li><code>孩子节点或子节点</code>：一个节点含有的子树的根节点称为该节点的子节点</li>
+<li><code>兄弟节点</code>：具有相同父节点的节点互称为兄弟节点</li>
+<li><code>节点的层次</code>：从根开始定义起，根为第1层，根的子节点为第2层，以此类推</li>
+<li><code>深度</code>：对于任意节点n,n的深度为从根到n的唯一路径长，根的深度为0</li>
+<li><code>高度</code>：对于任意节点n,n的高度为从n到一片树叶的最长路径长，所有树叶的高度为0</li>
+<li><code>堂兄弟节点</code>：父节点在同一层的节点互为堂兄弟</li>
+<li><code>节点的祖先</code>：从根到该节点所经分支上的所有节点</li>
+<li><code>子孙</code>：以某节点为根的子树中任一节点都称为该节点的子孙</li>
+<li><code>森林</code>：由m（m&gt;=0）棵互不相交的树的集合称为森林<ul>
+<li><strong>结构</strong></li>
+</ul>
+</li>
+<li>无序树</li>
+<li><p>有序树</p>
+<ul>
+<li><p>二叉树</p>
+<blockquote>
+<p>定义：二叉树是每个节点最多只有两个分支（即不存在分支度大于2的节点）的树结构<br><br><span style="color:red">备注：在图论中的定义，二叉树是连通的无环图，并且每个顶点的度不大于3</span></p>
+</blockquote>
+<ul>
+<li><p>完全二叉树<br><br>  定义：而在一棵二叉树中，除最后一层外，若其余层都是满的，并且最后一层或者是满的，或者是在右边缺少连续若干节点，则此二叉树为完全二叉树</p>
+<ul>
+<li>满二叉树<br><br>定义：一棵深度为k，且有 2^(k + 1) − 1 个节点的二叉树，称为满二叉树<ul>
+<li>平衡二叉树<br><br>定义：平衡二叉树一种结构平衡的二叉搜索树，即叶节点高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>排序二叉树（二叉搜索树）<br><br>性质： <ol>
+<li>若任意节点的左子树不空，则左子树上所有节点的值均小于它的根节点的值；</li>
+<li>若任意节点的右子树不空，则右子树上所有节点的值均大于它的根节点的值；</li>
+<li>任意节点的左、右子树也分别为二叉查找树；</li>
+<li>没有键值相等的节点</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>      * 哈夫曼树
+      * B树
+
+[扩展](https://zh.wikipedia.org/wiki/树_(数据结构))      
+[树结构讲解](#树结构讲解)   
+
+ * 二叉搜索树
+</code></pre><ul>
+<li>堆</li>
+<li>散列表</li>
+<li>图<ul>
+<li><a href="算法">算法</a></li>
+</ul>
+</li>
+<li>计数排序</li>
+<li>基数排序</li>
+<li>插入排序</li>
+<li><p>快速排序  </p>
+<ul>
+<li><p><strong>快速排序思想</strong></p>
+<ol>
+<li>获取数组第一个数作为枢轴,将大于枢轴的元素放到右边,将小于枢轴的元素放到左边</li>
+<li>在枢轴左右两侧重新做快速排序</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p><strong>快速排序复杂度</strong></p>
+<pre><code>1. 平均复杂度`O(NlogN)`
+2. 最坏复杂度`O(N^2)`
+</code></pre></li>
+<li><p><strong>快速排序实现(伪代码)</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">QUICKSORT(A, p, r)</span><br><span class="line">    if p &lt; r    </span><br><span class="line">        q = PARTITION(A, p, r)</span><br><span class="line">        QUICKSORT(A, p, q-1)</span><br><span class="line">        QUICKSORT(A, q+1, r)</span><br><span class="line"></span><br><span class="line">//将数组分为两部分，返回临界值下标</span><br><span class="line">PARTITION(A, p, r)</span><br><span class="line">    x = A[r]    //以最后一个数为主元（pivot element）</span><br><span class="line">    i = p-1 //小于主元子数组的下标上限</span><br><span class="line">    for j = p to r-1</span><br><span class="line">        if A[j] &lt;= x</span><br><span class="line">            i = i+1 //增加小于主元子数组的大小</span><br><span class="line">            exchange A[i] with A[j] //将A[j]加入小于主元的子数组</span><br><span class="line">    exchange A[i+1] with A[r]   //将主元从数组末尾移动至子数组之间</span><br><span class="line">    return i + 1</span><br></pre></td></tr></table></figure>
+<p><a href="http://harttle.land/2015/09/27/quick-sort.html" target="_blank" rel="noopener">来源</a></p>
+<ul>
+<li><strong>快速排序实现(java代码)</strong></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void quickSort(int a[], int left, int right) &#123;</span><br><span class="line">    if (left &gt;= 0 &amp;&amp; right &lt;= a.length - 1 &amp;&amp; left &lt; right) &#123;</span><br><span class="line">        int low = left,high = right,splitKey = a[left];</span><br><span class="line">        while (left &lt; right) &#123;</span><br><span class="line">            while (left &lt; right &amp;&amp; a[right] &gt;= splitKey) right--;</span><br><span class="line">            a[left] = a[right];</span><br><span class="line">            while (left &lt; right &amp;&amp; a[left] &lt;= splitKey) left++;</span><br><span class="line">            a[right] = a[left];</span><br><span class="line">        &#125;</span><br><span class="line">        a[left] = splitKey;//左右指针同时指向同一元素</span><br><span class="line">        quickSort(a, low, left - 1);</span><br><span class="line">        quickSort(a, left + 1, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>桶排序</li>
+<li>堆排序</li>
+<li>算法复杂度分析</li>
+</ul>
+<ul>
+<li>其他<ul>
+<li>动态规划算法</li>
+<li>分治法算法</li>
+<li>贪心算法</li>
+<li>并行算法</li>
+<li>排序网络</li>
+<li>矩阵计算</li>
+</ul>
+</li>
+</ul>
+<p><span id="树结构讲解">树结构讲解</span>  </p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/04/25/算法导读/">https://jianjustin.github.io/blog/2018/04/25/算法导读/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/05/05/html-notes-introduction/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">html-notes-introduction</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/04/25/缓存框架学习笔记/">
+        <span class="next-text nav-default">缓存框架学习笔记</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

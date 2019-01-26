@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="操作系统结构学习笔记">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/09/17/操作系统结构学习笔记/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 操作系统结构学习笔记 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          操作系统结构学习笔记
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-09-17
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/技术/">技术</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#概述"><span class="toc-text">概述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程"><span class="toc-text">进程</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#进程的特征"><span class="toc-text">进程的特征</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程状态说明"><span class="toc-text">进程状态说明</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程状态转换"><span class="toc-text">进程状态转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程控制块"><span class="toc-text">进程控制块</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何创建进程"><span class="toc-text">如何创建进程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程调度方式"><span class="toc-text">进程调度方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程同步与互斥"><span class="toc-text">进程同步与互斥</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#进程通信"><span class="toc-text">进程通信</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#线程"><span class="toc-text">线程</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#内存"><span class="toc-text">内存</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#为什么需要进行内存管理？"><span class="toc-text">为什么需要进行内存管理？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#内存管理"><span class="toc-text">内存管理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#固定分区"><span class="toc-text">固定分区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#动态分区"><span class="toc-text">动态分区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分页"><span class="toc-text">分页</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#分段"><span class="toc-text">分段</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#虚拟内存"><span class="toc-text">虚拟内存</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#调度管理"><span class="toc-text">调度管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设备管理"><span class="toc-text">设备管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#设备管理功能"><span class="toc-text">设备管理功能</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#设备控制器功能"><span class="toc-text">设备控制器功能</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IO控制方式"><span class="toc-text">IO控制方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#中断技术"><span class="toc-text">中断技术</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#缓冲技术"><span class="toc-text">缓冲技术</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件管理"><span class="toc-text">文件管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#文件"><span class="toc-text">文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件系统"><span class="toc-text">文件系统</span></a></li>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p><strong>前言</strong></p>
+<blockquote>
+<p>目前操作系统主要包括window，Unix，Linux三种内核；而我学习操作系统的目的是希望能够对操作系统的结构和整体的执行流程有一定的了解</p>
+</blockquote>
+<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><ul>
+<li><p>操作系统定义：控制和管理整个计算机系统的硬件和软件资源</p>
+</li>
+<li><p>计算机基本构成<br><code>处理器，内存，输入输出模块，系统总线</code></p>
+</li>
+<li><p>操作系统功能和目标</p>
+<ul>
+<li>方便</li>
+<li>有效</li>
+<li>扩展能力</li>
+</ul>
+</li>
+<li><p>操作系统特征 </p>
+<ul>
+<li>并发</li>
+<li>共享</li>
+<li>异步</li>
+<li>虚拟 </li>
+</ul>
+</li>
+<li><p>操作系统分类</p>
+<ul>
+<li>单道批处理系统</li>
+<li>多道批处理系统</li>
+<li>分时系统</li>
+<li>实时系统</li>
+<li>网络与分布式系统</li>
+</ul>
+</li>
+</ul>
+<h3 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h3><blockquote>
+<p>进程：由一组执行的指令，一个当前状态和一组相关的系统资源表征的活动单元；是正在执行的，争夺CPU时间和其他系统资源的程序</p>
+</blockquote>
+<h5 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h5><ul>
+<li><code>结构性</code>–进程实体是由相关的程序段，相关的数据或存放这些数据的地址和PCB三部分组成</li>
+<li><code>动态性</code>–进程的实质是进程实体的一次执行过程</li>
+<li><code>并发性</code>–指多个进程实体同时存放在内存中，并在一段时间内同时执行</li>
+<li><code>独立性</code>–进程实体是一个独立运行，独立分配系统资源和独立接受操作系统调度的基本单元</li>
+<li><code>异步性</code>–进程会以不可预知的速度进行推进，因为不同进程有不同的优先级别</li>
+</ul>
+<h5 id="进程状态说明"><a href="#进程状态说明" class="headerlink" title="进程状态说明"></a>进程状态说明</h5><ul>
+<li><code>运行态</code></li>
+<li><code>就绪态</code></li>
+<li><code>阻塞态/等待态</code></li>
+<li><code>新建态</code></li>
+<li><code>退出态</code></li>
+</ul>
+<h5 id="进程状态转换"><a href="#进程状态转换" class="headerlink" title="进程状态转换"></a>进程状态转换</h5><ul>
+<li>空  -&gt;新建</li>
+<li>新建-&gt;就绪</li>
+<li>就绪-&gt;运行</li>
+<li>运行-&gt;退出</li>
+<li>运行-&gt;就绪</li>
+<li>运行-&gt;阻塞</li>
+<li>阻塞-&gt;就绪</li>
+<li>就绪-&gt;退出</li>
+<li>阻塞-&gt;退出 </li>
+</ul>
+<p><font style="color: red">进程进入挂起状态的作用</font>：</p>
+<ul>
+<li><strong>什么是进程挂起？</strong>将内存中某个进程的一部分或全部已到磁盘中，换出到磁盘中的挂起队列</li>
+<li><p><strong>什么情况下需要进行进程挂起</strong></p>
+<ol>
+<li>操作系统需要交换获取足够的内存空间</li>
+<li>挂起后台进程或工具程序进程，或者可能会导致问题的进程</li>
+<li>交互式用户请求</li>
+<li>记账或系统监视进程，需要被周期性执行</li>
+<li>父进程请求</li>
+</ol>
+</li>
+<li><p><strong>如何进行进程挂起？</strong>将进程状态置为挂起状态并将进程数据换出到磁盘   </p>
+</li>
+</ul>
+<h5 id="进程控制块"><a href="#进程控制块" class="headerlink" title="进程控制块"></a>进程控制块</h5><blockquote>
+<p>进程控制块：用于描述和管理进程的相关信息</p>
+</blockquote>
+<p>进程控制块内容：</p>
+<ul>
+<li>进程标识符</li>
+<li>处理机状态信息</li>
+<li>进程调度信息</li>
+<li>进程控制信息</li>
+<li>存储管理信息</li>
+</ul>
+<p><font style="color: red">进程控制块的组织方式</font>：</p>
+<ul>
+<li>链接方式</li>
+<li>PCB索引方式</li>
+</ul>
+<h5 id="如何创建进程"><a href="#如何创建进程" class="headerlink" title="如何创建进程"></a>如何创建进程</h5><ol>
+<li>系统将所有CPU寄存器内容保存在调用程序PCB的寄存器保护区</li>
+<li>操作系统查询空闲PCB链表，并读取一个空闲PCB</li>
+<li>操作系统为新进程pid复制并更新空闲的PCB编号</li>
+<li>操作系统获取子程序文件在磁盘上的位置，该文件的大小和第一个可执行指令的位置</li>
+<li>操作系统分配存储单元并进行装载</li>
+<li>初始化进程信息</li>
+<li>将进程PCB链接到准备就绪的进程链表中</li>
+<li>更新进程总清单</li>
+</ol>
+<h5 id="进程调度方式"><a href="#进程调度方式" class="headerlink" title="进程调度方式"></a>进程调度方式</h5><ul>
+<li><strong>非抢占方式</strong>：让进程运行到结束或堵塞的调度方式，适合于专用系统</li>
+<li><strong>抢占方式</strong>：允许将逻辑上可继续运行的在运行过程暂停的方式</li>
+</ul>
+<h5 id="进程同步与互斥"><a href="#进程同步与互斥" class="headerlink" title="进程同步与互斥"></a>进程同步与互斥</h5><ul>
+<li><strong>进程同步</strong>：指多个进程在特定点会合或者握手使得达成协议或者使得操作序列有序</li>
+<li><strong>互斥</strong>：互斥是一种逻辑关系，指几个变量或事件之中的任一个不可能与其它一个或多个同时为真，或同时发生的情况 </li>
+<li><strong>临界资源</strong>：一次仅允许一个进程访问的资源就是临界资源</li>
+<li><strong>临界区</strong>：将每个进程中访问临界资源的代码段称为临界区</li>
+<li><strong>信号量机制</strong>：信号量机制即利用pv操作来对信号量进行处理</li>
+</ul>
+<h5 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h5><blockquote>
+<p>指进程间的信息交换，包括两种通信方式：基于共享数据结构的通信方式和机遇共享存储区的通信方式</p>
+</blockquote>
+<h5 id="线程"><a href="#线程" class="headerlink" title="线程"></a>线程</h5><blockquote>
+<p>线程是一个可调度和分派的基本单位，还是一个可以独立运行的实体；单个进程内的线程可并发执行且共享该进程的资源</p>
+</blockquote>
+<ul>
+<li>线程的属性<ul>
+<li>轻型实体-基本不拥有系统资源</li>
+<li>独立调度和分派的基本单位，切换迅速</li>
+<li>可并发执行</li>
+<li>共享进程资源</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>进程和线程的区别</li>
+</ul>
+<blockquote>
+<p>进程是系统进行资源分配和调度的一个独立单位，而线程则是CPU调度和分派的基本单位；线程不拥有系统资源，而是与同属一个进程的其他的线程共享进程所拥有的全部资源  </p>
+</blockquote>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><h5 id="为什么需要进行内存管理？"><a href="#为什么需要进行内存管理？" class="headerlink" title="为什么需要进行内存管理？"></a>为什么需要进行内存管理？</h5><p>如果只有少量进程在内存中，那么所有进程大部分时间都用来等待I/O，这种情况下处理器也处于空闲状态，因此有效地分配内存可以保证适量的就绪进程占用处理器时间</p>
+<h5 id="内存管理"><a href="#内存管理" class="headerlink" title="内存管理"></a>内存管理</h5><blockquote>
+<p>内存管理主要指操作系统对内存的划分和动态分配，内存管理的功能</p>
+</blockquote>
+<ol>
+<li>内存空间的分配与回收</li>
+<li>地址转换</li>
+<li>内存空间的扩充</li>
+<li>存储保护</li>
+</ol>
+<h5 id="固定分区"><a href="#固定分区" class="headerlink" title="固定分区"></a>固定分区</h5><blockquote>
+<p>在系统生成阶段，内存被划分成许多静态分区，进程可以装入大于等于自身大小的分区中</p>
+</blockquote>
+<blockquote>
+<p>这种分区方式存在两个问题：一是程序可能太大而放不进任何一个分区中，这时用户不得不使用覆盖技术来使用内存空间；二是主存利用率低，当程序小于固定分区大小时，也占用了一个完整的内存分区空间，这样分区内部有空间浪费，这种现象称为<span style="color: red">内部碎片</span>。</p>
+</blockquote>
+<h5 id="动态分区"><a href="#动态分区" class="headerlink" title="动态分区"></a>动态分区</h5><blockquote>
+<p>分区是动态创建的，因而每个进程可装入与自身大小正好相等的分区中</p>
+</blockquote>
+<blockquote>
+<p>动态分区在开始分配时是很好的，但是之后会导致内存中出现许多小的内存块。随着时间的推移，内存中会产生越来越多的碎片，内存的利用率随之下降;这种现象称为<span style="color: red">外部碎片</span></p>
+</blockquote>
+<ul>
+<li><p>如何解决外部碎片？</p>
+<ul>
+<li>利用非连续性内存的分配</li>
+<li>使用有效方式监控内存分配，保证大块内存的连续性和完整性</li>
+</ul>
+</li>
+<li><p>动态分区的分配策略</p>
+<ul>
+<li>最佳适配：选择和要求大小最接近的块</li>
+<li>首次适配：从头开始扫描内存，选择大小足够的第一个可用块</li>
+<li><p>下次适配：从上次结束位置开始扫描内存，选择大小足够的第一个可用块</p>
+<blockquote>
+<p><span style="color: red">置换算法</span>：<br>内存内所有进程处于阻塞态，且新进程没有足够内存空间，为避免等待活动进程解除阻塞状态引起的处理器时间浪费，操作系统可将阻塞进程置换出内存</p>
+</blockquote>
+<blockquote>
+<p><span style="color: red">伙伴系统</span>：最小的内存块来满足内核的对于内存的请求</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<p>​    </p>
+<h5 id="分页"><a href="#分页" class="headerlink" title="分页"></a>分页</h5><blockquote>
+<p>内存被划分为大小相等的页框，进程则被划分为大小和页框相等的页；装入进程则是将进程页装入不一定连续的页框中</p>
+</blockquote>
+<blockquote>
+<p><span style="color: red">引入分页技术原因</span>：<br>固定分区会产生内部碎片，动态分区会产生外部碎片，这两种技术对内存的利用率都比较低</p>
+</blockquote>
+<p>基本概念：</p>
+<ul>
+<li><code>页</code> - 进程中的块称为页</li>
+<li><code>页号</code> - 内存中的块称为页框</li>
+<li><code>地址结构</code> - 指分页存储管理的逻辑地址结构，地址结构包含两部分：前一部分为页号P，后一部分为页内偏移量W</li>
+<li><code>页表</code> - 为了便于在内存中找到进程的每个页面所对应的物理块，系统为每个进程建立一张页表，记录页面在内存中对应的物理块号，页表一般存放在内存中</li>
+</ul>
+<blockquote>
+<p><span style="color: red">地址变换机构(转换检测缓冲区)</span>：进行逻辑地址到物理地址的转换;可通过快表的方式加快变换的过程</p>
+</blockquote>
+<blockquote>
+<p><span style="color: red">两级页表</span>：通过两级页表的方式降低页表大小，提高内存利用率</p>
+</blockquote>
+<h5 id="分段"><a href="#分段" class="headerlink" title="分段"></a>分段</h5><blockquote>
+<p>每个进程被划分为许多段，装入进程则是将进程段装入不一定连续的某些动态分区中；有利于实现保护和共享机制</p>
+</blockquote>
+<blockquote>
+<p>注意：在一个进程中，段表只有一个，而页表可能有多个</p>
+</blockquote>
+<h5 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h5><ul>
+<li>读取策略</li>
+<li>放置策略</li>
+<li><p>置换策略</p>
+<p>置换策略算法</p>
+<ul>
+<li>最佳算法 - 选取下次访问时间距离当前时间最长的页(需要预测，无法实现)</li>
+<li>最近最少使用算法 - 置换内存内最长时间未被访问的页</li>
+<li>先进先出算法 - 置换再内存内停留时间最长的页，易造成<span style="color: red">缺页中断</span></li>
+<li>时钟算法</li>
+</ul>
+</li>
+<li>驻留集管理</li>
+<li>清除策略</li>
+<li>加载控制</li>
+</ul>
+<ul>
+<li><p>其他</p>
+<ul>
+<li>程序链接方式：<ol>
+<li>静态链接</li>
+<li>装入时动态链接</li>
+<li>运行时动态链接</li>
+</ol>
+</li>
+<li>如何扩充内存？</li>
+<li><p>分页技术和分段技术的区别</p>
+<p> 页管理方式是从计算机的角度考虑设计的，以提高内存的利用率，提升计算机的性能, 且分页通过硬件机制实现，对用户完全透明；而分段管理方式的提出则是考虑了用户和程序员，以满足方便编程、信息保护和共享、动态增长及动态链接等多方面的需要</p>
+<ul>
+<li>局部性原理  </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="调度管理"><a href="#调度管理" class="headerlink" title="调度管理"></a>调度管理</h3><ul>
+<li>调度类型<ul>
+<li><code>长程调度</code> – 决定加入待执行线程池</li>
+<li><code>中程调度</code> – 决定加入部分或全部位于内存的线程集合</li>
+<li><code>短程调度</code> – 决定处理器执行哪个可运行进程</li>
+<li><code>I/O调度</code> – 决定可用IO设备执行哪个进程的IO请求</li>
+</ul>
+</li>
+<li>调度算法</li>
+<li>多处理器调度</li>
+</ul>
+<h3 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h3><h5 id="设备管理功能"><a href="#设备管理功能" class="headerlink" title="设备管理功能"></a>设备管理功能</h5><ul>
+<li>进行设备的分配</li>
+<li>实现IO操作</li>
+</ul>
+<h5 id="设备控制器功能"><a href="#设备控制器功能" class="headerlink" title="设备控制器功能"></a>设备控制器功能</h5><ul>
+<li>接收和识别命令</li>
+<li>数据交换</li>
+<li>标识和报告设备状态</li>
+<li>地址识别</li>
+<li>数据缓冲</li>
+<li>差错控制</li>
+</ul>
+<h5 id="IO控制方式"><a href="#IO控制方式" class="headerlink" title="IO控制方式"></a>IO控制方式</h5><ul>
+<li>程序直接控制方式</li>
+<li>中断控制方式</li>
+<li>DMA控制方式</li>
+<li>通道控制方式</li>
+</ul>
+<h5 id="中断技术"><a href="#中断技术" class="headerlink" title="中断技术"></a>中断技术</h5><h5 id="缓冲技术"><a href="#缓冲技术" class="headerlink" title="缓冲技术"></a>缓冲技术</h5><h3 id="文件管理"><a href="#文件管理" class="headerlink" title="文件管理"></a>文件管理</h3><h5 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h5><blockquote>
+<p>文件是具有标识符的一组相关信息的集合</p>
+</blockquote>
+<ol>
+<li>文件逻辑结构<ul>
+<li>有结构文件</li>
+<li>无结构文件</li>
+</ul>
+</li>
+<li>文件物理结构<ul>
+<li>顺序结构存储</li>
+<li>链式结构存储</li>
+<li>索引结构存储</li>
+</ul>
+</li>
+<li>文件存取方式<ul>
+<li>顺序存取</li>
+<li>直接存取</li>
+<li>索引存取</li>
+</ul>
+</li>
+<li>文件存储设备<ul>
+<li>顺序存储</li>
+<li>直接存储</li>
+</ul>
+</li>
+<li>文件共享和保护</li>
+</ol>
+<h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><blockquote>
+<p>文件系统主要实现对文件存储器空间的组织和分配，以及对文件的存储和检索</p>
+</blockquote>
+<ol>
+<li>文件存储空间管理</li>
+<li>文件目录管理</li>
+</ol>
+<p>参考书籍：“<a href="https://book.douban.com/subject/5064311/" target="_blank" rel="noopener">操作系统精髓与设计原理</a>”</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/09/17/操作系统结构学习笔记/">https://jianjustin.github.io/blog/2018/09/17/操作系统结构学习笔记/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/09/23/游记-俄罗斯行走/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">游记-俄罗斯行走</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/09/14/front-end-notes-如何实现页面布局/">
+        <span class="next-text nav-default">如何实现页面布局</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="什么是Docker">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/11/29/什么是Docker/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 什么是Docker - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          什么是Docker
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-11-29
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/技术/">技术</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker简介"><span class="toc-text">Docker简介</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Docker解决什么问题"><span class="toc-text">Docker解决什么问题</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Docker技术实现"><span class="toc-text">Docker技术实现</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Docker用途"><span class="toc-text">Docker用途</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Docker基本概念"><span class="toc-text">Docker基本概念</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker-objects"><span class="toc-text">Docker objects</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#镜像"><span class="toc-text">镜像</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#容器"><span class="toc-text">容器</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#仓库"><span class="toc-text">仓库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker使用"><span class="toc-text">Docker使用</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#镜像操作"><span class="toc-text">镜像操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#容器操作"><span class="toc-text">容器操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker使用案例"><span class="toc-text">Docker使用案例</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#Docker安装MYSQL"><span class="toc-text">Docker安装MYSQL</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#Docker安装mongoDB"><span class="toc-text">Docker安装mongoDB</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Docker图形化管理"><span class="toc-text">Docker图形化管理</span></a></li>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近因为安装sqlserver时涉及到Docker，所以希望能够了解Docker是如何虚拟化物理资源的，提高自己对运维这块的了解</p>
+<p><a href="https://www.docker.com/" target="_blank" rel="noopener">Docker官网：https://www.docker.com/</a></p>
+<h3 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h3><blockquote>
+<p>Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly</p>
+</blockquote>
+<p>上面这一段是官网对Docker的描述：Docker是一个用于开发,运行并管理应用程序的开放平台.Docker能够分离你的应用程序和基础架构,使你能够快速交付.</p>
+<blockquote>
+<p>备注：Docker许可证————<strong>open source Apache 2.0 license</strong></p>
+</blockquote>
+<h6 id="Docker解决什么问题"><a href="#Docker解决什么问题" class="headerlink" title="Docker解决什么问题"></a>Docker解决什么问题</h6><p>软件开发最大的麻烦事之一，就是环境配置；我们在平时的开发过程中，经常出现在本地或者测试环境测试通过了，但是却在正式环境跪了的情况；然后我们就会去比较两者的环境差别。</p>
+<h6 id="Docker技术实现"><a href="#Docker技术实现" class="headerlink" title="Docker技术实现"></a>Docker技术实现</h6><p>Docker 基于Linux容器技术,使用Go开发实现;</p>
+<h6 id="Docker用途"><a href="#Docker用途" class="headerlink" title="Docker用途"></a>Docker用途</h6><ol>
+<li>提供一次性的环境</li>
+<li>提供弹性的云服务</li>
+<li>组建微服务架构</li>
+</ol>
+<h6 id="Docker基本概念"><a href="#Docker基本概念" class="headerlink" title="Docker基本概念"></a>Docker基本概念</h6><p><img src="https://jianjustin.github.io/blog/assets/img/picture/engine-components-flow.png" alt="Docker基本结构"></p>
+<h3 id="Docker-objects"><a href="#Docker-objects" class="headerlink" title="Docker objects"></a>Docker objects</h3><h6 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h6><blockquote>
+<p>An <em>image</em> is a read-only template with instructions for creating a Docker container. Often, an image is <em>based on</em>another image, with some additional customization. </p>
+</blockquote>
+<p>以上是官网对镜像的定义：镜像是一个用于创建容器的只读模板，而镜像是存在依赖关系的，你可以在基础镜像上构建自定义镜像</p>
+<h6 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h6><blockquote>
+<p>A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. </p>
+</blockquote>
+<p>容器则是镜像所创建出的可运行实例，你可以通过Docker API等对容器进行操作。所以说在实际中我们主要会操作容器</p>
+<h6 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h6><p>我们在自定义镜像进行构建后可能会在不同的物理机进行使用，所以就需要一个集中的存储、分发镜像的服务；常用是：<code>Docker Hub</code></p>
+<h3 id="Docker使用"><a href="#Docker使用" class="headerlink" title="Docker使用"></a>Docker使用</h3><blockquote>
+<p>Docker的安装比较简单，和正常的程序安装基本一致</p>
+</blockquote>
+<ul>
+<li>mac：<a href="https://docs.docker.com/docker-for-mac/install/" target="_blank" rel="noopener">https://docs.docker.com/docker-for-mac/install/</a></li>
+<li>window：<a href="https://docs.docker.com/docker-for-windows/install/" target="_blank" rel="noopener">https://docs.docker.com/docker-for-windows/install/</a></li>
+</ul>
+<blockquote>
+<p>验证Docker是否成功安装：<code>docker version</code></p>
+</blockquote>
+<h6 id="镜像操作"><a href="#镜像操作" class="headerlink" title="镜像操作"></a>镜像操作</h6><ul>
+<li><p>镜像拉取：<code>docker pull [OPTIONS] NAME[:TAG|@DIGEST]</code></p>
+<p>eg:<code>docker pull centos</code></p>
+</li>
+<li><p>镜像搜索：<code>docker search [OPTIONS] TERM</code></p>
+</li>
+<li><p>列出本地镜像：<code>docker images [OPTIONS] [REPOSITORY[:TAG]]</code></p>
+</li>
+<li>本地镜像构建：<code>docker build [OPTIONS] PATH | URL |</code></li>
+</ul>
+<h6 id="容器操作"><a href="#容器操作" class="headerlink" title="容器操作"></a>容器操作</h6><ul>
+<li>显示本地容器：<code>docker ps [OPTIONS]</code></li>
+<li>连接运行中容器：<code>docker attach [OPTIONS] CONTAINER</code></li>
+<li>容器端口映射信息：<code>docker port [OPTIONS] CONTAINER [PRIVATE_PORT[/PROTO]]</code></li>
+<li>容器启动：<code>docker start</code></li>
+<li>容器停止：<code>docker stop</code></li>
+<li>容器重启：<code>docker restart</code></li>
+<li>创建新容器并运行：<code>docker run</code></li>
+<li>清理已终止容器：<code>docker container prune</code></li>
+</ul>
+<h3 id="Docker使用案例"><a href="#Docker使用案例" class="headerlink" title="Docker使用案例"></a>Docker使用案例</h3><h6 id="Docker安装MYSQL"><a href="#Docker安装MYSQL" class="headerlink" title="Docker安装MYSQL"></a>Docker安装MYSQL</h6><ul>
+<li>查询mysql镜像：<code>docker search mysql</code></li>
+<li>拉取mysql镜像：<code>docker pull mysql</code></li>
+<li>创建容器：<code>docker run -p 33060:3306 --name mymysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</code></li>
+<li>查看本地容器：<code>docker ps [container_id]</code></li>
+</ul>
+<h6 id="Docker安装mongoDB"><a href="#Docker安装mongoDB" class="headerlink" title="Docker安装mongoDB"></a>Docker安装mongoDB</h6><ul>
+<li>查询mongoDB镜像：<code>docker search mongo</code></li>
+<li>拉取mongoDB镜像：<code>docker pull mongo</code></li>
+<li>创建mongoDB容器：<code>docker run --name mymongo -p 27017:27017 -v /data/db:/data/db -d mongo --auth</code></li>
+<li>进入mongo容器：<code>docker exec -it mymongo mongo admin</code></li>
+<li>创建管理员账号：<code>db.createUser({ user: &#39;&lt;USER&gt;&#39;, pwd: &#39;&lt;PASSWORD&gt;&#39;, roles: [ { role: &#39;userAdminAnyDatabase&#39;, db: &#39;admin&#39; } ]})</code></li>
+<li>退出mongo容器，以校验方式进入：<code>docker exec -it &lt;YOUR-NAME&gt; mongo -u &lt;USER&gt; -p &lt;PASSWORD&gt; --authenticationDatabase admin</code></li>
+</ul>
+<p><a href="https://brickyang.github.io/2017/03/15/%E5%88%A9%E7%94%A8-Docker-%E8%BF%90%E8%A1%8C-MongoDB/" target="_blank" rel="noopener">参考链接</a></p>
+<p>Docker安装redis</p>
+<ul>
+<li>查询redis镜像：<code>docker search redis</code></li>
+<li>拉取redis镜像：<code>docker pull redis</code></li>
+<li>创建redis容器并运行：<code>docker run -d --name myredis -p 6379:6379 redis --requirepass &quot;mypassword&quot;</code></li>
+<li>进入redis容器中并执行redis-cli：<code>docker exec -it b98b0c0e3797 redis-cli -a &quot;jian031018&quot;</code></li>
+</ul>
+<p>Docker安装sqlserver</p>
+<ul>
+<li><h3 id="Docker图形化管理"><a href="#Docker图形化管理" class="headerlink" title="Docker图形化管理"></a>Docker图形化管理</h3></li>
+<li><p>配置portainer目录：<code>docker volume create portainer_data</code></p>
+</li>
+<li><p>安装portainer容器：<code>docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</code></p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/11/29/什么是Docker/">https://jianjustin.github.io/blog/2018/11/29/什么是Docker/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/12/02/如何科学上网/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">如何科学上网</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/11/21/ECMAScript-Introduction/">
+        <span class="next-text nav-default">ECMAScript-Introduction</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

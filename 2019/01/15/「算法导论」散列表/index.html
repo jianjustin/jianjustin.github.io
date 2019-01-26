@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="「算法导论」散列表">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2019/01/15/「算法导论」散列表/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 「算法导论」散列表 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          「算法导论」散列表
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-01-15
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/算法/">算法</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#散列函数"><span class="toc-text">散列函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#散列冲突"><span class="toc-text">散列冲突</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <p>[TOC]</p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这是「<strong>算法导论</strong>」系列文章的<code>第一篇</code>,所以我先简单说明一下；这个系列主要针对算法这一块做一个整理，而学习过程中，主要使用算法导论作为参考书籍，通过<strong>C语言</strong>进行编码测试，题库来源主要是<strong>leetcode</strong>；</p>
+<p>但是因为「<strong>算法导论</strong>」涉及较多的数学概念，导致比较难懂，所以更新的时间和频率会出现不确定性，请大家谅解；以及基础的<code>栈</code>,<code>队列</code>等概念不做详细的讲解，因为其实质就是对数据插入和数据删除做了一定限制的数据结构，后续会根据具体习题进行讲解</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li><p><strong>散列表定义</strong></p>
+<p>散列表是根据键而直接访问在内存存储位置的数据结构，其实质是对普通数组概念的扩展，其目标是使数据的<strong>查询效率达到O(1)</strong></p>
+</li>
+<li><p><strong>散列函数</strong></p>
+<p>wiki上是这样解释散列函数的：散列函数把消息或数据压缩成摘要，使得数据量变小，将数据的格式固定下来。该函数将数据打乱混合，重新创建一个叫做<strong>散列值</strong>的指纹；其实质就是通过一个固定长度数据去表达元数据</p>
+</li>
+<li><p><strong>装载因子</strong></p>
+<p>装载因子指<strong>散列表装满程度的标志因子</strong>，表示为：<code>填入表中的元素个数 / 散列表的长度</code>;</p>
+</li>
+</ul>
+<blockquote>
+<p>Java的系统库限制了荷载因子为0.75，超过此值将resize散列表</p>
+</blockquote>
+<h3 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h3><ul>
+<li><p><strong>直接寻址法</strong></p>
+<p>直接寻址法又称为数组，其特点是将元数据值或元数据属性值作为下标进行存储</p>
+</li>
+<li><p><strong>除法散列法</strong></p>
+<p>除法散列法指通过取k除以m的余数，将关键字k映射到m个槽中某一个，即散列函数为：<code>h(k)=k mod m</code></p>
+</li>
+<li><p><strong>乘法散列法</strong></p>
+<p>同理得到散列函数为：<code>h(k)=[m(kA mod 1)]</code>; 指将关键字k乘以常数A并取整得到槽位置</p>
+</li>
+<li><p><strong>全域散列法</strong></p>
+<p>全域散列法主要将哈希函数替换成一组哈希函数集合，通过随机化策略进行选择哈希函数进行散列；而为什么要增加<strong>随机化选择哈希函数的策略呢？</strong>，原因就在于当哈希函数固定时，就一定会有一组数据使得散列表退化成链表；</p>
+<p>同时书中还提到了<strong>完全散列</strong>，有人将其称之为完美散列，其结构就是<strong>二级全域散列表</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>其实对于全域散列法，我一直不理解当策略随机化时，你应该如何将数据找到并取出来呢？这主要是我们对随机策略有误解，随机函数的获取实质是通过进制转换的方式获取，所以只要数据一致实质获取的哈希函数就是一致的</p>
+</blockquote>
+<h3 id="散列冲突"><a href="#散列冲突" class="headerlink" title="散列冲突"></a>散列冲突</h3><ul>
+<li><p><strong>链接法</strong></p>
+<p>链接法其实很好理解，如果读者对java有接触，就知道HashMap类就利用了这个策略，其实质就是将元素槽改造成链表结构，使得Hash值相同的元素不会产生冲突，而是向链表进行插入操作</p>
+</li>
+<li><p><strong>开放寻址法</strong></p>
+<p>开放寻址法主要通过再次探查的方式寻找元素槽，主要包括以下几种</p>
+<ul>
+<li>线性探查 - 以冲突位置为基准，向后移动指定位置进行插入</li>
+<li>二次探查 - 以冲突位置为基准，向后移动二次方数量位置进行插入</li>
+<li>双重散列 - 以冲突位置为基准，向后移动再次哈希位置，得到<code>h(k,i) = (h1(k)+ih2(k)) mod m</code></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2019/01/15/「算法导论」散列表/">https://jianjustin.github.io/blog/2019/01/15/「算法导论」散列表/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2019/01/16/「工具推荐」markdown/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">「工具推荐」markdown</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2019/01/06/「今日简史」摘要/">
+        <span class="next-text nav-default">「今日简史」摘要</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

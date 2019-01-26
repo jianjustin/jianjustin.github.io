@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="development tools learning notes">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/05/05/development tools learning notes/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> development tools learning notes - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          development tools learning notes
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-05-05
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/tool-notes/">tool-notes</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#通用开发环境"><span class="toc-text">通用开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PLSQL"><span class="toc-text">PLSQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#navicat"><span class="toc-text">navicat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git-amp-tortoiseGit"><span class="toc-text">git&amp;tortoiseGit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim"><span class="toc-text">vim</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#java开发环境"><span class="toc-text">java开发环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JDK"><span class="toc-text">JDK</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#maven"><span class="toc-text">maven</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#myeclipse"><span class="toc-text">myeclipse</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IDEA"><span class="toc-text">IDEA</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#公有服务使用"><span class="toc-text">公有服务使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#github"><span class="toc-text">github</span></a></li></ol></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h2 id="通用开发环境"><a href="#通用开发环境" class="headerlink" title="通用开发环境"></a>通用开发环境</h2><h3 id="PLSQL"><a href="#PLSQL" class="headerlink" title="PLSQL"></a>PLSQL</h3><h3 id="navicat"><a href="#navicat" class="headerlink" title="navicat"></a>navicat</h3><h3 id="git-amp-tortoiseGit"><a href="#git-amp-tortoiseGit" class="headerlink" title="git&amp;tortoiseGit"></a>git&amp;tortoiseGit</h3><h3 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h3><ol>
+<li><p>vim简介  <a href="http://www.vim.org" target="_blank" rel="noopener">安装地址</a></p>
+<blockquote>
+<p>基本上 vi/vim共分为三种模式，分别是命令模式，插入模式和底线命令模式</p>
+</blockquote>
+</li>
+<li><p>vim使用——<strong>命令模式</strong></p>
+<ul>
+<li>i 切换到插入模式，以输入字符</li>
+<li>x 删除当前光标所在处的字符</li>
+<li>: 切换到底线命令模式，以在最底一行输入命令</li>
+</ul>
+</li>
+</ol>
+<ol start="3">
+<li><p>vim使用——<strong>插入模式</strong></p>
+<ul>
+<li>字符按键以及Shift组合，输入字符</li>
+<li>ENTER，回车键，换行</li>
+<li>BACK SPACE，退格键，删除光标前一个字符</li>
+<li>DEL，删除键，删除光标后一个字符</li>
+<li>方向键，在文本中移动光标</li>
+<li>HOME/END，移动光标到行首/行尾</li>
+<li>Page Up/Page Down，上/下翻页</li>
+<li>Insert，切换光标为输入/替换模式，光标将变成竖线/下划线</li>
+<li>ESC，退出输入模式，切换到命令模式</li>
+</ul>
+</li>
+</ol>
+<ol start="4">
+<li>vim使用——<strong>底线命令模式</strong><ul>
+<li>q 退出程序</li>
+<li>w 保存文件</li>
+</ul>
+</li>
+</ol>
+<h2 id="java开发环境"><a href="#java开发环境" class="headerlink" title="java开发环境"></a>java开发环境</h2><h3 id="JDK"><a href="#JDK" class="headerlink" title="JDK"></a>JDK</h3><h3 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h3><ul>
+<li>maven包下载 <a href="https://maven.apache.org/download.cgi" target="_blank" rel="noopener">下载地址</a></li>
+<li>maven执行路径配置(配置<code>MAVEN_HOME</code>路径)</li>
+</ul>
+<h3 id="myeclipse"><a href="#myeclipse" class="headerlink" title="myeclipse"></a>myeclipse</h3><ul>
+<li>myeclipse安装包下载(<a href="http://www.myeclipsecn.com/" target="_blank" rel="noopener">下载地址</a>)</li>
+<li>myeclipse安装</li>
+<li><p>myeclipse破解</p>
+<ol>
+<li><p>替换pluins文件</p>
+<p><code>将MyEclipse2017CI7破解文件\plugins文件夹里所有文件拷贝到MyEclipse安装位置\plugins文件夹进行覆盖替换</code></p>
+</li>
+</ol>
+<ol start="2">
+<li><p>运行cracker2017.jar  </p>
+<p><img src="/images/myeclipse破解1.png" alt="myeclipse破解1"></p>
+<p><img src="/images/myeclipse破解2.png" alt="myeclipse破解2"></p>
+</li>
+</ol>
+</li>
+</ul>
+<h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h3><ul>
+<li>IDEA安装包下载(<a href="https://www.jetbrains.com/idea/download/#section=windows" target="_blank" rel="noopener">下载地址</a>)</li>
+<li>IDEA安装</li>
+<li><p>IDEA破解</p>
+<ol>
+<li>获取激活码并填充(<a href="http://idea.lanyus.com/" target="_blank" rel="noopener">激活码获取</a>)</li>
+<li><p>host文件修改</p>
+<p><code>在host文件内配置&quot;0.0.0.0 account.jetbrains.com&quot;</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="公有服务使用"><a href="#公有服务使用" class="headerlink" title="公有服务使用"></a>公有服务使用</h2><h3 id="github"><a href="#github" class="headerlink" title="github"></a>github</h3><ul>
+<li>添加github节点徽章(<a href="http://shields.io/" target="_blank" rel="noopener">徽章网址</a>)</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/05/05/development tools learning notes/">https://jianjustin.github.io/blog/2018/05/05/development tools learning notes/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/05/11/learning-notes-springboot/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">learning-notes-springboot</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/05/05/html-notes-introduction/">
+        <span class="next-text nav-default">html-notes-introduction</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

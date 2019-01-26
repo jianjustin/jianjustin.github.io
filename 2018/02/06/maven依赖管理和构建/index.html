@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="maven-项目管理">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/02/06/maven依赖管理和构建/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> maven-项目管理 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          maven-项目管理
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-02-06
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/技术/">技术</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#基础使用"><span class="toc-text">基础使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础命令"><span class="toc-text">基础命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#扩展使用命令"><span class="toc-text">扩展使用命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#settings-xml配置"><span class="toc-text">settings.xml配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pom-xml配置"><span class="toc-text">pom.xml配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生命周期"><span class="toc-text">生命周期</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#插件管理"><span class="toc-text">插件管理</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h2 id="基础使用"><a href="#基础使用" class="headerlink" title="基础使用"></a>基础使用</h2><h3 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h3><ol>
+<li>mvn clean    清空构建包文件</li>
+<li>mvn compiler 编译源文件</li>
+<li>mvn deploy   部署构建包</li>
+<li>mvn failsafe 集成测试</li>
+<li>mvn install  构建包文件到本地repository</li>
+<li>mvn resources实现不同环境下配置的替换</li>
+<li>mvn site     生成站点，根据report节点</li>
+<li>mvn surefire 用例测试</li>
+<li>mvn verifier 构建包验证</li>
+</ol>
+<h3 id="扩展使用命令"><a href="#扩展使用命令" class="headerlink" title="扩展使用命令"></a>扩展使用命令</h3><ol>
+<li>mvn archetype:generate 创建项目骨架</li>
+</ol>
+<h3 id="settings-xml配置"><a href="#settings-xml配置" class="headerlink" title="settings.xml配置"></a>settings.xml配置</h3><ol>
+<li><p>整体配置</p>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://maven.apache.org/SETTINGS/1.0.0
+                     https://maven.apache.org/xsd/settings-1.0.0.xsd"><br> <!--简单配置--><br> <localrepository><localrepository><!--本地仓库位置，用于包依赖管理；同时本地构建会将包放置在本地仓库--><br> <interactivemode><interactivemode><!--配置是否与用户进行交互输入--><br> <usepluginregistry><usepluginregistry><!--默认是false,用于管理plugins版本，通过${user.home}/.m2/plugin-registry.xml文件进行版本管理--><br> <offline><offline><!--配置是否以离线方式进行依赖管理和项目构建--><br> <!--复杂多节点配置--><br> <plugingroups><plugingroups><!--插件管理--><br> <servers><servers><br> <mirrors><mirrors><br> <proxies><proxies><br> <profiles><br>   <profile><br>     <activation></activation><br>     <properties></properties><br>     <repositories></repositories><br>   </profile><br> <profiles><br> <activeprofiles><activeprofiles><br></activeprofiles></activeprofiles></profiles></profiles></proxies></proxies></mirrors></mirrors></servers></servers></plugingroups></plugingroups></offline></offline></usepluginregistry></usepluginregistry></interactivemode></interactivemode></localrepository></localrepository></settings>
+</li>
+<li><p>servers节点配置：</p>
+<servers><br>   <server><br>     <id>server001</id><!--maven所连接的repository/mirror唯一编号--><br>     <username>my_login</username><!--repository/mirror服务器名称--><br>     <password>my_password</password><!--repository/mirror服务器密码--><br>     <privatekey>${user.home}/.ssh/id_dsa</privatekey><!--repository/mirror服务器私钥--><br>     <passphrase>some_passphrase</passphrase><!--repository/mirror服务器密钥--><br>     <filepermissions>664</filepermissions><!--repository/mirror服务器文件创建权限，对应unix文件权限编号--><br>     <directorypermissions>775</directorypermissions><!--repository/mirror服务器目录创建权限，对应unix目录权限编号--><br>     <configuration></configuration><!--repository/mirror服务器配置信息--><br>   </server><br> </servers>
+</li>
+<li><p>mirrors节点配置：</p>
+<mirror><br>   <id>planetmirror.com</id><!--镜像站id,用于标识mirror；同时可与server节点相关联--><br>   <name>PlanetMirror Australia</name><!--镜像站name--><br>   <url><a href="http://downloads.planetmirror.com/pub/maven2" target="_blank" rel="noopener">http://downloads.planetmirror.com/pub/maven2</a></url><!--镜像站url--><br>   <mirrorof>central</mirrorof><!--镜像站内仓库地址，central表示主仓库，可与id相关联--><br></mirror>    
+</li>
+<li><p>proxies节点配置:</p>
+<proxy><br> <id>myproxy</id><!--代理id--><br> <active>true</active><!--是否开启代理--><br> <protocol>http</protocol><!--代理连接协议--><br> <host>proxy.somewhere.com</host><!--代理主机ip--><br> <port>8080</port><!--代理主机端口号--><br> <username>proxyuser</username><!--代理主机用户名--><br> <password>somepassword</password><!--代理主机密码--><br> <nonproxyhosts>*.google.com|ibiblio.org</nonproxyhosts><!--代理过滤主机--><br></proxy>  
+</li>
+<li><p>activation节点配置:</p>
+<p>说明:根据环境参数调整构建系统，仅用于配置系统相关的环境参数(与pom.xml的profile节点相对应)</p>
+<profile><!--包含(activation,repositories,pluginRepositories,properties)四个节点，用于配置构建系统--><br> <id>test</id><br> <activation><br>   <activebydefault>false</activebydefault><br>   <jdk>1.5</jdk><!--activation有一个内建的java版本检测，如果检测到jdk版本与期待的一样，profile被激活。 --><br>   <os><br>     <name>Windows XP</name><br>     <family>Windows</family><br>     <arch>x86</arch><br>     <version>5.1.2600</version><br>   </os><br>   <property><br>     <name>mavenVersion</name><br>     <value>2.0.3</value><br>   </property><br>   <file><!--指定目录文件存在，profile被激活。 --><br>     <exists>${basedir}/file2.properties</exists><br>     <missing>${basedir}/file1.properties</missing><br>   </file><br> </activation><br></profile>
+
+
+</li>
+</ol>
+<ol start="6">
+<li><p>properties节点配置:</p>
+<profiles><!--${user.install}配置可应用于全局--><br>  <profile><br>    <properties><br>      &lt;user.install&gt;${user.home}/our-project&lt;/user.install&gt;<br>    </properties><br>  </profile><br></profiles>
+</li>
+<li><p>repositories节点配置:</p>
+<profile><br>  <repositories><!--远程仓库配置--><br>    <repository><br>      <id>codehausSnapshots</id><br>      <name>Codehaus Snapshots</name><br>      <releases><!--发布版本信息配置--><br>        <enabled>false</enabled><!--是否开启发布版本依赖构件下载--><br>        <updatepolicy>always</updatepolicy><!--构件更新策略，用pom文件时间戳进行匹配,always or daily or interval:X or never--><br>        <checksumpolicy>warn</checksumpolicy><!--构件更新失败提示策略--><br>      </releases><br>      <snapshots><!--快照版本信息配置--><br>        <enabled>true</enabled><!--是否开启快照版本依赖构件下载--><br>        <updatepolicy>never</updatepolicy><!--构件更新策略，用pom文件时间戳进行匹配--><br>        <checksumpolicy>fail</checksumpolicy><!--构件更新失败提示策略--><br>      </snapshots><br>      <url><a href="http://snapshots.maven.codehaus.org/maven2" target="_blank" rel="noopener">http://snapshots.maven.codehaus.org/maven2</a></url><!--远程仓库url--><br>      <layout>default</layout><!--用于定位和排序构件的仓库布局类型,default or legacy--><br>    </repository><br>  </repositories><br>  <pluginrepositories><!-- 远程插件仓库配置 --><br>  </pluginrepositories><br></profile>
+
+
+</li>
+</ol>
+<h3 id="pom-xml配置"><a href="#pom-xml配置" class="headerlink" title="pom.xml配置"></a>pom.xml配置</h3><pre><code>1. 整体配置：
+
+  &lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+    xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0
+                        http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+    &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;&lt;!--POM文件版本，4.0.0说明POM支持2&amp;3版本的maven--&gt;
+
+    &lt;!-- The Basics --&gt;
+    &lt;!-- 说明:版本标识  &lt;主版本&gt;.&lt;次版本&gt;.&lt;增量版本&gt;-&lt;限定符&gt;--&gt;
+    &lt;groupId&gt;&lt;/groupId&gt;&lt;!--通常是组织或项目的唯一表示，用于表示项目的主目录结构--&gt;
+    &lt;artifactId&gt;&lt;/artifactId&gt;&lt;!--代表项目名称，用于项目的唯一标识--&gt;
+    &lt;version&gt;&lt;/version&gt;&lt;!--代表项目版本，用于定位唯一版本项目--&gt;
+    &lt;packaging&gt;&lt;/packaging&gt;&lt;!--打包方式,主要包括 jar or war，默认打包方式是jar--&gt;
+    &lt;classifier&gt;&lt;/classifier&gt;&lt;!--用于生成构建包--&gt;
+    &lt;dependencies&gt;&lt;/dependencies&gt;
+    &lt;parent&gt;&lt;/parent&gt;
+    &lt;dependencyManagement&gt;&lt;/dependencyManagement&gt;
+    &lt;modules&gt;&lt;/modules&gt;
+    &lt;properties&gt;&lt;/properties&gt;
+
+    &lt;!-- Build Settings --&gt;
+    &lt;build&gt;&lt;/build&gt;
+    &lt;reporting&gt;&lt;/reporting&gt;
+
+    &lt;!-- More Project Information --&gt;
+    &lt;name&gt;&lt;/name&gt;&lt;!--项目别名--&gt;
+    &lt;description&gt;&lt;/description&gt;&lt;!--项目描述--&gt;
+    &lt;url&gt;&lt;/url&gt;&lt;!--项目路径--&gt;
+    &lt;inceptionYear&gt;&lt;/inceptionYear&gt;&lt;!--项目修改路径--&gt;
+    &lt;licenses&gt;&lt;/licenses&gt;&lt;!--项目协议--&gt;
+    &lt;organization&gt;&lt;/organization&gt;&lt;!--项目所在组织--&gt;
+    &lt;developers&gt;&lt;/developers&gt;&lt;!--项目开发者列表--&gt;
+    &lt;contributors&gt;&lt;/contributors&gt;&lt;!--贡献者列表--&gt;
+
+    &lt;!-- Environment Settings --&gt;
+    &lt;issueManagement&gt;&lt;/issueManagement&gt;&lt;!--缺陷追踪系统信息--&gt;
+    &lt;ciManagement&gt;&lt;/ciManagement&gt;&lt;!--配置持续集成管理系统--&gt;
+    &lt;mailingLists&gt;&lt;/mailingLists&gt;&lt;!--管理邮箱列表--&gt;
+    &lt;scm&gt;&lt;/scm&gt;&lt;!--软件管理信息--&gt;
+    &lt;prerequisites&gt;&lt;/prerequisites&gt;
+    &lt;repositories&gt;&lt;/repositories&gt;
+    &lt;pluginRepositories&gt;&lt;/pluginRepositories&gt;
+    &lt;distributionManagement&gt;&lt;/distributionManagement&gt;
+    &lt;profiles&gt;&lt;/profiles&gt;
+  &lt;/project&gt;
+</code></pre><ol start="2">
+<li><p>dependencies节点配置说明:</p>
+<dependencies><!--maven包依赖管理--><br><dependency><br>  <groupid>junit</groupid><!--依赖主版本--><br>  <artifactid>junit</artifactid><!--依赖次版本--><br>  <version>4.0</version><!--依赖版本号--><br>  <type>jar</type><!--依赖打包类型--><br>  <scope>test</scope><!--指定依赖使用范围--><br>  <systempath></systempath><!--仅适用于scope节点为system--><br>  <optional>true</optional><!--将依赖设置为可选依赖，不进行依赖传递--><br>  <exclusions><!--排除依赖，用于解除依赖传递--><br>    <exclusion><br>      <groupid>org.apache.maven</groupid><br>      <artifactid>maven-core</artifactid><br>    </exclusion><br>  </exclusions><br></dependency><br></dependencies>
+
+<p>a. 下载指定依赖:mvn install: install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -DartifactId=non-maven-proj -Dversion=1 -Dpackaging=jar<br>b. scope(依赖作用域):</p>
+<ol>
+<li>compile(默认依赖作用域)</li>
+<li>provided(说明依赖有JDK或虚拟机提供)</li>
+<li>runtime(说明依赖作用于运行测试期间，但是不在编译类路径)</li>
+<li>test(说明依赖只在测试编译和测试执行期间引入)</li>
+<li>system(说明依赖由JDK或虚拟机提供，与systemPath节点相关)</li>
+<li>import(导入另一个POM中 dependency management 里声明的依赖仲裁)</li>
+</ol>
+<p>c. inheritance(继承管理)</p>
+<parent><!--定义父节点--><br> <groupid>org.codehaus.mojo</groupid><br> <artifactid>my-parent</artifactid><br> <version>2.0</version><br> <relativepath>../my-parent</relativepath><br></parent>
+
+<p>d. Aggregation(集成管理):</p>
+<modules><br><module>my-project</module><br><module>another-project</module><br><module>third-project/pom-example.xml</module><br></modules>    
+
+
+
+</li>
+</ol>
+<ol start="3">
+<li><p>build节点配置:</p>
+<pre><code> &lt;!--包括两种方式--&gt;
+ &lt;build&gt;&lt;/build&gt;
+ &lt;profiles&gt;
+   &lt;profile&gt;
+     &lt;!-- &quot;Profile Build&quot; contains a subset of &quot;Project Build&quot;s elements --&gt;
+     &lt;build&gt;...&lt;/build&gt;
+   &lt;/profile&gt;
+ &lt;/profiles&gt;
+
+a. 全局基本节点
+ &lt;build&gt;
+   &lt;defaultGoal&gt;install&lt;/defaultGoal&gt;&lt;!--设置构建目标--&gt;
+   &lt;directory&gt;${basedir}/target&lt;/directory&gt;&lt;!--构建目标路径--&gt;
+   &lt;finalName&gt;${artifactId}-${version}&lt;/finalName&gt;&lt;!--构建结果名称--&gt;
+   &lt;filters&gt;&lt;!--配置构建参数--&gt;
+     &lt;filter&gt;filters/filter1.properties&lt;/filter&gt;
+   &lt;/filters&gt;
+ &lt;/build&gt;
+
+ b. resources节点配置：
+ &lt;resources&gt;
+   &lt;resource&gt;
+     &lt;targetPath&gt;META-INF/plexus&lt;/targetPath&gt;
+     &lt;filtering&gt;false&lt;/filtering&gt;
+     &lt;directory&gt;${basedir}/src/main/plexus&lt;/directory&gt;
+     &lt;includes&gt;
+       &lt;include&gt;configuration.xml&lt;/include&gt;
+     &lt;/includes&gt;
+     &lt;excludes&gt;
+       &lt;exclude&gt;**/*.properties&lt;/exclude&gt;
+     &lt;/excludes&gt;
+   &lt;/resource&gt;
+ &lt;/resources&gt;
+
+ c. plugins节点配置：
+ &lt;plugins&gt;
+    &lt;plugin&gt;
+      &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+      &lt;artifactId&gt;maven-jar-plugin&lt;/artifactId&gt;
+      &lt;version&gt;2.6&lt;/version&gt;
+      &lt;extensions&gt;false&lt;/extensions&gt;
+      &lt;inherited&gt;true&lt;/inherited&gt;
+      &lt;configuration&gt;
+        &lt;classifier&gt;test&lt;/classifier&gt;
+      &lt;/configuration&gt;
+      &lt;dependencies&gt;...&lt;/dependencies&gt;
+      &lt;executions&gt;...&lt;/executions&gt;
+    &lt;/plugin&gt;
+  &lt;/plugins&gt;
+</code></pre></li>
+</ol>
+<h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><ol>
+<li>clean周期</li>
+<li>默认周期</li>
+<li>site周期</li>
+</ol>
+<h2 id="插件管理"><a href="#插件管理" class="headerlink" title="插件管理"></a>插件管理</h2><ol>
+<li>maven-assembly-plugin<br>用于将指定文件进行自定义打包</li>
+<li>maven-dependency-plugin<br>检查pom依赖关系：<br>  Used undeclared dependencies: 表示项目中使用到的，但是没有显示声明的依赖<br>  Unused declared dependencies: 表示项目中未使用的，但显示声明的依赖<br>运行命令:</li>
+<li>maven-resources-plugin</li>
+<li>maven-compiler-plugin</li>
+<li>maven-surefire-plugin</li>
+<li>maven-jar-plugin</li>
+<li>maven-install-plugin</li>
+</ol>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/02/06/maven依赖管理和构建/">https://jianjustin.github.io/blog/2018/02/06/maven依赖管理和构建/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/02/10/项目问题集/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">项目问题集</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/01/29/python学习笔记/">
+        <span class="next-text nav-default">python学习笔记</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

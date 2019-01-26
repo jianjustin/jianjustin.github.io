@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="如何开发小程序">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/10/11/如何开发小程序/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 如何开发小程序 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          如何开发小程序
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-11
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/wechat/">wechat</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#账号注册"><span class="toc-text">账号注册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小程序基础开发"><span class="toc-text">小程序基础开发</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#组件使用"><span class="toc-text">组件使用</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#生命周期"><span class="toc-text">生命周期</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#数据绑定渲染"><span class="toc-text">数据绑定渲染</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#事件"><span class="toc-text">事件</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#WXSS"><span class="toc-text">WXSS</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#API能力"><span class="toc-text">API能力</span></a></li></ol></li></ol><li class="toc-item toc-level-3"><a class="toc-link" href="#框架简介"><span class="toc-text">框架简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#小程序开发"><span class="toc-text">小程序开发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#云开发"><span class="toc-text">云开发</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#数据库操作"><span class="toc-text">数据库操作</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#引入npm构建功能"><span class="toc-text">引入npm构建功能</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#引入外部UI框架"><span class="toc-text">引入外部UI框架</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#引入iconfont库"><span class="toc-text">引入iconfont库</span></a></li></ol></li>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="账号注册"><a href="#账号注册" class="headerlink" title="账号注册"></a>账号注册</h3><ul>
+<li><a href="https://mp.weixin.qq.com/wxopen/waregister?action=step1" target="_blank" rel="noopener">申请小程序账号</a></li>
+<li><a href="https://mp.weixin.qq.com" target="_blank" rel="noopener">登录小程序后台管理</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html?t=18101214" target="_blank" rel="noopener">下载开发者工具</a></li>
+</ul>
+<h3 id="小程序基础开发"><a href="#小程序基础开发" class="headerlink" title="小程序基础开发"></a>小程序基础开发</h3><h6 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h6><h6 id="组件使用"><a href="#组件使用" class="headerlink" title="组件使用"></a>组件使用</h6><ul>
+<li><code>tabbar</code>————<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#tabbar" target="_blank" rel="noopener">官网参考</a></li>
+</ul>
+<p>如果小程序是一个多 tab 应用（客户端窗口的底部或顶部有 tab 栏可以切换页面），可以通过 tabBar 配置项指定 tab 栏的表现，以及 tab 切换时显示的对应页面</p>
+<h6 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h6><ul>
+<li>程序生命周期————<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/app.html" target="_blank" rel="noopener">官网参考</a><ul>
+<li>onLaunch——小程序初始化监听函数</li>
+<li>onShow——小程序显示监听函数</li>
+<li>onHide——小程序隐藏监听函数</li>
+<li>onError——小程序错误监听函数</li>
+<li>onPageNotFound——页面找不到监听函数</li>
+</ul>
+</li>
+<li>页面生命周期————<a href="">官网参考</a><ul>
+<li>onLoad        生命周期回调—监听页面加载</li>
+<li>onShow        生命周期回调—监听页面显示</li>
+<li>onReady        生命周期回调—监听页面初次渲染完成</li>
+<li>onHide        生命周期回调—监听页面隐藏</li>
+<li>onUnload        生命周期回调—监听页面卸载</li>
+<li>onPullDownRefresh        监听用户下拉动作</li>
+<li>onReachBottom        页面上拉触底事件的处理函数</li>
+<li>onShareAppMessage        用户点击右上角转发</li>
+<li>onPageScroll        页面滚动触发事件的处理函数</li>
+<li>onResize        页面尺寸改变时触发，详见 响应显示区域变化</li>
+<li>onTabItemTap        当前是 tab 页时，点击 tab 时触发</li>
+</ul>
+</li>
+</ul>
+<h6 id="数据绑定渲染"><a href="#数据绑定渲染" class="headerlink" title="数据绑定渲染"></a>数据绑定渲染</h6><ul>
+<li><p>数据渲染</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span>&gt;</span> &#123;&#123;message&#125;&#125; <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列表渲染</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:for</span>=<span class="string">"&#123;&#123;array&#125;&#125;"</span> <span class="attr">wx:for-index</span>=<span class="string">"idx"</span> <span class="attr">wx:for-item</span>=<span class="string">"itemName"</span>&gt;</span></span><br><span class="line">  &#123;&#123;idx&#125;&#125;: &#123;&#123;itemName.message&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>条件渲染</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:if</span>=<span class="string">"&#123;&#123;length &gt; 5&#125;&#125;"</span>&gt;</span> 1 <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:elif</span>=<span class="string">"&#123;&#123;length &gt; 2&#125;&#125;"</span>&gt;</span> 2 <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">view</span> <span class="attr">wx:else</span>&gt;</span> 3 <span class="tag">&lt;/<span class="name">view</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>数据双向绑定</p>
+<blockquote>
+<p>因为小程序并没有和vue类似的双向绑定功能，所以我们需要通过setData的方式去模拟双向绑定——<a href="https://segmentfault.com/a/1190000015684864" target="_blank" rel="noopener">参考链接</a></p>
+</blockquote>
+<h6 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h6><ul>
+<li><p>touchstart    手指触摸动作开始    </p>
+</li>
+<li><p>touchmove    手指触摸后移动    </p>
+</li>
+<li><p>touchcancel    手指触摸动作被打断，如来电提醒，弹窗    </p>
+</li>
+<li><p>touchend    手指触摸动作结束    </p>
+</li>
+<li><p>tap    手指触摸后马上离开    </p>
+</li>
+<li><p>longpress    手指触摸后，超过350ms再离开，如果指定了事件回调函数并触发了这个事件，tap事件将不被触发    1.5.0</p>
+</li>
+<li><p>longtap    手指触摸后，超过350ms再离开（推荐使用longpress事件代替）    </p>
+</li>
+<li><p>transitionend     动画结束后触发    </p>
+</li>
+<li><p>animationstart    会在一个 WXSS animation 动画开始时触发    </p>
+</li>
+<li><p>animationiteration    会在一个 WXSS animation 一次迭代结束时触发    </p>
+</li>
+<li><p>animationend    会在一个 WXSS animation 动画完成时触发    </p>
+</li>
+<li><p>touchforcechange    在支持 3D Touch 的 iPhone 设备，重按时会触发</p>
+</li>
+</ul>
+<blockquote>
+<p><code>bind</code>事件绑定不会阻止冒泡事件向上冒泡，<code>catch</code>事件绑定可以阻止冒泡事件向上冒泡。</p>
+</blockquote>
+<h6 id="WXSS"><a href="#WXSS" class="headerlink" title="WXSS"></a>WXSS</h6><blockquote>
+<p>WXSS是小程序的一套脚本语言，结合 <code>WXML</code>，可以构建出页面的结构。————<a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxs/" target="_blank" rel="noopener">官网参考</a></p>
+</blockquote>
+<h6 id="API能力"><a href="#API能力" class="headerlink" title="API能力"></a>API能力</h6><blockquote>
+<p>TODO</p>
+</blockquote>
+<blockquote>
+<p>小程序代码包大小限制在1M内</p>
+</blockquote>
+<p><a href="http://wxopen.club/" target="_blank" rel="noopener">教程网站</a></p>
+<h3 id="框架简介"><a href="#框架简介" class="headerlink" title="框架简介"></a>框架简介</h3><ul>
+<li><p>代码构成</p>
+<ul>
+<li>JSON 配置</li>
+</ul>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html" target="_blank" rel="noopener"><code>app.json</code></a> 是当前小程序的全局配置,<a href="https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html" target="_blank" rel="noopener"><code>project.config.json</code></a>是工具配置,用于微信开发者工具自定义配置,页面配置 <a href="https://developers.weixin.qq.com/miniprogram/dev/framework/config.html#页面配置" target="_blank" rel="noopener"><code>page.json</code></a>则是独立定义每个页面的一些属性</p>
+<ul>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/index.html" target="_blank" rel="noopener">WXML模板</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html" target="_blank" rel="noopener">WXSS样式</a></li>
+<li><a href="https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxml/event.html" target="_blank" rel="noopener">JS交互逻辑</a></li>
+</ul>
+</li>
+<li><p>流程管理</p>
+<ul>
+<li>开发</li>
+<li>测试</li>
+<li>上线</li>
+</ul>
+</li>
+</ul>
+<h3 id="小程序开发"><a href="#小程序开发" class="headerlink" title="小程序开发"></a>小程序开发</h3><ul>
+<li><p>授权获取</p>
+<pre><code> onGetOpenid: function() {
+     // 调用云函数(需要提前将云函数上传并部署)
+     wx.cloud.callFunction({
+        name: &apos;login&apos;,
+        data: {},
+        success: res =&gt; {
+           console.log(&apos;[云函数] [login] user openid: &apos;, res.result.openid)
+           //将openid存储为全局变量
+           app.globalData.openid = res.result.openid
+           //获取用户信息
+           wx.getUserInfo({
+
+           })
+        },
+       fail: err =&gt; {
+           console.error(&apos;[云函数] [login] 调用失败&apos;, err)
+       }
+    })
+},
+</code></pre></li>
+<li><p>获取用户信息 <code>wx.getUserInfo</code> </p>
+<ul>
+<li><code>userInfo</code> - 用户信息对象，不包含 openid 等敏感信息 </li>
+<li><code>rawData</code> - 不包括敏感信息的原始数据字符串，用于计算签名 </li>
+<li><code>signature</code> - 使用 sha1( rawData + sessionkey ) 得到字符串，用于校验用户信息</li>
+<li><code>encryptedData</code> - 包括敏感数据在内的完整用户信息的加密数据</li>
+<li><code>iv</code> - 加密算法的初始向量，详见 用户数据的签名验证和加解密</li>
+</ul>
+<p><a href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/user-info/wx.getUserInfo.html" target="_blank" rel="noopener">参考</a></p>
+</li>
+<li><p>设置底部导航栏</p>
+<blockquote>
+<p>app.json内添加配置，配置内容如下：</p>
+</blockquote>
+<pre><code>  &quot;tabBar&quot;: {
+  &quot;color&quot;: &quot;#a9b7b7&quot;,
+  &quot;selectedColor&quot;: &quot;#11cd6e&quot;,
+  &quot;borderStyle&quot;: &quot;white&quot;,
+  &quot;list&quot;: [
+    {
+      &quot;selectedIconPath&quot;: &quot;images/blog.png&quot;,
+      &quot;iconPath&quot;: &quot;images/blog.png&quot;,
+      &quot;pagePath&quot;: &quot;pages/index/index&quot;,
+      &quot;text&quot;: &quot;首页&quot;
+    },
+    {
+      &quot;selectedIconPath&quot;: &quot;images/menu.png&quot;,
+      &quot;iconPath&quot;: &quot;images/menu.png&quot;,
+      &quot;pagePath&quot;: &quot;pages/index/index&quot;,
+      &quot;text&quot;: &quot;文章&quot;
+    },
+    {
+      &quot;selectedIconPath&quot;: &quot;images/member.png&quot;,
+      &quot;iconPath&quot;: &quot;images/member.png&quot;,
+      &quot;pagePath&quot;: &quot;pages/index/index&quot;,
+      &quot;text&quot;: &quot;设置&quot;
+    }
+  ]
+}  
+</code></pre></li>
+</ul>
+<h3 id="云开发"><a href="#云开发" class="headerlink" title="云开发"></a>云开发</h3><blockquote>
+<p>定义：开发者可以使用云开发开发微信小程序、小游戏，无需搭建服务器，即可使用云端能力</p>
+</blockquote>
+<ul>
+<li>代码执行 - <code>云函数</code></li>
+<li>数据库执行操作 - <code>云数据库</code></li>
+<li>文件存储 - `云文件</li>
+</ul>
+<h6 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h6><blockquote>
+<p>数据库数据类型：String，Number，Object，Array，Bool，GeoPoint，Date，Null；详见<a href="https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/database/data-type.html" target="_blank" rel="noopener">文档</a></p>
+</blockquote>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><h6 id="引入npm构建功能"><a href="#引入npm构建功能" class="headerlink" title="引入npm构建功能"></a>引入npm构建功能</h6><blockquote>
+<p>该功能的前提是本机环境需要有node环境</p>
+</blockquote>
+<ul>
+<li><code>npm init</code> ———初始化npm构建文件</li>
+<li><code>npm install --production -S js-base64</code> ———安装js-base64包</li>
+<li>点击开发者工具中的菜单栏：工具 –&gt; 构建 npm</li>
+</ul>
+<h6 id="引入外部UI框架"><a href="#引入外部UI框架" class="headerlink" title="引入外部UI框架"></a>引入外部UI框架</h6><ul>
+<li>WeUI WXSS</li>
+<li>iView WeApp</li>
+<li>ZanUI WeApp</li>
+<li>MinUI WeApp</li>
+<li>Wux WeApp</li>
+</ul>
+<h6 id="引入iconfont库"><a href="#引入iconfont库" class="headerlink" title="引入iconfont库"></a>引入iconfont库</h6>
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/10/11/如何开发小程序/">https://jianjustin.github.io/blog/2018/10/11/如何开发小程序/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/10/21/【译】Github10月21日事故报告/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">【译】Github10月21日事故报告</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/10/10/C语言学习笔记/">
+        <span class="next-text nav-default">C语言学习笔记</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

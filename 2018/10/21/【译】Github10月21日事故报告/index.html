@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="【译】Github10月21日事故报告">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/10/21/【译】Github10月21日事故报告/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 【译】Github10月21日事故报告 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          【译】Github10月21日事故报告
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-10-21
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/translation/">translation</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#官方报告"><span class="toc-text">官方报告</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说明"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#扩展"><span class="toc-text">扩展</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>国际标准时间下午10:52，大约是国内7点多的时候，Github网站出现了问题，网上描述为：无法登录，无法创建或删除，无法创建issue等等。我下午登录后显示的页面则是502错误提示页面。</p>
+<h2 id="官方报告"><a href="#官方报告" class="headerlink" title="官方报告"></a>官方报告</h2><ul>
+<li>原文</li>
+</ul>
+<blockquote>
+<p>At 10:52 pm Sunday UTC, multiple services on GitHub.com were affected by a network partition and subsequent database failure resulting in inconsistent information being presented on our website. Out of an abundance of caution we have taken steps to ensure the integrity of your data, including pausing webhook events and other internal processing systems.</p>
+</blockquote>
+<blockquote>
+<p>We are aware of how important our services are to your development workflows and are actively working to establish an estimated timeframe for full recovery. We will share this information with you as soon as it is available. During this time, information displayed on GitHub.com is likely to appear out of date; however no data was lost. Once service is fully restored, everything should appear as expected. Further, this incident only impacted website metadata stored in our MySQL databases, such as issues and pull requests. Git repository data remains unaffected and has been available throughout the incident.</p>
+</blockquote>
+<blockquote>
+<p>We will continue to provide updates and an estimated time to resolution via our <a href="https://status.github.com/messages" target="_blank" rel="noopener">status page</a>.</p>
+</blockquote>
+<ul>
+<li>译文</li>
+</ul>
+<blockquote>
+<p>国际标准时间下午10:52，Github网站的多个服务因为网络分区和备份数据库和网站所呈现出的信息不一致导致异常。出于谨慎我们必须采取措施去确保数据的完整性，包括暂停网络连接以及关闭一些其他的内部信息处理系统。</p>
+</blockquote>
+<blockquote>
+<p>我们知道我们的服务对于开发者有多么重要,所以我们积极地建立服务完全恢复的时间表并将有用信息及时地反馈给大家。在此期间，网站上显示的信息可能会是过期信息；不管怎样数据并没有丢失。一旦服务恢复则所有信息都会像往常一样呈现。详细地说,这次事故只对网站MySQL数据库内存储的相关的元数据产生影响，例如issues和pull requests。而Git仓库实体数据则不受影响并且始终处于可用状态。</p>
+</blockquote>
+<blockquote>
+<p>我们将继续通过<a href="https://status.github.com/messages" target="_blank" rel="noopener">状态页面</a>提供更新和估计解决时间</p>
+</blockquote>
+<h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>从官方给的报告来看，其实就是数据库服务这一块出现问题，所以人为将相关服务断开网络连接；导致我们无法对数据进行操作，但是又能对Github仓库的文件系统进行同步操作。下图是Github给出的状态信息说明，我们可以从中看到，北京时间晚上20点左右故障已经基本移除，并在一小时后所有数据存储恢复正常。</p>
+<p><img src="https://jianjustin.github.io/blog/assets/img/picture/Github状态信息.png" alt="Github状态信息"></p>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p><span style="color:red">当一个大型网站遇到问题时的做法</span></p>
+<p>以前很少关注哪个网站挂了或者怎样，因为以前都是公司自己购买服务器然后自己组建数据中心，当系统出现问题时，只需要启动备案计划即可；但是云的广泛化，带来的是IT基础设施的服务化，当我们组建系统时，都会默认云服务不会挂，即云服务具备可靠性，所以当我们的基础设施真的挂了后，我们会手足无措，并且没有能力去处理，毕竟所有数据都在云服务公司那边。而云服务出现故障后，带来的是无数网站不可用，甚至数据丢失。</p>
+<p>例如2018年6月27日阿里云出现的<a href="https://bbs.aliyun.com/read/581590.html?spm=5176.10695662.1996646101.searchclickresult.711b46f42U3bhk" target="_blank" rel="noopener">故障</a>：</p>
+<p><img src="https://jianjustin.github.io/blog/assets/img/picture/阿里云故障.png" alt="阿里云故障"></p>
+<p>所以这里面涉及到两个<strong>问题</strong>：</p>
+<ul>
+<li><strong>是否应该使用云服务</strong></li>
+<li><strong>如何降低云服务带来的风险</strong></li>
+</ul>
+<blockquote>
+<p>在我看来，云是趋势，我们只能调整方向，但是不能逆着趋势，因为逆着趋势阻力太大了。所以我们应该通过云服务降低自己的运维成本，但是本着“鸡蛋不能放在同一个篮子里”的原则，我们还应该与多个云服务厂商建立联系，毕竟云服务不间断地出现问题这是真，而两个云服务同时出现故障则基本没有。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/10/21/【译】Github10月21日事故报告/">https://jianjustin.github.io/blog/2018/10/21/【译】Github10月21日事故报告/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/11/02/如何设计原型UI/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">如何设计原型UI</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/10/11/如何开发小程序/">
+        <span class="next-text nav-default">如何开发小程序</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="详解C标准规范">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/blog/default" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/blog/favicon.ico?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/blog/2018/12/07/详解C标准规范/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blog/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/blog/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 详解C标准规范 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/blog/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/blog/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/blog/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/blog/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          详解C标准规范
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-12-07
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/blog/categories/技术/">技术</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C编译器"><span class="toc-text">C编译器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C标准规范"><span class="toc-text">C标准规范</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CMake"><span class="toc-text">CMake</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C标准库"><span class="toc-text">C标准库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C扩展"><span class="toc-text">C扩展</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近又涉及C语言的一些编码工作，而且经常对一些报错无从下手；所以打算写这篇文章，去了解C语言的一些扩展知识，和C语言的规范</p>
+<blockquote>
+<p>下面我会从这几个角度，讲解一下C语言：</p>
+<ul>
+<li>C编译器</li>
+<li>C标准规范</li>
+<li>CMake</li>
+<li>C标准库</li>
+<li>C扩展</li>
+</ul>
+</blockquote>
+<h3 id="C编译器"><a href="#C编译器" class="headerlink" title="C编译器"></a>C编译器</h3><p>编译器应该算静态语言的一个重要组成部分吧，涉及代码的具体执行；而C语言编译器主要包括这几种：</p>
+<ol>
+<li><p>pcc编译器</p>
+<blockquote>
+<p>一个古老的可移植C编译器，并在2005年9月支持C11规范</p>
+</blockquote>
+</li>
+<li><p>gcc编译器</p>
+<blockquote>
+<p>相信只要是计算机专业的同学，肯定对gcc不陌生，因为它是linux环境下默认的C编译环境；如今GCC则是指一套编程语言编译器，以GPL及LGPL许可证所发行的自由软件，也是GNU项目的关键部分，也是GNU工具链的主要组成部分之一</p>
+</blockquote>
+</li>
+<li><p>MinGW</p>
+<blockquote>
+<p>MinGW是GCC编译器和GNU Binutils移植到Win32平台下的产物，包括一系列头文件（Win32API）、库和可执行文件；同时可能也是我们第一个接触的执行环境</p>
+</blockquote>
+</li>
+</ol>
+<p>备注：综上所述，实际上我们所接触的C编译环境就是GCC</p>
+<h3 id="C标准规范"><a href="#C标准规范" class="headerlink" title="C标准规范"></a>C标准规范</h3><blockquote>
+<p>什么是标准？标准可以视为语言的实现参考，相当于语言的最佳实践；而编译器也会使用标准作为指导去实现；C标准规范主要包括<code>C89规范</code>，<code>C99规范</code>，<code>C11规范</code></p>
+</blockquote>
+<ul>
+<li><p>C89规范</p>
+<blockquote>
+<p>C89规范在1989年完成，并在作为ANSI X3.159-1989 “Programming Language C”正式生效；又被称为<code>ANSI C</code></p>
+</blockquote>
+</li>
+<li><p>C90规范—由C89规范改进而来</p>
+</li>
+<li><p>C99规范</p>
+<blockquote>
+<p>C99规范完成于2000年，为<code>ISO/IEC 9899:1999</code>标准</p>
+</blockquote>
+</li>
+<li><p>C11规范</p>
+<blockquote>
+<p>C11规范完成于2011年，为<code>ISO/IEC 9899:2011</code>标准</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="CMake"><a href="#CMake" class="headerlink" title="CMake"></a>CMake</h3><blockquote>
+<p>我们在学校学习C语言的时候，只是了解了C语言的一些语法，但是应用程序的开发是技术栈和工具栈的完美集合；包括linux，gcc等一系列由C语言创建的大型软件，它都是将文件模块化，再通过CMake等构建工具将软件工程化</p>
+</blockquote>
+<p><strong>CMake</strong>是个一个开源的跨平台自动化建构系统，用来管理软件建置的程序，并不相依于某特定编译器。并可支持多层目录、多个应用程序与多个库，详细见<a href="https://cmake.org/" target="_blank" rel="noopener">官网</a></p>
+<h3 id="C标准库"><a href="#C标准库" class="headerlink" title="C标准库"></a>C标准库</h3><ul>
+<li><code>assert.h</code>    断言相关</li>
+<li><code>ctype.h</code>    字符类型判断</li>
+<li><code>errno.h</code>    标准报错机制</li>
+<li><code>float.h</code>    浮点运算</li>
+<li><code>limits.h</code>    各种体系结构限制</li>
+<li><code>locale.h</code>    本地化接口</li>
+<li><code>math.h</code>    数学函数</li>
+<li><code>setjmp.h</code>    跨函数跳转</li>
+<li><code>signal.h</code>    信号</li>
+<li><code>stdarg.h</code>    可变参处理</li>
+<li><code>stddef.h</code>    一些标准宏定义</li>
+<li><code>stdio.h</code>    标准I/O库</li>
+<li><code>stdlib.h</code>    标准工具库函数</li>
+<li><code>string.h</code>    ASCIIZ字符串及任意内存处理函数</li>
+<li><code>time.h</code>    时间相关</li>
+</ul>
+<h3 id="C扩展"><a href="#C扩展" class="headerlink" title="C扩展"></a>C扩展</h3><ul>
+<li><a href="https://github.com/fragglet/c-algorithms" target="_blank" rel="noopener"><code>c-algorithms</code></a>——基于C的常见数据结构和算法实现</li>
+<li><a href="https://www.gtk.org/" target="_blank" rel="noopener"><code>GTK+</code></a>——基于C的UI组件库</li>
+<li><code>Clion</code>——C语言集成IDE</li>
+</ul>
+<p>更多资源可参考<a href="https://github.com/kozross/awesome-c" target="_blank" rel="noopener">awesome-c</a>项目</p>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io/blog">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/blog/2018/12/07/详解C标准规范/">https://jianjustin.github.io/blog/2018/12/07/详解C标准规范/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/blog/2018/12/08/javaGUI开发指南/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">javaGUI开发指南</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/blog/2018/12/02/如何科学上网/">
+        <span class="next-text nav-default">如何科学上网</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        
+          <a href="https://github.com/ahonn" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+
+    
+      
+      <a href="/blog/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2015 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/blog/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/blog/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/blog/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>
