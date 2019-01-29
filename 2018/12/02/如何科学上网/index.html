@@ -31,7 +31,7 @@
 
 
 
-  <link rel="alternate" href="/default" title="JIAN">
+  <link rel="alternate" href="/atom.xml" title="JIAN">
 
 
 
@@ -192,7 +192,7 @@
   <div class="post-toc" id="post-toc">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VPN"><span class="toc-text">VPN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改host文件"><span class="toc-text">修改host文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-VPN客户端软件"><span class="toc-text">使用 VPN客户端软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shadowsocks"><span class="toc-text">shadowsocks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wireguard"><span class="toc-text">wireguard</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#mac启动教程"><span class="toc-text">mac启动教程</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本概念"><span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VPN"><span class="toc-text">VPN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#修改host文件"><span class="toc-text">修改host文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#使用-VPN客户端软件"><span class="toc-text">使用 VPN客户端软件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#shadowsocks"><span class="toc-text">shadowsocks</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#wireguard"><span class="toc-text">wireguard</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#命令"><span class="toc-text">命令</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#mac启动教程"><span class="toc-text">mac启动教程</span></a></li></ol></li></ol>
     </div>
   </div>
 
@@ -244,6 +244,7 @@
 </ol>
 <p>有人就会问，ss梯子就十全十美了吗？当然不，当你想要拥有shadowsocks时，首先你需要有一台代理服务器！这就难到很多人了，因为很多人对服务器命令和韵味不是特别了解；其次，从2018年开始，app store就开始下架很多ss客户端了，这可能只是开始，后面当ss流量检测算法成熟后，可能也会成为过往吧</p>
 <p><a href="https://blog.pika666.cn/%E6%8A%80%E6%9C%AF/2018-06-10.html" target="_blank" rel="noopener">shadowsocks客户端列表</a></p>
+<p><a href="https://teddysun.com/342.html" target="_blank" rel="noopener">shadowsocks参考教程</a></p>
 <h3 id="wireguard"><a href="#wireguard" class="headerlink" title="wireguard"></a>wireguard</h3><blockquote>
 <p>WireGuard® is an extremely simple yet fast and modern VPN that utilizes <strong>state-of-the-art cryptography</strong>. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.</p>
 </blockquote>
@@ -252,6 +253,13 @@
 <li>wireguard是内核级的加密方式，据说准备并入linux内核中，这就降低了wireguard的资源消耗，同时网上传wireguard可以抵御量子攻击，但是我对量子没了解，所以不做评价</li>
 <li>因为wireguard极低的资源消耗，所以wirguard的稳定性和上行/下行速度会快很多；根据小编的测试，主要体现在上行速度上，具体大家可以自行测试</li>
 </ol>
+<h6 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h6><ul>
+<li>启动：/etc/init.d/shadowsocks start</li>
+<li>停止：/etc/init.d/shadowsocks stop</li>
+<li>重启：/etc/init.d/shadowsocks restart</li>
+<li>状态：/etc/init.d/shadowsocks status</li>
+<li>配置信息查询：vim /etc/shadowsocks.json</li>
+</ul>
 <p>######wrieguard 安装</p>
 <blockquote>
 <p>只讲述大致的安装流程，具体的实施步骤和大家的系统有关，可自行百度；而同样地，wireguard只是加密协议，所以需要一台代理服务器</p>
@@ -362,7 +370,6 @@
     
 
     
-      
       <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     
   </div>

@@ -31,7 +31,7 @@
 
 
 
-  <link rel="alternate" href="/default" title="JIAN">
+  <link rel="alternate" href="/atom.xml" title="JIAN">
 
 
 
@@ -283,8 +283,8 @@
 <li><h3 id="Docker图形化管理"><a href="#Docker图形化管理" class="headerlink" title="Docker图形化管理"></a>Docker图形化管理</h3></li>
 <li><p>配置portainer目录：<code>docker volume create portainer_data</code></p>
 </li>
-<li><p>安装portainer容器：<code>docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</code></p>
-</li>
+<li>拉取Docker镜像：<code>docker pull portainer/portainer</code></li>
+<li>安装portainer容器：<code>docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</code></li>
 </ul>
 
       
@@ -373,7 +373,6 @@
     
 
     
-      
       <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
     
   </div>
