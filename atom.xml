@@ -116,30 +116,6 @@
   </entry>
   
   <entry>
-    <title>「工具推荐」RSS</title>
-    <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8DRSS/"/>
-    <id>https://jianjustin.github.io/2019/01/16/「工具推荐」RSS/</id>
-    <published>2019-01-15T16:00:00.000Z</published>
-    <updated>2019-01-29T07:38:42.760Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛</p><h3 id="RSS是什么"><a href="#RSS是什么" class="headerlink" title="RSS是什么"></a>RSS是什么</h3><p>RSS可以看作是一个个性化推送信息的服务，或者说的更直白一点：RSS是网站订阅；它能解决你漫无目的浏览网页的问题，在信息过剩的时代能够更为有效地获取有效信息，减少被无效信息污染；</p><h3 id="RSS解决什么问题"><a href="#RSS解决什么问题" class="headerlink" title="RSS解决什么问题"></a>RSS解决什么问题</h3><p>在我看来，RSS的对立面就是算法个性推荐，包括今日头条，抖音，youtube中，都存在着算法将你的阅读历史转化为你的阅读个性，从而建立你的档案；但是<strong>个性推荐带来的问题是什么呢？</strong>，我认为这可以从我们阅读的目的出发，我们阅读新闻，阅读书籍，我们更多地是希望去了解世界，了解自我，从而建立认知的新角度；而不应该一味地迎合我们的口味，这会使得我们逐渐进入认知的死角中</p><h3 id="如何开始使用RSS"><a href="#如何开始使用RSS" class="headerlink" title="如何开始使用RSS"></a>如何开始使用RSS</h3><p>在这一小节，我会通过<code>feedly</code>让大家知道rss的基本使用方式</p><p><img src="/blog/source/assets/img/picture/feedly基本使用.png" alt=""></p><ol><li>注册feedly账号(<a href="https://feedly.com" target="_blank" rel="noopener">https://feedly.com</a>)</li><li>点击网站左下角添加订阅源</li><li>通过左侧目录选择订阅源更新内容进行阅读</li></ol><h3 id="RSS信息源推荐"><a href="#RSS信息源推荐" class="headerlink" title="RSS信息源推荐"></a>RSS信息源推荐</h3><ul><li>掘金：<a href="https://juejin.im" target="_blank" rel="noopener">https://juejin.im</a></li><li>纽约时报：<a href="https://sspai.com/" target="_blank" rel="noopener">https://sspai.com/</a></li><li>少数派：<a href="https://cn.nytimes.com/" target="_blank" rel="noopener">https://cn.nytimes.com/</a></li><li>我的博客：<a href="https://jianjustin.github.io">https://jianjustin.github.io</a></li></ul><blockquote><p>RSS客户端推荐：reeder，FeedMe</p></blockquote><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>给大家一个小建议，把头条APP删了吧，给自己一些时间去发呆，去思考</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://jianjustin.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>「工具推荐」markdown</title>
     <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8Dmarkdown/"/>
     <id>https://jianjustin.github.io/2019/01/16/「工具推荐」markdown/</id>
@@ -157,6 +133,30 @@
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在此之前我想讲一下为什么在这个系列文章中我首先推荐markdown呢？因为markdown已经和g
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://jianjustin.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>「工具推荐」RSS</title>
+    <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8DRSS/"/>
+    <id>https://jianjustin.github.io/2019/01/16/「工具推荐」RSS/</id>
+    <published>2019-01-15T16:00:00.000Z</published>
+    <updated>2019-01-29T07:40:16.808Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛</p><h3 id="RSS是什么"><a href="#RSS是什么" class="headerlink" title="RSS是什么"></a>RSS是什么</h3><p>RSS可以看作是一个个性化推送信息的服务，或者说的更直白一点：RSS是网站订阅；它能解决你漫无目的浏览网页的问题，在信息过剩的时代能够更为有效地获取有效信息，减少被无效信息污染；</p><h3 id="RSS解决什么问题"><a href="#RSS解决什么问题" class="headerlink" title="RSS解决什么问题"></a>RSS解决什么问题</h3><p>在我看来，RSS的对立面就是算法个性推荐，包括今日头条，抖音，youtube中，都存在着算法将你的阅读历史转化为你的阅读个性，从而建立你的档案；但是<strong>个性推荐带来的问题是什么呢？</strong>，我认为这可以从我们阅读的目的出发，我们阅读新闻，阅读书籍，我们更多地是希望去了解世界，了解自我，从而建立认知的新角度；而不应该一味地迎合我们的口味，这会使得我们逐渐进入认知的死角中</p><h3 id="如何开始使用RSS"><a href="#如何开始使用RSS" class="headerlink" title="如何开始使用RSS"></a>如何开始使用RSS</h3><p>在这一小节，我会通过<code>feedly</code>让大家知道rss的基本使用方式</p><p><img src="/blog/assets/img/picture/feedly基本使用.png" alt="feedly基本使用"></p><ol><li>注册feedly账号(<a href="https://feedly.com" target="_blank" rel="noopener">https://feedly.com</a>)</li><li>点击网站左下角添加订阅源</li><li>通过左侧目录选择订阅源更新内容进行阅读</li></ol><h3 id="RSS信息源推荐"><a href="#RSS信息源推荐" class="headerlink" title="RSS信息源推荐"></a>RSS信息源推荐</h3><ul><li>掘金：<a href="https://juejin.im" target="_blank" rel="noopener">https://juejin.im</a></li><li>纽约时报：<a href="https://sspai.com/" target="_blank" rel="noopener">https://sspai.com/</a></li><li>少数派：<a href="https://cn.nytimes.com/" target="_blank" rel="noopener">https://cn.nytimes.com/</a></li><li>我的博客：<a href="https://jianjustin.github.io">https://jianjustin.github.io</a></li></ul><blockquote><p>RSS客户端推荐：reeder，FeedMe</p></blockquote><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>给大家一个小建议，把头条APP删了吧，给自己一些时间去发呆，去思考</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛&lt;/p&gt;
+
       
     
     </summary>
