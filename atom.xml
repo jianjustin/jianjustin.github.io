@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jianjustin.github.io/"/>
-  <updated>2019-01-29T03:16:30.603Z</updated>
+  <updated>2019-02-01T14:29:51.030Z</updated>
   <id>https://jianjustin.github.io/</id>
   
   <author>
@@ -17,13 +17,69 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>「项目管理」#02敏捷开发</title>
+    <link href="https://jianjustin.github.io/2019/02/01/%E3%80%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E3%80%8D#02%E6%95%8F%E6%8D%B7%E5%BC%80%E5%8F%91/"/>
+    <id>https://jianjustin.github.io/2019/02/01/「项目管理」#02敏捷开发/</id>
+    <published>2019-01-31T16:00:00.000Z</published>
+    <updated>2019-02-01T14:29:51.030Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="https://jianjustin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>「PHP学习教程」#01基础语法</title>
+    <link href="https://jianjustin.github.io/2019/02/01/%E3%80%8CPHP%E5%AD%A6%E4%B9%A0%E6%95%99%E7%A8%8B%E3%80%8D%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+    <id>https://jianjustin.github.io/2019/02/01/「PHP学习教程」基础语法/</id>
+    <published>2019-01-31T16:00:00.000Z</published>
+    <updated>2019-02-01T08:54:13.309Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="技术" scheme="https://jianjustin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>「项目管理」#01导论</title>
+    <link href="https://jianjustin.github.io/2019/01/30/%E3%80%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E3%80%8D#01%E5%AF%BC%E8%AE%BA/"/>
+    <id>https://jianjustin.github.io/2019/01/30/「项目管理」#01导论/</id>
+    <published>2019-01-29T16:00:00.000Z</published>
+    <updated>2019-02-01T14:30:00.221Z</updated>
+    
+    <content type="html"><![CDATA[<p>这个系列文章主要目的是探索项目管理中的一些方法论，学习项目管理在产品开发所起到的作用。</p><p>更多知识，大家可以阅读「<strong>项目管理知识体系指南</strong>」去理解，如果大家找不到的话，可以到我的books仓库(<a href="https://github.com/jianjustin/books" target="_blank" rel="noopener">仓库地址-https://github.com/jianjustin/books</a>)</p><h4 id="什么是项目管理？"><a href="#什么是项目管理？" class="headerlink" title="什么是项目管理？"></a>什么是项目管理？</h4><p>首先，我们需要了解「<strong>什么是项目管理？</strong>」在维基百科中是这样定义项目管理的：“项目管理是运用管理的知识、工具、和技术于项目活动上，来达成解决项目的问题或达成项目的需求”；所以项目管理的目的是更好地完成项目，其方式可以是工具，可以是一些方法论。</p><h4 id="项目管理流程"><a href="#项目管理流程" class="headerlink" title="项目管理流程"></a>项目管理流程</h4><ul><li><p>意向接触阶段</p><p><img src="/Users/jian/blog/source/assets/img/picture/项目管理-意向接触阶段.png" alt="项目管理-意向接触阶段"></p></li><li><p>需求阶段</p><p><img src="/Users/jian/blog/source/assets/img/picture/项目管理-需求阶段.png" alt="项目管理-需求阶段"></p></li><li><p>设计阶段</p><p><img src="/Users/jian/blog/source/assets/img/picture/项目管理-设计阶段.png" alt="项目管理-设计阶段"></p></li><li><p>实施阶段</p><p><img src="/Users/jian/blog/source/assets/img/picture/项目管理-实施阶段.png" alt="项目管理-实施阶段"></p></li><li><p>落地阶段</p><p><img src="/Users/jian/blog/source/assets/img/picture/项目管理-落地阶段.png" alt="项目管理-落地阶段"></p></li></ul><h4 id="项目管理方法论"><a href="#项目管理方法论" class="headerlink" title="项目管理方法论"></a>项目管理方法论</h4><ul><li>项目沟通管理</li><li>项目质量管理<ul><li>结对编程</li><li>测试驱动开发</li></ul></li><li>项目时间管理</li><li>项目知识库管理</li><li>项目工具管理</li></ul><h4 id="书籍推荐"><a href="#书籍推荐" class="headerlink" title="书籍推荐"></a>书籍推荐</h4><ul><li>敏捷革命：提升个人创造力与企业效率的全新协作模式</li><li>Scrum敏捷软件开发</li><li>Scrum精髓 </li><li>精益和敏捷开发大型应用指南</li><li>解析极限编程</li><li>如何构建敏捷项目管理团队 </li><li>测试驱动开发</li><li>敏捷软件开发：原则、模式与实践</li><li>重构:改善既有代码的设计</li><li>持续集成：软件质量改进和风险降低之道</li><li>持续交付</li><li>敏捷测试</li><li>修改代码的艺术</li><li>整洁代码 </li><li>实例化需求</li><li>程序员修炼之道 </li><li>有效的单元测试</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这个系列文章主要目的是探索项目管理中的一些方法论，学习项目管理在产品开发所起到的作用。&lt;/p&gt;
+&lt;p&gt;更多知识，大家可以阅读「&lt;strong&gt;项目管理知识体系指南&lt;/strong&gt;」去理解，如果大家找不到的话，可以到我的books仓库(&lt;a href=&quot;https://gi
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://jianjustin.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>「算法导论」队列&amp;栈</title>
     <link href="https://jianjustin.github.io/2019/01/28/%E3%80%8C%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8D%E9%98%9F%E5%88%97&amp;%E6%A0%88/"/>
     <id>https://jianjustin.github.io/2019/01/28/「算法导论」队列&amp;栈/</id>
     <published>2019-01-27T16:00:00.000Z</published>
-    <updated>2019-01-29T03:16:30.603Z</updated>
+    <updated>2019-01-30T14:29:03.719Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这个章节我主要会围绕<code>队列</code>和<code>栈</code>这两个数据结构讨论，为什么我会将这两个数据结构统一进行讲解呢？因为队列和栈不过是数组的衍生，对数组在操作上做了一部分的限制；队列是通过<code>先入先出</code>的方式进行限制，而栈则是通过<code>先入后出</code>的方式进行限制</p><h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>首先呢，我先把题目引出来，我使用的是leetcode上关于队列的题目，如果大家有兴趣，可以使用leetcode实现自己的代码（<a href="https://leetcode-cn.com/problems/design-circular-queue/" target="_blank" rel="noopener">访问链接-https://leetcode-cn.com/problems/design-circular-queue/</a>）;当然，如果大家觉得麻烦也可以跟着我去了解队列的一下特性</p><h5 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h5><blockquote><p>设计你的循环队列实现。 循环队列是一种线性数据结构，其操作表现基于 FIFO（先进先出）原则并且队尾被连接在队首之后以形成一个循环。它也被称为“环形缓冲器”。<br>循环队列的一个好处是我们可以利用这个队列之前用过的空间。在一个普通队列里，一旦一个队列满了，我们就不能插入下一个元素，即使在队列前面仍有空间。但是使用循环队列，我们能使用这些空间去存储新的值。<br>你的实现应该支持如下操作：</p><ul><li>MyCircularQueue(k): 构造器，设置队列长度为 k 。</li><li>Front: 从队首获取元素。如果队列为空，返回 -1 。</li><li>Rear: 获取队尾元素。如果队列为空，返回 -1 。</li><li>enQueue(value): 向循环队列插入一个元素。如果成功插入则返回真。</li><li>deQueue(): 从循环队列中删除一个元素。如果成功删除则返回真。</li><li>isEmpty(): 检查循环队列是否为空。</li><li>isFull(): 检查循环队列是否已满。</li></ul></blockquote><ul><li><p><strong>队列包含哪些功能？</strong></p><ol><li>入队列</li><li>出队列</li><li>队列判空/判满（用于判断是否能够操作队列）</li></ol></li><li><p><strong>入队列</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(isFull())<span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//判断队列是否满</span></span><br><span class="line">    queue_end++;<span class="comment">//获取下一元素位置</span></span><br><span class="line">    <span class="keyword">if</span>(queue_end == queue_size)queue_end = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">0</span> != queue_data[queue_end])<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    queue_data[queue_end] = value;</span><br><span class="line">    queue_item++;<span class="comment">//用于队列判空/判满</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li><li><p><strong>出队列</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(isEmpty())<span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//判断队列是否空</span></span><br><span class="line">    queue_data[queue_start] = <span class="number">0</span>;</span><br><span class="line">    queue_start++;<span class="comment">//获取下一元素位置</span></span><br><span class="line">    <span class="keyword">if</span>(queue_start == queue_size)queue_start = <span class="number">0</span>;</span><br><span class="line">    queue_item--;<span class="comment">//用于队列判空/判满</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li></ul><blockquote><p>给大家留一个问题去思考吧（来源于leetcode网站-问题编号为862）</p></blockquote><p><img src="/Users/jian/blog/source/assets/img/picture/栈-困难-问题.png" alt="栈-困难-问题"></p><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈则是一个先入后出的特殊数组，通过栈顶指针去实现特殊化操作；同样地，我会通过一个题目去大致解释栈的操作</p><blockquote><p>设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。</p><ul><li>push(x) – 将元素 x 推入栈中。</li><li>pop() – 删除栈顶的元素。</li><li>top() – 获取栈顶元素。</li><li>getMin() – 检索栈中的最小元素。</li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这个章节我主要会围绕<code>队列</code>和<code>栈</code>这两个数据结构讨论，为什么我会将这两个数据结构统一进行讲解呢？因为队列和栈不过是数组的衍生，对数组在操作上做了一部分的限制；队列是通过<code>先入先出</code>的方式进行限制，而栈则是通过<code>先入后出</code>的方式进行限制</p><h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>首先呢，我先把题目引出来，我使用的是leetcode上关于队列的题目，如果大家有兴趣，可以使用leetcode实现自己的代码（<a href="https://leetcode-cn.com/problems/design-circular-queue/" target="_blank" rel="noopener">访问链接-https://leetcode-cn.com/problems/design-circular-queue/</a>）;当然，如果大家觉得麻烦也可以跟着我去了解队列的一下特性</p><h5 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h5><blockquote><p>设计你的循环队列实现。 循环队列是一种线性数据结构，其操作表现基于 FIFO（先进先出）原则并且队尾被连接在队首之后以形成一个循环。它也被称为“环形缓冲器”。<br>循环队列的一个好处是我们可以利用这个队列之前用过的空间。在一个普通队列里，一旦一个队列满了，我们就不能插入下一个元素，即使在队列前面仍有空间。但是使用循环队列，我们能使用这些空间去存储新的值。<br>你的实现应该支持如下操作：</p><ul><li>MyCircularQueue(k): 构造器，设置队列长度为 k 。</li><li>Front: 从队首获取元素。如果队列为空，返回 -1 。</li><li>Rear: 获取队尾元素。如果队列为空，返回 -1 。</li><li>enQueue(value): 向循环队列插入一个元素。如果成功插入则返回真。</li><li>deQueue(): 从循环队列中删除一个元素。如果成功删除则返回真。</li><li>isEmpty(): 检查循环队列是否为空。</li><li>isFull(): 检查循环队列是否已满。</li></ul></blockquote><ul><li><p><strong>队列包含哪些功能？</strong></p><ol><li>入队列</li><li>出队列</li><li>队列判空/判满（用于判断是否能够操作队列）</li></ol></li><li><p><strong>入队列</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">enQueue</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(isFull())<span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//判断队列是否满</span></span><br><span class="line">    queue_end++;<span class="comment">//获取下一元素位置</span></span><br><span class="line">    <span class="keyword">if</span>(queue_end == queue_size)queue_end = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span>(<span class="number">0</span> != queue_data[queue_end])<span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    queue_data[queue_end] = value;</span><br><span class="line">    queue_item++;<span class="comment">//用于队列判空/判满</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li><li><p><strong>出队列</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">deQueue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(isEmpty())<span class="keyword">return</span> <span class="keyword">false</span>;<span class="comment">//判断队列是否空</span></span><br><span class="line">    queue_data[queue_start] = <span class="number">0</span>;</span><br><span class="line">    queue_start++;<span class="comment">//获取下一元素位置</span></span><br><span class="line">    <span class="keyword">if</span>(queue_start == queue_size)queue_start = <span class="number">0</span>;</span><br><span class="line">    queue_item--;<span class="comment">//用于队列判空/判满</span></span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li></ul><blockquote><p>给大家留一个问题去思考吧（来源于leetcode网站-问题编号为862）</p></blockquote><p><img src="/Users/jian/blog/source/assets/img/picture/栈-困难-问题.png" alt="栈-困难-问题"></p><h3 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h3><p>栈则是一个先入后出的特殊数组，通过栈顶指针去实现特殊化操作；同样地，我会通过一个题目去大致解释栈的操作</p><blockquote><p>设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。</p><ul><li>push(x) – 将元素 x 推入栈中。</li><li>pop() – 删除栈顶的元素。</li><li>top() – 获取栈顶元素。</li><li>getMin() – 检索栈中的最小元素。</li></ul></blockquote><ul><li><p>入栈</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(isFull())resize();</span><br><span class="line">        stack_data[++stack_top] = x;</span><br><span class="line">        <span class="keyword">this</span>.stack_deep++;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li><li><p>出栈</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(isEmpty())<span class="keyword">return</span>;</span><br><span class="line">    stack_data[stack_top--] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.stack_deep--;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li><li><p>获取栈顶元素</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(isEmpty())<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">return</span> stack_data[stack_top];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li><li><p>获取最小元素</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = stack_top,n = stack_deep;</span><br><span class="line">        <span class="keyword">int</span> min = -<span class="number">1</span>,k = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(n&gt;<span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(k == <span class="number">0</span>)min = stack_data[m];</span><br><span class="line">    <span class="keyword">if</span>(stack_data[m] &lt; min)min = stack_data[m];</span><br><span class="line">    m--;</span><br><span class="line">    n--;</span><br><span class="line">    k++;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li><li><p>栈扩容</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">resize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span>[] stack_new_data = <span class="keyword">new</span> <span class="keyword">int</span>[stack_size*<span class="number">2</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; stack_data.length; i++) &#123;</span><br><span class="line">    stack_new_data[i] = stack_data[i];</span><br><span class="line">&#125;</span><br><span class="line">    <span class="keyword">this</span>.stack_size = stack_size*<span class="number">2</span>;</span><br><span class="line">    stack_data = stack_new_data;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     <summary type="html">
     
@@ -147,9 +203,9 @@
     <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8DRSS/"/>
     <id>https://jianjustin.github.io/2019/01/16/「工具推荐」RSS/</id>
     <published>2019-01-15T16:00:00.000Z</published>
-    <updated>2019-01-29T07:40:16.808Z</updated>
+    <updated>2019-01-30T14:53:34.661Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛</p><h3 id="RSS是什么"><a href="#RSS是什么" class="headerlink" title="RSS是什么"></a>RSS是什么</h3><p>RSS可以看作是一个个性化推送信息的服务，或者说的更直白一点：RSS是网站订阅；它能解决你漫无目的浏览网页的问题，在信息过剩的时代能够更为有效地获取有效信息，减少被无效信息污染；</p><h3 id="RSS解决什么问题"><a href="#RSS解决什么问题" class="headerlink" title="RSS解决什么问题"></a>RSS解决什么问题</h3><p>在我看来，RSS的对立面就是算法个性推荐，包括今日头条，抖音，youtube中，都存在着算法将你的阅读历史转化为你的阅读个性，从而建立你的档案；但是<strong>个性推荐带来的问题是什么呢？</strong>，我认为这可以从我们阅读的目的出发，我们阅读新闻，阅读书籍，我们更多地是希望去了解世界，了解自我，从而建立认知的新角度；而不应该一味地迎合我们的口味，这会使得我们逐渐进入认知的死角中</p><h3 id="如何开始使用RSS"><a href="#如何开始使用RSS" class="headerlink" title="如何开始使用RSS"></a>如何开始使用RSS</h3><p>在这一小节，我会通过<code>feedly</code>让大家知道rss的基本使用方式</p><p><img src="/blog/assets/img/picture/feedly基本使用.png" alt="feedly基本使用"></p><ol><li>注册feedly账号(<a href="https://feedly.com" target="_blank" rel="noopener">https://feedly.com</a>)</li><li>点击网站左下角添加订阅源</li><li>通过左侧目录选择订阅源更新内容进行阅读</li></ol><h3 id="RSS信息源推荐"><a href="#RSS信息源推荐" class="headerlink" title="RSS信息源推荐"></a>RSS信息源推荐</h3><ul><li>掘金：<a href="https://juejin.im" target="_blank" rel="noopener">https://juejin.im</a></li><li>纽约时报：<a href="https://sspai.com/" target="_blank" rel="noopener">https://sspai.com/</a></li><li>少数派：<a href="https://cn.nytimes.com/" target="_blank" rel="noopener">https://cn.nytimes.com/</a></li><li>我的博客：<a href="https://jianjustin.github.io">https://jianjustin.github.io</a></li></ul><blockquote><p>RSS客户端推荐：reeder，FeedMe</p></blockquote><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>给大家一个小建议，把头条APP删了吧，给自己一些时间去发呆，去思考</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛</p><h3 id="RSS是什么"><a href="#RSS是什么" class="headerlink" title="RSS是什么"></a>RSS是什么</h3><p>RSS可以看作是一个个性化推送信息的服务，或者说的更直白一点：RSS是网站订阅；它能解决你漫无目的浏览网页的问题，在信息过剩的时代能够更为有效地获取有效信息，减少被无效信息污染；</p><h3 id="RSS解决什么问题"><a href="#RSS解决什么问题" class="headerlink" title="RSS解决什么问题"></a>RSS解决什么问题</h3><p>在我看来，RSS的对立面就是算法个性推荐，包括今日头条，抖音，youtube中，都存在着算法将你的阅读历史转化为你的阅读个性，从而建立你的档案；但是<strong>个性推荐带来的问题是什么呢？</strong>，我认为这可以从我们阅读的目的出发，我们阅读新闻，阅读书籍，我们更多地是希望去了解世界，了解自我，从而建立认知的新角度；而不应该一味地迎合我们的口味，这会使得我们逐渐进入认知的死角中</p><h3 id="如何开始使用RSS"><a href="#如何开始使用RSS" class="headerlink" title="如何开始使用RSS"></a>如何开始使用RSS</h3><p>在这一小节，我会通过<code>feedly</code>让大家知道rss的基本使用方式</p><p><img src="/blog/assets/img/picture/feedly基本使用.png" alt="feedly基本使用"></p><ol><li>注册feedly账号(<a href="https://feedly.com" target="_blank" rel="noopener">https://feedly.com</a>)</li><li>点击网站左下角添加订阅源</li><li>通过左侧目录选择订阅源更新内容进行阅读</li></ol><h3 id="RSS信息源推荐"><a href="#RSS信息源推荐" class="headerlink" title="RSS信息源推荐"></a>RSS信息源推荐</h3><ul><li>掘金：<a href="https://juejin.im" target="_blank" rel="noopener">https://juejin.im</a></li><li>纽约时报：<a href="https://sspai.com" target="_blank" rel="noopener">https://sspai.com</a></li><li>少数派：<a href="https://cn.nytimes.com" target="_blank" rel="noopener">https://cn.nytimes.com</a></li><li>我的博客：<a href="https://jianjustin.github.io">https://jianjustin.github.io</a></li><li>爱思想：<a href="http://www.aisixiang.com" target="_blank" rel="noopener">http://www.aisixiang.com</a></li><li>github：<a href="https://github.blog" target="_blank" rel="noopener">https://github.blog</a></li><li>阮一峰：<a href="http://www.ruanyifeng.com/blog" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog</a></li><li>IBM社区：<a href="https://www.ibm.com/developerworks/cn" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn</a></li><li>thoughtworks技术雷达：<a href="https://insights.thoughtworks.cn(**强烈推荐**)" target="_blank" rel="noopener">https://insights.thoughtworks.cn(**强烈推荐**)</a></li><li><a href="https://www.infoq.cn/" target="_blank" rel="noopener">https://www.infoq.cn/</a></li></ul><blockquote><p>RSS客户端推荐：reeder，FeedMe</p></blockquote><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>给大家一个小建议，把头条APP删了吧，给自己一些时间去发呆，去思考</p>]]></content>
     
     <summary type="html">
     
@@ -171,7 +227,7 @@
     <link href="https://jianjustin.github.io/2019/01/15/%E3%80%8C%E7%AE%97%E6%B3%95%E5%AF%BC%E8%AE%BA%E3%80%8D%E6%95%A3%E5%88%97%E8%A1%A8/"/>
     <id>https://jianjustin.github.io/2019/01/15/「算法导论」散列表/</id>
     <published>2019-01-14T16:00:00.000Z</published>
-    <updated>2019-01-15T17:58:07.172Z</updated>
+    <updated>2019-01-30T08:30:07.415Z</updated>
     
     <content type="html"><![CDATA[<p>[TOC]</p><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这是「<strong>算法导论</strong>」系列文章的<code>第一篇</code>,所以我先简单说明一下；这个系列主要针对算法这一块做一个整理，而学习过程中，主要使用算法导论作为参考书籍，通过<strong>C语言</strong>进行编码测试，题库来源主要是<strong>leetcode</strong>；</p><p>但是因为「<strong>算法导论</strong>」涉及较多的数学概念，导致比较难懂，所以更新的时间和频率会出现不确定性，请大家谅解；以及基础的<code>栈</code>,<code>队列</code>等概念不做详细的讲解，因为其实质就是对数据插入和数据删除做了一定限制的数据结构，后续会根据具体习题进行讲解</p><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul><li><p><strong>散列表定义</strong></p><p>散列表是根据键而直接访问在内存存储位置的数据结构，其实质是对普通数组概念的扩展，其目标是使数据的<strong>查询效率达到O(1)</strong></p></li><li><p><strong>散列函数</strong></p><p>wiki上是这样解释散列函数的：散列函数把消息或数据压缩成摘要，使得数据量变小，将数据的格式固定下来。该函数将数据打乱混合，重新创建一个叫做<strong>散列值</strong>的指纹；其实质就是通过一个固定长度数据去表达元数据</p></li><li><p><strong>装载因子</strong></p><p>装载因子指<strong>散列表装满程度的标志因子</strong>，表示为：<code>填入表中的元素个数 / 散列表的长度</code>;</p></li></ul><blockquote><p>Java的系统库限制了荷载因子为0.75，超过此值将resize散列表</p></blockquote><h3 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h3><ul><li><p><strong>直接寻址法</strong></p><p>直接寻址法又称为数组，其特点是将元数据值或元数据属性值作为下标进行存储</p></li><li><p><strong>除法散列法</strong></p><p>除法散列法指通过取k除以m的余数，将关键字k映射到m个槽中某一个，即散列函数为：<code>h(k)=k mod m</code></p></li><li><p><strong>乘法散列法</strong></p><p>同理得到散列函数为：<code>h(k)=[m(kA mod 1)]</code>; 指将关键字k乘以常数A并取整得到槽位置</p></li><li><p><strong>全域散列法</strong></p><p>全域散列法主要将哈希函数替换成一组哈希函数集合，通过随机化策略进行选择哈希函数进行散列；而为什么要增加<strong>随机化选择哈希函数的策略呢？</strong>，原因就在于当哈希函数固定时，就一定会有一组数据使得散列表退化成链表；</p><p>同时书中还提到了<strong>完全散列</strong>，有人将其称之为完美散列，其结构就是<strong>二级全域散列表</strong></p></li></ul><blockquote><p>其实对于全域散列法，我一直不理解当策略随机化时，你应该如何将数据找到并取出来呢？这主要是我们对随机策略有误解，随机函数的获取实质是通过进制转换的方式获取，所以只要数据一致实质获取的哈希函数就是一致的</p></blockquote><h3 id="散列冲突"><a href="#散列冲突" class="headerlink" title="散列冲突"></a>散列冲突</h3><ul><li><p><strong>链接法</strong></p><p>链接法其实很好理解，如果读者对java有接触，就知道HashMap类就利用了这个策略，其实质就是将元素槽改造成链表结构，使得Hash值相同的元素不会产生冲突，而是向链表进行插入操作</p></li><li><p><strong>开放寻址法</strong></p><p>开放寻址法主要通过再次探查的方式寻找元素槽，主要包括以下几种</p><ul><li>线性探查 - 以冲突位置为基准，向后移动指定位置进行插入</li><li>二次探查 - 以冲突位置为基准，向后移动二次方数量位置进行插入</li><li>双重散列 - 以冲突位置为基准，向后移动再次哈希位置，得到<code>h(k,i) = (h1(k)+ih2(k)) mod m</code></li></ul></li></ul>]]></content>
     
@@ -424,68 +480,6 @@
     </summary>
     
       <category term="技术" scheme="https://jianjustin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>「工具推荐」Hexo</title>
-    <link href="https://jianjustin.github.io/2018/11/09/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8DHexo/"/>
-    <id>https://jianjustin.github.io/2018/11/09/「工具推荐」Hexo/</id>
-    <published>2018-11-08T16:00:00.000Z</published>
-    <updated>2019-01-27T07:47:40.476Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h5 id="什么是Hexo"><a href="#什么是Hexo" class="headerlink" title="什么是Hexo"></a><strong>什么是Hexo</strong></h5><p>Hexo是一个简洁而高效的博客框架；使用markdown渲染引擎将Hexo主题生成静态页面</p><h5 id="Hexo资料"><a href="#Hexo资料" class="headerlink" title="Hexo资料"></a><strong>Hexo资料</strong></h5><ul><li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">官方文档</a></li><li><a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Github仓库</a></li></ul><h3 id="Hexo基本使用"><a href="#Hexo基本使用" class="headerlink" title="Hexo基本使用"></a>Hexo基本使用</h3><ul><li>Hexo安装<code>npm install hexo-cli -g</code></li><li>创建Hexo项目<code>hexo init [folder]</code></li><li>Hexo项目启动<code>hexo server</code></li><li>Hexo项目部署<code>hexo deploy</code></li></ul><h3 id="Hexo集成Github-Pages"><a href="#Hexo集成Github-Pages" class="headerlink" title="Hexo集成Github Pages"></a>Hexo集成Github Pages</h3><blockquote><p>目标是将hexo生成静态文件并发布到github仓库中进行解析</p></blockquote><ul><li><p>创建github仓库</p></li><li><p>创建Hexo本地项目</p></li><li><p>安装Hexo部署插件<code>npm install hexo-deployer-git --save</code></p></li><li><p>修改_config.yml部署相关信息</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="string">&lt;repository</span> <span class="string">url&gt;</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">[branch]</span></span><br><span class="line"><span class="attr">  message:</span> <span class="string">[message]</span></span><br></pre></td></tr></table></figure></li><li><p>发布Hexo静态页面<code>hexo deploy</code></p></li></ul><h3 id="Hexo-theme-制作"><a href="#Hexo-theme-制作" class="headerlink" title="Hexo theme 制作"></a>Hexo theme 制作</h3><ul><li>创建Hexo项目</li><li><code>themes</code>目录下创建自定义主题目录</li><li>修改自定义主题样式</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;h5 id=&quot;什么是Hexo&quot;&gt;&lt;a href=&quot;#什么是Hexo&quot; class=&quot;headerlink&quot; title=&quot;什么是Hexo&quot;&gt;&lt;/
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://jianjustin.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>如何设计原型UI</title>
-    <link href="https://jianjustin.github.io/2018/11/02/%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%9E%8BUI/"/>
-    <id>https://jianjustin.github.io/2018/11/02/如何设计原型UI/</id>
-    <published>2018-11-01T16:00:00.000Z</published>
-    <updated>2019-01-24T05:33:39.734Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="learning-notes" scheme="https://jianjustin.github.io/categories/learning-notes/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>「译」Github10月21日事故报告</title>
-    <link href="https://jianjustin.github.io/2018/10/21/%E3%80%8C%E8%AF%91%E3%80%8DGithub10%E6%9C%8821%E6%97%A5%E4%BA%8B%E6%95%85%E6%8A%A5%E5%91%8A/"/>
-    <id>https://jianjustin.github.io/2018/10/21/「译」Github10月21日事故报告/</id>
-    <published>2018-10-20T16:00:00.000Z</published>
-    <updated>2019-01-27T06:34:35.653Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>国际标准时间下午10:52，大约是国内7点多的时候，Github网站出现了问题，网上描述为：无法登录，无法创建或删除，无法创建issue等等。我下午登录后显示的页面则是502错误提示页面。</p><h2 id="官方报告"><a href="#官方报告" class="headerlink" title="官方报告"></a>官方报告</h2><ul><li>原文</li></ul><blockquote><p>At 10:52 pm Sunday UTC, multiple services on GitHub.com were affected by a network partition and subsequent database failure resulting in inconsistent information being presented on our website. Out of an abundance of caution we have taken steps to ensure the integrity of your data, including pausing webhook events and other internal processing systems.</p></blockquote><blockquote><p>We are aware of how important our services are to your development workflows and are actively working to establish an estimated timeframe for full recovery. We will share this information with you as soon as it is available. During this time, information displayed on GitHub.com is likely to appear out of date; however no data was lost. Once service is fully restored, everything should appear as expected. Further, this incident only impacted website metadata stored in our MySQL databases, such as issues and pull requests. Git repository data remains unaffected and has been available throughout the incident.</p></blockquote><blockquote><p>We will continue to provide updates and an estimated time to resolution via our <a href="https://status.github.com/messages" target="_blank" rel="noopener">status page</a>.</p></blockquote><ul><li>译文</li></ul><blockquote><p>国际标准时间下午10:52，Github网站的多个服务因为网络分区和备份数据库和网站所呈现出的信息不一致导致异常。出于谨慎我们必须采取措施去确保数据的完整性，包括暂停网络连接以及关闭一些其他的内部信息处理系统。</p></blockquote><blockquote><p>我们知道我们的服务对于开发者有多么重要,所以我们积极地建立服务完全恢复的时间表并将有用信息及时地反馈给大家。在此期间，网站上显示的信息可能会是过期信息；不管怎样数据并没有丢失。一旦服务恢复则所有信息都会像往常一样呈现。详细地说,这次事故只对网站MySQL数据库内存储的相关的元数据产生影响，例如issues和pull requests。而Git仓库实体数据则不受影响并且始终处于可用状态。</p></blockquote><blockquote><p>我们将继续通过<a href="https://status.github.com/messages" target="_blank" rel="noopener">状态页面</a>提供更新和估计解决时间</p></blockquote><h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>从官方给的报告来看，其实就是数据库服务这一块出现问题，所以人为将相关服务断开网络连接；导致我们无法对数据进行操作，但是又能对Github仓库的文件系统进行同步操作。下图是Github给出的状态信息说明，我们可以从中看到，北京时间晚上20点左右故障已经基本移除，并在一小时后所有数据存储恢复正常。</p><p><img src="https://jianjustin.github.io/blog/assets/img/picture/Github状态信息.png" alt="Github状态信息"></p><h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><p><span style="color:red">当一个大型网站遇到问题时的做法</span></p><p>以前很少关注哪个网站挂了或者怎样，因为以前都是公司自己购买服务器然后自己组建数据中心，当系统出现问题时，只需要启动备案计划即可；但是云的广泛化，带来的是IT基础设施的服务化，当我们组建系统时，都会默认云服务不会挂，即云服务具备可靠性，所以当我们的基础设施真的挂了后，我们会手足无措，并且没有能力去处理，毕竟所有数据都在云服务公司那边。而云服务出现故障后，带来的是无数网站不可用，甚至数据丢失。</p><p>例如2018年6月27日阿里云出现的<a href="https://bbs.aliyun.com/read/581590.html?spm=5176.10695662.1996646101.searchclickresult.711b46f42U3bhk" target="_blank" rel="noopener">故障</a>：</p><p><img src="https://jianjustin.github.io/blog/assets/img/picture/阿里云故障.png" alt="阿里云故障"></p><p>所以这里面涉及到两个<strong>问题</strong>：</p><ul><li><strong>是否应该使用云服务</strong></li><li><strong>如何降低云服务带来的风险</strong></li></ul><blockquote><p>在我看来，云是趋势，我们只能调整方向，但是不能逆着趋势，因为逆着趋势阻力太大了。所以我们应该通过云服务降低自己的运维成本，但是本着“鸡蛋不能放在同一个篮子里”的原则，我们还应该与多个云服务厂商建立联系，毕竟云服务不间断地出现问题这是真，而两个云服务同时出现故障则基本没有。</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;国际标准时间下午10:52，大约是国内7点多的时候，Github网站出现了问题，网上描述为：无法登录，无法创建或删除，无法创建issue等等
-      
-    
-    </summary>
-    
-      <category term="translation" scheme="https://jianjustin.github.io/categories/translation/"/>
     
     
   </entry>

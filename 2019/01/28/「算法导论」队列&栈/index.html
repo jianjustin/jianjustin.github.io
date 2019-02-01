@@ -243,6 +243,23 @@
 <li>getMin() – 检索栈中的最小元素。</li>
 </ul>
 </blockquote>
+<ul>
+<li><p>入栈</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(isFull())resize();</span><br><span class="line">        stack_data[++stack_top] = x;</span><br><span class="line">        <span class="keyword">this</span>.stack_deep++;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>出栈</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(isEmpty())<span class="keyword">return</span>;</span><br><span class="line">    	stack_data[stack_top--] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.stack_deep--;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取栈顶元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">if</span>(isEmpty())<span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">return</span> stack_data[stack_top];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>获取最小元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span> m = stack_top,n = stack_deep;</span><br><span class="line">        <span class="keyword">int</span> min = -<span class="number">1</span>,k = <span class="number">0</span>;</span><br><span class="line">    	<span class="keyword">while</span>(n&gt;<span class="number">0</span>) &#123;</span><br><span class="line">    		<span class="keyword">if</span>(k == <span class="number">0</span>)min = stack_data[m];</span><br><span class="line">    		<span class="keyword">if</span>(stack_data[m] &lt; min)min = stack_data[m];</span><br><span class="line">    		m--;</span><br><span class="line">    		n--;</span><br><span class="line">    		k++;</span><br><span class="line">    	&#125;</span><br><span class="line">		<span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>栈扩容</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">resize</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">int</span>[] stack_new_data = <span class="keyword">new</span> <span class="keyword">int</span>[stack_size*<span class="number">2</span>];</span><br><span class="line">    	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; stack_data.length; i++) &#123;</span><br><span class="line">    		stack_new_data[i] = stack_data[i];</span><br><span class="line">		&#125;</span><br><span class="line">    	<span class="keyword">this</span>.stack_size = stack_size*<span class="number">2</span>;</span><br><span class="line">    	stack_data = stack_new_data;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -279,6 +296,12 @@
         
         
   <nav class="post-nav">
+    
+      <a class="prev" href="/2019/01/30/「项目管理」#01导论/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">「项目管理」#01导论</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
     
     
       <a class="next" href="/2019/01/22/「工具推荐」谷歌云/">
