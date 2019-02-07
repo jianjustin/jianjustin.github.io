@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jianjustin.github.io/"/>
-  <updated>2019-02-01T14:29:51.030Z</updated>
+  <updated>2019-02-05T09:39:21.927Z</updated>
   <id>https://jianjustin.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「Spring结构分析」#01core模块</title>
+    <link href="https://jianjustin.github.io/2019/02/02/%E3%80%8Cspring%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90%E3%80%8D#core%E6%A8%A1%E5%9D%97/"/>
+    <id>https://jianjustin.github.io/2019/02/02/「spring结构分析」#core模块/</id>
+    <published>2019-02-01T16:00:00.000Z</published>
+    <updated>2019-02-05T09:39:21.927Z</updated>
+    
+    <content type="html"><![CDATA[<p>这篇文章中，我主要会围绕core模块进行讲解；</p><h4 id="IOC原理"><a href="#IOC原理" class="headerlink" title="IOC原理"></a>IOC原理</h4><p>IOC即控制反转，又被称为依赖注入，其目的是解耦Bean之间的依赖关系；在<code>org.springframework.beans</code>和<code>org.springframework.context</code>包是Spring框架的IoC容器的基础; <code>BeanFactory</code>接口提供了一种能够管理任何类型对象的高级配置机制，而<code>ApplicationContext</code>则是<code>BeanFactory</code>的超集，目的是添加一系列企业级开发套件</p><h6 id="Bean配置"><a href="#Bean配置" class="headerlink" title="Bean配置"></a>Bean配置</h6><ul><li>XML配置方式</li></ul><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag"><span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>   <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.janine.jian.test.SimpleBean"</span>&gt;</span><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure><ul><li>注解配置方式</li></ul><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BeanConfig</span> </span>&#123;</span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> SimpleBean <span class="title">simpleBean</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SimpleBean();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h6 id="实例化bean容器"><a href="#实例化bean容器" class="headerlink" title="实例化bean容器"></a>实例化bean容器</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ApplicationContext context;</span><br><span class="line">context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"config.xml"</span>);</span><br><span class="line">SimpleBean bean = context.getBean(SimpleBean.class);</span><br><span class="line">bean.send();</span><br></pre></td></tr></table></figure><h6 id="ApplicationContext实现"><a href="#ApplicationContext实现" class="headerlink" title="ApplicationContext实现"></a>ApplicationContext实现</h6><p><img src="/Users/jian/blog/source/assets/img/picture/ApplicationContext实现.png" alt="image-20190205172445335"></p><ul><li>ClassPathXmlApplicationContext – XML配置方式实现bean容器</li><li>FileSystemXmlApplicationContext – XML配置方式实现bean容器</li><li>AnnotationConfigApplicationContext – 注解配置方式实现bean容器</li></ul><h3 id="Bean配置讲解"><a href="#Bean配置讲解" class="headerlink" title="Bean配置讲解"></a>Bean配置讲解</h3><h3 id="ApplicationContext结构分析"><a href="#ApplicationContext结构分析" class="headerlink" title="ApplicationContext结构分析"></a>ApplicationContext结构分析</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这篇文章中，我主要会围绕core模块进行讲解；&lt;/p&gt;
+&lt;h4 id=&quot;IOC原理&quot;&gt;&lt;a href=&quot;#IOC原理&quot; class=&quot;headerlink&quot; title=&quot;IOC原理&quot;&gt;&lt;/a&gt;IOC原理&lt;/h4&gt;&lt;p&gt;IOC即控制反转，又被称为依赖注入，其目的是解耦Bea
+      
+    
+    </summary>
+    
+      <category term="spring-notes" scheme="https://jianjustin.github.io/categories/spring-notes/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>「项目管理」#02敏捷开发</title>
@@ -172,6 +196,30 @@
   </entry>
   
   <entry>
+    <title>「工具推荐」RSS</title>
+    <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8DRSS/"/>
+    <id>https://jianjustin.github.io/2019/01/16/「工具推荐」RSS/</id>
+    <published>2019-01-15T16:00:00.000Z</published>
+    <updated>2019-01-30T14:53:34.661Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛</p><h3 id="RSS是什么"><a href="#RSS是什么" class="headerlink" title="RSS是什么"></a>RSS是什么</h3><p>RSS可以看作是一个个性化推送信息的服务，或者说的更直白一点：RSS是网站订阅；它能解决你漫无目的浏览网页的问题，在信息过剩的时代能够更为有效地获取有效信息，减少被无效信息污染；</p><h3 id="RSS解决什么问题"><a href="#RSS解决什么问题" class="headerlink" title="RSS解决什么问题"></a>RSS解决什么问题</h3><p>在我看来，RSS的对立面就是算法个性推荐，包括今日头条，抖音，youtube中，都存在着算法将你的阅读历史转化为你的阅读个性，从而建立你的档案；但是<strong>个性推荐带来的问题是什么呢？</strong>，我认为这可以从我们阅读的目的出发，我们阅读新闻，阅读书籍，我们更多地是希望去了解世界，了解自我，从而建立认知的新角度；而不应该一味地迎合我们的口味，这会使得我们逐渐进入认知的死角中</p><h3 id="如何开始使用RSS"><a href="#如何开始使用RSS" class="headerlink" title="如何开始使用RSS"></a>如何开始使用RSS</h3><p>在这一小节，我会通过<code>feedly</code>让大家知道rss的基本使用方式</p><p><img src="/blog/assets/img/picture/feedly基本使用.png" alt="feedly基本使用"></p><ol><li>注册feedly账号(<a href="https://feedly.com" target="_blank" rel="noopener">https://feedly.com</a>)</li><li>点击网站左下角添加订阅源</li><li>通过左侧目录选择订阅源更新内容进行阅读</li></ol><h3 id="RSS信息源推荐"><a href="#RSS信息源推荐" class="headerlink" title="RSS信息源推荐"></a>RSS信息源推荐</h3><ul><li>掘金：<a href="https://juejin.im" target="_blank" rel="noopener">https://juejin.im</a></li><li>纽约时报：<a href="https://sspai.com" target="_blank" rel="noopener">https://sspai.com</a></li><li>少数派：<a href="https://cn.nytimes.com" target="_blank" rel="noopener">https://cn.nytimes.com</a></li><li>我的博客：<a href="https://jianjustin.github.io">https://jianjustin.github.io</a></li><li>爱思想：<a href="http://www.aisixiang.com" target="_blank" rel="noopener">http://www.aisixiang.com</a></li><li>github：<a href="https://github.blog" target="_blank" rel="noopener">https://github.blog</a></li><li>阮一峰：<a href="http://www.ruanyifeng.com/blog" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog</a></li><li>IBM社区：<a href="https://www.ibm.com/developerworks/cn" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn</a></li><li>thoughtworks技术雷达：<a href="https://insights.thoughtworks.cn(**强烈推荐**)" target="_blank" rel="noopener">https://insights.thoughtworks.cn(**强烈推荐**)</a></li><li><a href="https://www.infoq.cn/" target="_blank" rel="noopener">https://www.infoq.cn/</a></li></ul><blockquote><p>RSS客户端推荐：reeder，FeedMe</p></blockquote><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>给大家一个小建议，把头条APP删了吧，给自己一些时间去发呆，去思考</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://jianjustin.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>「工具推荐」markdown</title>
     <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8Dmarkdown/"/>
     <id>https://jianjustin.github.io/2019/01/16/「工具推荐」markdown/</id>
@@ -189,30 +237,6 @@
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在此之前我想讲一下为什么在这个系列文章中我首先推荐markdown呢？因为markdown已经和g
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://jianjustin.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>「工具推荐」RSS</title>
-    <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8DRSS/"/>
-    <id>https://jianjustin.github.io/2019/01/16/「工具推荐」RSS/</id>
-    <published>2019-01-15T16:00:00.000Z</published>
-    <updated>2019-01-30T14:53:34.661Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛</p><h3 id="RSS是什么"><a href="#RSS是什么" class="headerlink" title="RSS是什么"></a>RSS是什么</h3><p>RSS可以看作是一个个性化推送信息的服务，或者说的更直白一点：RSS是网站订阅；它能解决你漫无目的浏览网页的问题，在信息过剩的时代能够更为有效地获取有效信息，减少被无效信息污染；</p><h3 id="RSS解决什么问题"><a href="#RSS解决什么问题" class="headerlink" title="RSS解决什么问题"></a>RSS解决什么问题</h3><p>在我看来，RSS的对立面就是算法个性推荐，包括今日头条，抖音，youtube中，都存在着算法将你的阅读历史转化为你的阅读个性，从而建立你的档案；但是<strong>个性推荐带来的问题是什么呢？</strong>，我认为这可以从我们阅读的目的出发，我们阅读新闻，阅读书籍，我们更多地是希望去了解世界，了解自我，从而建立认知的新角度；而不应该一味地迎合我们的口味，这会使得我们逐渐进入认知的死角中</p><h3 id="如何开始使用RSS"><a href="#如何开始使用RSS" class="headerlink" title="如何开始使用RSS"></a>如何开始使用RSS</h3><p>在这一小节，我会通过<code>feedly</code>让大家知道rss的基本使用方式</p><p><img src="/blog/assets/img/picture/feedly基本使用.png" alt="feedly基本使用"></p><ol><li>注册feedly账号(<a href="https://feedly.com" target="_blank" rel="noopener">https://feedly.com</a>)</li><li>点击网站左下角添加订阅源</li><li>通过左侧目录选择订阅源更新内容进行阅读</li></ol><h3 id="RSS信息源推荐"><a href="#RSS信息源推荐" class="headerlink" title="RSS信息源推荐"></a>RSS信息源推荐</h3><ul><li>掘金：<a href="https://juejin.im" target="_blank" rel="noopener">https://juejin.im</a></li><li>纽约时报：<a href="https://sspai.com" target="_blank" rel="noopener">https://sspai.com</a></li><li>少数派：<a href="https://cn.nytimes.com" target="_blank" rel="noopener">https://cn.nytimes.com</a></li><li>我的博客：<a href="https://jianjustin.github.io">https://jianjustin.github.io</a></li><li>爱思想：<a href="http://www.aisixiang.com" target="_blank" rel="noopener">http://www.aisixiang.com</a></li><li>github：<a href="https://github.blog" target="_blank" rel="noopener">https://github.blog</a></li><li>阮一峰：<a href="http://www.ruanyifeng.com/blog" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog</a></li><li>IBM社区：<a href="https://www.ibm.com/developerworks/cn" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn</a></li><li>thoughtworks技术雷达：<a href="https://insights.thoughtworks.cn(**强烈推荐**)" target="_blank" rel="noopener">https://insights.thoughtworks.cn(**强烈推荐**)</a></li><li><a href="https://www.infoq.cn/" target="_blank" rel="noopener">https://www.infoq.cn/</a></li></ul><blockquote><p>RSS客户端推荐：reeder，FeedMe</p></blockquote><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>给大家一个小建议，把头条APP删了吧，给自己一些时间去发呆，去思考</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛&lt;/p&gt;
-
       
     
     </summary>
@@ -456,30 +480,6 @@
     </summary>
     
       <category term="随想" scheme="https://jianjustin.github.io/categories/%E9%9A%8F%E6%83%B3/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>leetcode习题</title>
-    <link href="https://jianjustin.github.io/2018/11/11/leetcode%E4%B9%A0%E9%A2%98/"/>
-    <id>https://jianjustin.github.io/2018/11/11/leetcode习题/</id>
-    <published>2018-11-10T16:00:00.000Z</published>
-    <updated>2019-01-24T05:33:39.728Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="java版"><a href="#java版" class="headerlink" title="java版"></a>java版</h3><ol><li><p>给定一个整数数组和一个目标值，找出数组中和为目标值的<strong>两个</strong>数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。<strong>示例:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure></li><li><p>(数组)给定一个非负整数数组 <code>A</code>，返回一个由 <code>A</code> 的所有偶数元素组成的数组，后面跟 <code>A</code> 的所有奇数元素。你可以返回满足此条件的任何数组作为答案，示例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：[3,1,2,4]</span><br><span class="line">输出：[2,4,3,1]</span><br><span class="line">输出 [4,2,3,1]，[2,4,1,3] 和 [4,2,1,3] 也会被接受。</span><br></pre></td></tr></table></figure><p>结果：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArrayByParity(<span class="keyword">int</span>[] A) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] b = <span class="keyword">new</span> <span class="keyword">int</span>[A.length];</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">0</span>,n = A.length -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length; i++) &#123;</span><br><span class="line"><span class="keyword">if</span>(A[i]%<span class="number">2</span> == <span class="number">0</span>) </span><br><span class="line">b[m++] = A[i];</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">b[n--] = A[i];</span><br><span class="line">&#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>给定一个整数数组 <code>A</code> ，考虑 <code>A</code> 的所有非空子序列。对于任意序列 S ，设 S 的宽度是 S 的最大元素和最小元素的差。返回 A 的所有子序列的宽度之和。由于答案可能非常大，请<strong>返回答案模 10^9+7</strong>。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">输入：[2,1,3]</span><br><span class="line">输出：6</span><br><span class="line">解释：</span><br><span class="line">子序列为 [1]，[2]，[3]，[2,1]，[2,3]，[1,3]，[2,1,3] 。</span><br><span class="line">相应的宽度是 0，0，0，1，1，2，2 。</span><br><span class="line">这些宽度之和是 6 。</span><br></pre></td></tr></table></figure><p>answer:</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">sumSubseqWidths</span><span class="params">(<span class="keyword">int</span>[] A)</span> </span>&#123;</span><br><span class="line"><span class="keyword">int</span> mod = <span class="number">1000000007</span>;</span><br><span class="line">        Arrays.sort(A);</span><br><span class="line">        <span class="keyword">long</span> ans = <span class="number">0</span>,pow2 = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; A.length; i++) &#123;</span><br><span class="line">            ans = (ans + (A[i] - A[A.length-<span class="number">1</span>-i]) * pow2)%mod;</span><br><span class="line">            pow2 = (pow2&lt;&lt;<span class="number">1</span>)%mod;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h3 id="C语言版"><a href="#C语言版" class="headerlink" title="C语言版"></a>C语言版</h3><ol><li><p>给定一个整数数组和一个目标值，找出数组中和为目标值的<strong>两个</strong>数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。<strong>示例:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure><p>answer:</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span>* <span class="title">twoSum</span><span class="params">(<span class="keyword">int</span>* nums, <span class="keyword">int</span> numsSize, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> *nums1 = (<span class="keyword">int</span>*)<span class="built_in">malloc</span>(<span class="number">2</span>*<span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; numsSize;i++)&#123;</span><br><span class="line">        nums1[<span class="number">0</span>] = i;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j &lt; numsSize;j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (target - nums[i] == nums[j]) &#123;</span><br><span class="line">                nums1[<span class="number">1</span>] = j;</span><br><span class="line">                <span class="keyword">return</span> nums1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ol><h3 id="python版"><a href="#python版" class="headerlink" title="python版"></a>python版</h3><ol><li><p>给定一个整数数组和一个目标值，找出数组中和为目标值的<strong>两个</strong>数。你可以假设每个输入只对应一种答案，且同样的元素不能被重复利用。<strong>示例:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定 nums = [2, 7, 11, 15], target = 9</span><br><span class="line">因为 nums[0] + nums[1] = 2 + 7 = 9</span><br><span class="line">所以返回 [0, 1]</span><br></pre></td></tr></table></figure></li></ol>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;java版&quot;&gt;&lt;a href=&quot;#java版&quot; class=&quot;headerlink&quot; title=&quot;java版&quot;&gt;&lt;/a&gt;java版&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;给定一个整数数组和一个目标值，找出数组中和为目标值的&lt;strong&gt;两个&lt;/strong&gt;数。你可
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://jianjustin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
   </entry>

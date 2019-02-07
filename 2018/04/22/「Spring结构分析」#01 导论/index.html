@@ -201,7 +201,8 @@
     <div class="post-content">
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这个系列文章主要针对Spring框架做一次结构性的认知，了解Spring在软件开发中所涉及到的功能</p>
-<p><code>#备注:文章主要涉及内容主要来源Spring官网和维基百科</code></p>
+<p><a href="https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference" target="_blank" rel="noopener">参考文档-https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference</a></p>
+<p><code>备注:文章主要涉及内容主要来源Spring官网和维基百科；并且所有源码测试依照5.1.4.RELEASE这个版本</code></p>
 <ul>
 <li><p><strong>什么是Spring</strong></p>
 <p><strong>Spring Framework</strong> 是一个开源的Java／Java EE全功能栈的应用程序框架，以Apache License 2.0开源许可协议的形式发布。该框架基于 Expert One-on-One Java EE Design and Development一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。</p>
@@ -214,24 +215,52 @@
 <li>核心内容: IOC, AOP，events, resources, i18n, validation, data binding, type conversion, SpEL, .</li>
 <li>测试框架: mock objects, TestContext framework, Spring MVC Test, <code>WebTestClient</code>.</li>
 <li>数据访问: transactions, DAO support, JDBC, ORM, Marshalling XML.</li>
-<li>web框架：Spring MVC and Spring WebFlux.</li>
+<li>web编程：Spring MVC, WebSocket, SockJS, STOMP messaging.</li>
+<li>web响应式编程：Spring WebFlux, WebClient, WebSocket.</li>
 <li>Integration: remoting, JMS, JCA, JMX, email, tasks, scheduling, cache.</li>
 <li>支持语言: Kotlin, Groovy, dynamic languages.</li>
 </ul>
 </li>
-<li><p><strong>Spirng Core组成模块</strong></p>
+<li><p><strong>Spring项目列表</strong></p>
 <ul>
-<li>spring-aop</li>
-<li>spring-beans</li>
-<li>spring-context</li>
-<li>spring-core</li>
-<li>spring-expression</li>
+<li>Spring Boot</li>
+<li>Spring Framework</li>
+<li>Spring Data</li>
+<li>Spring Cloud</li>
+<li>Spring Cloud Data Flow</li>
+<li>Spring Security</li>
+<li>Spring Session</li>
+<li>Spring Integration</li>
+<li>Spring HATEOAS</li>
+<li>Spring REST Docs</li>
+<li>Spring Batch</li>
+<li>Spring IO Platform</li>
+<li>Spring AMQP</li>
+<li>Spring for Android</li>
+<li>Spring CredHub</li>
+<li>Spring for Apache Kafka</li>
+<li>Spring LDAP</li>
+<li>Spring Mobile</li>
+<li>Spring Roo</li>
+<li>Spring Shell</li>
+<li>Spring Statemachine</li>
+<li>Spring Test HtmlUnit</li>
+<li>Spring Vault</li>
+<li>Spring Web Flow</li>
+<li>Spring Web Services</li>
 </ul>
-<p><img src="/Users/jian/blog/source/assets/img/picture/spring-overview.png" alt="spring-overview"></p>
+</li>
+<li><p><strong>Spirng Framework 5结构图</strong></p>
+<p><img src="/Users/jian/blog/source/assets/img/picture/diagram-boot-reactor.svg" alt="spring-overview"></p>
 </li>
 </ul>
-<p><a href="https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/overview.html" target="_blank" rel="noopener">图片来源地址-https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/overview.html</a></p>
-<h3 id="系列文章目标"><a href="#系列文章目标" class="headerlink" title="系列文章目标"></a>系列文章目标</h3>
+<h3 id="系列文章目标"><a href="#系列文章目标" class="headerlink" title="系列文章目标"></a>系列文章目标</h3><ul>
+<li>core模快(包括IOC和AOP技术)</li>
+<li>web模块(涉及Spring MVC和Spring Flux框架)</li>
+<li>JPA模块(即数据访问层)</li>
+<li>Spring boot</li>
+</ul>
+
       
     </div>
 
