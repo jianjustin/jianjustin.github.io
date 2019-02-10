@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="「Spring文档阅读」导论">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.jpg?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/2018/04/22/「Spring文档阅读」导论/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 「Spring文档阅读」导论 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          「Spring文档阅读」导论
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2018-04-22
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/spring-notes/">spring-notes</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#系列文章目标"><span class="toc-text">系列文章目标</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这个系列文章主要针对Spring框架做一次结构性的认知，了解Spring在软件开发中所涉及到的功能</p>
+<p><a href="https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference" target="_blank" rel="noopener">参考文档-https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference</a></p>
+<p><code>备注:文章主要涉及内容主要来源Spring官网和维基百科；并且所有源码测试依照5.1.4.RELEASE这个版本</code></p>
+<ul>
+<li><p><strong>什么是Spring</strong></p>
+<p><strong>Spring Framework</strong> 是一个开源的Java／Java EE全功能栈的应用程序框架，以Apache License 2.0开源许可协议的形式发布。该框架基于 Expert One-on-One Java EE Design and Development一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。</p>
+</li>
+<li><p><strong>Pivotal公司</strong></p>
+<p><strong>Pivotal</strong>是一家位于美国加州的计算机软件公司，由VMware和EMC合资成立，其前身则是Pivotal Labs实验室；Pivotal目前运营并维护着Spring framework</p>
+</li>
+<li><p><strong>Spring framework特性</strong></p>
+<ul>
+<li>核心内容: IOC, AOP，events, resources, i18n, validation, data binding, type conversion, SpEL, .</li>
+<li>测试框架: mock objects, TestContext framework, Spring MVC Test, <code>WebTestClient</code>.</li>
+<li>数据访问: transactions, DAO support, JDBC, ORM, Marshalling XML.</li>
+<li>web编程：Spring MVC, WebSocket, SockJS, STOMP messaging.</li>
+<li>web响应式编程：Spring WebFlux, WebClient, WebSocket.</li>
+<li>Integration: remoting, JMS, JCA, JMX, email, tasks, scheduling, cache.</li>
+<li>支持语言: Kotlin, Groovy, dynamic languages.</li>
+</ul>
+</li>
+<li><p><strong>Spring项目列表</strong></p>
+<ul>
+<li>Spring Boot</li>
+<li>Spring Framework</li>
+<li>Spring Data</li>
+<li>Spring Cloud</li>
+<li>Spring Cloud Data Flow</li>
+<li>Spring Security</li>
+<li>Spring Session</li>
+<li>Spring Integration</li>
+<li>Spring HATEOAS</li>
+<li>Spring REST Docs</li>
+<li>Spring Batch</li>
+<li>Spring IO Platform</li>
+<li>Spring AMQP</li>
+<li>Spring for Android</li>
+<li>Spring CredHub</li>
+<li>Spring for Apache Kafka</li>
+<li>Spring LDAP</li>
+<li>Spring Mobile</li>
+<li>Spring Roo</li>
+<li>Spring Shell</li>
+<li>Spring Statemachine</li>
+<li>Spring Test HtmlUnit</li>
+<li>Spring Vault</li>
+<li>Spring Web Flow</li>
+<li>Spring Web Services</li>
+</ul>
+</li>
+<li><p><strong>Spirng Framework 5结构图</strong></p>
+<p><img src="/Users/jian/blog/source/assets/img/picture/diagram-boot-reactor.svg" alt="spring-overview"></p>
+</li>
+</ul>
+<h3 id="系列文章目标"><a href="#系列文章目标" class="headerlink" title="系列文章目标"></a>系列文章目标</h3><ul>
+<li>core模快(包括IOC和AOP技术)</li>
+<li>web模块(涉及Spring MVC和Spring Flux框架)</li>
+<li>JPA模块(即数据访问层)</li>
+<li>Spring boot</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+  <div class="post-copyright">
+    <p class="copyright-item">
+      <span>原文作者: </span>
+      <a href="https://jianjustin.github.io">jianjustin</a>
+    </p>
+    <p class="copyright-item">
+      <span>原文链接: </span>
+      <a href="https://jianjustin.github.io/2018/04/22/「Spring文档阅读」导论/">https://jianjustin.github.io/2018/04/22/「Spring文档阅读」导论/</a>
+    </p>
+    <p class="copyright-item">
+      <span>许可协议: </span>
+      
+      <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>
+    </p>
+  </div>
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2018/04/25/数据库原理学习笔记/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">数据库原理笔记</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2018/03/28/linux使用笔记/">
+        <span class="next-text nav-default">linux使用笔记</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:janine.jian.chen@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+        
+          <a href="https://github.com/jianjustin" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>
