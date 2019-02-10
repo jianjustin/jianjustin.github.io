@@ -73,6 +73,30 @@
   </entry>
   
   <entry>
+    <title>「Spring文档阅读」导论</title>
+    <link href="https://jianjustin.github.io/2019/02/01/%E3%80%8CSpring%E6%96%87%E6%A1%A3%E9%98%85%E8%AF%BB%E3%80%8D%E5%AF%BC%E8%AE%BA/"/>
+    <id>https://jianjustin.github.io/2019/02/01/「Spring文档阅读」导论/</id>
+    <published>2019-01-31T16:00:00.000Z</published>
+    <updated>2019-02-10T07:10:50.060Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这个系列文章主要针对Spring框架做一次结构性的认知，了解Spring在软件开发中所涉及到的功能</p><p><a href="https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference" target="_blank" rel="noopener">参考文档-https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference</a></p><p><code>备注:文章主要涉及内容主要来源Spring官网和维基百科；并且所有源码测试依照5.1.4.RELEASE这个版本</code></p><ul><li><p><strong>什么是Spring</strong></p><p><strong>Spring Framework</strong> 是一个开源的Java／Java EE全功能栈的应用程序框架，以Apache License 2.0开源许可协议的形式发布。该框架基于 Expert One-on-One Java EE Design and Development一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。</p></li><li><p><strong>Pivotal公司</strong></p><p><strong>Pivotal</strong>是一家位于美国加州的计算机软件公司，由VMware和EMC合资成立，其前身则是Pivotal Labs实验室；Pivotal目前运营并维护着Spring framework</p></li><li><p><strong>Spring framework特性</strong></p><ul><li>核心内容: IOC, AOP，events, resources, i18n, validation, data binding, type conversion, SpEL, .</li><li>测试框架: mock objects, TestContext framework, Spring MVC Test, <code>WebTestClient</code>.</li><li>数据访问: transactions, DAO support, JDBC, ORM, Marshalling XML.</li><li>web编程：Spring MVC, WebSocket, SockJS, STOMP messaging.</li><li>web响应式编程：Spring WebFlux, WebClient, WebSocket.</li><li>Integration: remoting, JMS, JCA, JMX, email, tasks, scheduling, cache.</li><li>支持语言: Kotlin, Groovy, dynamic languages.</li></ul></li><li><p><strong>Spring项目列表</strong></p><ul><li>Spring Boot</li><li>Spring Framework</li><li>Spring Data</li><li>Spring Cloud</li><li>Spring Cloud Data Flow</li><li>Spring Security</li><li>Spring Session</li><li>Spring Integration</li><li>Spring HATEOAS</li><li>Spring REST Docs</li><li>Spring Batch</li><li>Spring IO Platform</li><li>Spring AMQP</li><li>Spring for Android</li><li>Spring CredHub</li><li>Spring for Apache Kafka</li><li>Spring LDAP</li><li>Spring Mobile</li><li>Spring Roo</li><li>Spring Shell</li><li>Spring Statemachine</li><li>Spring Test HtmlUnit</li><li>Spring Vault</li><li>Spring Web Flow</li><li>Spring Web Services</li></ul></li><li><p><strong>Spirng Framework 5结构图</strong></p><p><img src="/Users/jian/blog/source/assets/img/picture/diagram-boot-reactor.svg" alt="spring-overview"></p></li></ul><h3 id="系列文章目标"><a href="#系列文章目标" class="headerlink" title="系列文章目标"></a>系列文章目标</h3><ul><li>core模快(包括IOC和AOP技术)</li><li>web模块(涉及Spring MVC和Spring Flux框架)</li><li>JPA模块(即数据访问层)</li><li>Spring boot</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;这个系列文章主要针对Spring框架做一次结构性的认知，了解Spring在软件开发中所涉及到的功能&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http
+      
+    
+    </summary>
+    
+      <category term="spring-notes" scheme="https://jianjustin.github.io/categories/spring-notes/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>「项目管理」导论</title>
     <link href="https://jianjustin.github.io/2019/01/30/%E3%80%8C%E9%A1%B9%E7%9B%AE%E7%AE%A1%E7%90%86%E3%80%8D%E5%AF%BC%E8%AE%BA/"/>
     <id>https://jianjustin.github.io/2019/01/30/「项目管理」导论/</id>
@@ -196,6 +220,30 @@
   </entry>
   
   <entry>
+    <title>「工具推荐」RSS</title>
+    <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8DRSS/"/>
+    <id>https://jianjustin.github.io/2019/01/16/「工具推荐」RSS/</id>
+    <published>2019-01-15T16:00:00.000Z</published>
+    <updated>2019-01-30T14:53:34.661Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛</p><h3 id="RSS是什么"><a href="#RSS是什么" class="headerlink" title="RSS是什么"></a>RSS是什么</h3><p>RSS可以看作是一个个性化推送信息的服务，或者说的更直白一点：RSS是网站订阅；它能解决你漫无目的浏览网页的问题，在信息过剩的时代能够更为有效地获取有效信息，减少被无效信息污染；</p><h3 id="RSS解决什么问题"><a href="#RSS解决什么问题" class="headerlink" title="RSS解决什么问题"></a>RSS解决什么问题</h3><p>在我看来，RSS的对立面就是算法个性推荐，包括今日头条，抖音，youtube中，都存在着算法将你的阅读历史转化为你的阅读个性，从而建立你的档案；但是<strong>个性推荐带来的问题是什么呢？</strong>，我认为这可以从我们阅读的目的出发，我们阅读新闻，阅读书籍，我们更多地是希望去了解世界，了解自我，从而建立认知的新角度；而不应该一味地迎合我们的口味，这会使得我们逐渐进入认知的死角中</p><h3 id="如何开始使用RSS"><a href="#如何开始使用RSS" class="headerlink" title="如何开始使用RSS"></a>如何开始使用RSS</h3><p>在这一小节，我会通过<code>feedly</code>让大家知道rss的基本使用方式</p><p><img src="/blog/assets/img/picture/feedly基本使用.png" alt="feedly基本使用"></p><ol><li>注册feedly账号(<a href="https://feedly.com" target="_blank" rel="noopener">https://feedly.com</a>)</li><li>点击网站左下角添加订阅源</li><li>通过左侧目录选择订阅源更新内容进行阅读</li></ol><h3 id="RSS信息源推荐"><a href="#RSS信息源推荐" class="headerlink" title="RSS信息源推荐"></a>RSS信息源推荐</h3><ul><li>掘金：<a href="https://juejin.im" target="_blank" rel="noopener">https://juejin.im</a></li><li>纽约时报：<a href="https://sspai.com" target="_blank" rel="noopener">https://sspai.com</a></li><li>少数派：<a href="https://cn.nytimes.com" target="_blank" rel="noopener">https://cn.nytimes.com</a></li><li>我的博客：<a href="https://jianjustin.github.io">https://jianjustin.github.io</a></li><li>爱思想：<a href="http://www.aisixiang.com" target="_blank" rel="noopener">http://www.aisixiang.com</a></li><li>github：<a href="https://github.blog" target="_blank" rel="noopener">https://github.blog</a></li><li>阮一峰：<a href="http://www.ruanyifeng.com/blog" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog</a></li><li>IBM社区：<a href="https://www.ibm.com/developerworks/cn" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn</a></li><li>thoughtworks技术雷达：<a href="https://insights.thoughtworks.cn(**强烈推荐**)" target="_blank" rel="noopener">https://insights.thoughtworks.cn(**强烈推荐**)</a></li><li><a href="https://www.infoq.cn/" target="_blank" rel="noopener">https://www.infoq.cn/</a></li></ul><blockquote><p>RSS客户端推荐：reeder，FeedMe</p></blockquote><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>给大家一个小建议，把头条APP删了吧，给自己一些时间去发呆，去思考</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="工具" scheme="https://jianjustin.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>「工具推荐」markdown</title>
     <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8Dmarkdown/"/>
     <id>https://jianjustin.github.io/2019/01/16/「工具推荐」markdown/</id>
@@ -213,30 +261,6 @@
 &lt;/blockquote&gt;
 &lt;blockquote&gt;
 &lt;p&gt;在此之前我想讲一下为什么在这个系列文章中我首先推荐markdown呢？因为markdown已经和g
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://jianjustin.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>「工具推荐」RSS</title>
-    <link href="https://jianjustin.github.io/2019/01/16/%E3%80%8C%E5%B7%A5%E5%85%B7%E6%8E%A8%E8%8D%90%E3%80%8DRSS/"/>
-    <id>https://jianjustin.github.io/2019/01/16/「工具推荐」RSS/</id>
-    <published>2019-01-15T16:00:00.000Z</published>
-    <updated>2019-01-30T14:53:34.661Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛</p><h3 id="RSS是什么"><a href="#RSS是什么" class="headerlink" title="RSS是什么"></a>RSS是什么</h3><p>RSS可以看作是一个个性化推送信息的服务，或者说的更直白一点：RSS是网站订阅；它能解决你漫无目的浏览网页的问题，在信息过剩的时代能够更为有效地获取有效信息，减少被无效信息污染；</p><h3 id="RSS解决什么问题"><a href="#RSS解决什么问题" class="headerlink" title="RSS解决什么问题"></a>RSS解决什么问题</h3><p>在我看来，RSS的对立面就是算法个性推荐，包括今日头条，抖音，youtube中，都存在着算法将你的阅读历史转化为你的阅读个性，从而建立你的档案；但是<strong>个性推荐带来的问题是什么呢？</strong>，我认为这可以从我们阅读的目的出发，我们阅读新闻，阅读书籍，我们更多地是希望去了解世界，了解自我，从而建立认知的新角度；而不应该一味地迎合我们的口味，这会使得我们逐渐进入认知的死角中</p><h3 id="如何开始使用RSS"><a href="#如何开始使用RSS" class="headerlink" title="如何开始使用RSS"></a>如何开始使用RSS</h3><p>在这一小节，我会通过<code>feedly</code>让大家知道rss的基本使用方式</p><p><img src="/blog/assets/img/picture/feedly基本使用.png" alt="feedly基本使用"></p><ol><li>注册feedly账号(<a href="https://feedly.com" target="_blank" rel="noopener">https://feedly.com</a>)</li><li>点击网站左下角添加订阅源</li><li>通过左侧目录选择订阅源更新内容进行阅读</li></ol><h3 id="RSS信息源推荐"><a href="#RSS信息源推荐" class="headerlink" title="RSS信息源推荐"></a>RSS信息源推荐</h3><ul><li>掘金：<a href="https://juejin.im" target="_blank" rel="noopener">https://juejin.im</a></li><li>纽约时报：<a href="https://sspai.com" target="_blank" rel="noopener">https://sspai.com</a></li><li>少数派：<a href="https://cn.nytimes.com" target="_blank" rel="noopener">https://cn.nytimes.com</a></li><li>我的博客：<a href="https://jianjustin.github.io">https://jianjustin.github.io</a></li><li>爱思想：<a href="http://www.aisixiang.com" target="_blank" rel="noopener">http://www.aisixiang.com</a></li><li>github：<a href="https://github.blog" target="_blank" rel="noopener">https://github.blog</a></li><li>阮一峰：<a href="http://www.ruanyifeng.com/blog" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog</a></li><li>IBM社区：<a href="https://www.ibm.com/developerworks/cn" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn</a></li><li>thoughtworks技术雷达：<a href="https://insights.thoughtworks.cn(**强烈推荐**)" target="_blank" rel="noopener">https://insights.thoughtworks.cn(**强烈推荐**)</a></li><li><a href="https://www.infoq.cn/" target="_blank" rel="noopener">https://www.infoq.cn/</a></li></ul><blockquote><p>RSS客户端推荐：reeder，FeedMe</p></blockquote><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>给大家一个小建议，把头条APP删了吧，给自己一些时间去发呆，去思考</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;这篇文章我主要会讨论RSS这个互联网上另一种阅读的方式，让大家能够学会这种方式去获取有价值的信息，而不是在充斥着无效信息的网上闲逛&lt;/p&gt;
-
       
     
     </summary>
@@ -457,29 +481,6 @@
     </summary>
     
       <category term="技术" scheme="https://jianjustin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>电影心灵捕手小记</title>
-    <link href="https://jianjustin.github.io/2018/11/12/%E7%94%B5%E5%BD%B1%E5%BF%83%E7%81%B5%E6%8D%95%E6%89%8B%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://jianjustin.github.io/2018/11/12/电影心灵捕手小记/</id>
-    <published>2018-11-11T16:00:00.000Z</published>
-    <updated>2019-01-24T05:33:39.737Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="故事简介"><a href="#故事简介" class="headerlink" title="故事简介"></a>故事简介</h3><p>故事描述一个少年时受到父母虐待而产生心理问题的天才青年威尔，他虽没上过大学，但他却有着过人的天赋，并且狂热于读书。在他做麻省理工学院的清洁工时解开了一位著名数学教授公开给学生出的难题。在一次斗殴后威尔被法庭宣判送进少年观护所。数学教授向法官求情并保释了威尔，希望能和他一起研究数学，可是威尔却不愿意与他合作，他为威尔找了心理医生做心理辅导，但这些心理医生均被智商极高的威尔羞辱，不愿再为威尔做心理辅导。教授无奈请大学同学及好友西恩·麦克奎尔帮忙，而西恩终于消除了威尔的心理痼疾，在朋友查克的鼓励劝告下，威尔最终找到了自我和爱情</p><h3 id="什么是良好的友谊？"><a href="#什么是良好的友谊？" class="headerlink" title="什么是良好的友谊？"></a>什么是良好的友谊？</h3><p>“我每天到你家接你，我们出去喝酒笑闹，那很棒。但我一天中最棒的时刻，只有十秒，从停车到你家门口，每次我敲门，都希望你不在了，不说再见，什么都没有，你就走了，我懂得不多，但我很清楚。”</p><p>这是查克在建筑工地上对威尔说的；当威尔表示希望和查克一直当邻居时，查克则表示不希望威尔握着彩票却不去开奖。</p><p>这是朋友间的对话，却让我反思朋友间应该是怎样的状态呢？</p><p>其实在生活中，我们和大部分朋友并不会经常见面，而是和几个生活状态相差无几的朋友接触的比较多。而在和朋友的接触中，会有两个问题需要我们去思考，一是我们应该怎样在相处中保持自我的完整，即给予自己较完整的思考空间；二则是如何看待朋友对自身的影响，因为近朱者赤，近墨者黑；我们不能保证自我的隔离性，所以我们不能仅仅在择友上去判断，我们更应该学会去观察每个人的闪光店。</p><p>电影最后：查克还是去威尔家敲门，却发现好友已经离去了，先是有些小伤感，接着便带着欣喜离去。获取他欣慰于威尔的决定。</p><h3 id="我们在追求什么？"><a href="#我们在追求什么？" class="headerlink" title="我们在追求什么？"></a>我们在追求什么？</h3><p>电影中有一个场景“查克每天早晨开着车来到威尔门前，敲敲门；然后两人十分默契，开车离去。”，我不是驻足于好友间的默契，而是惊讶于威尔生活的不羁</p><p>我们在生活，拼命读书，拼命工作；然后结婚生子，然后周而复始；可是，我们并不知道我们真正想要的是什么，所以我们跟随大众是最简单的，也是最不会被当作异类的，我们呼喊着自己混的很好，想象着自己是一个成功人士；</p><p>这部电影中还有一个对立，就是教授和罗宾·威廉斯对待戴蒙的态度上。教授在意的只是一个天才和他可以取得的成就，而罗宾在意的是那个叫威尔的年轻人</p><p>这里面抛出一个点：我们生命的价值是否等同于成就？我个人觉得是NO，如果这样，那社会上乞丐,残疾人是否应该消失呢？当然不应该！我们每个人都是一个个体，从我们有意识开始，我们就在探索世界，探索自我；探索个体的价值和快乐所在；我们不应该通过普世价值去衡量一个人的价值，而是应该去追求自我的快乐，即使那是无用的快乐</p><p>这也是为什么西方教育区别于国内教育，并不会通过一刀切的方式去划分等级，而是通过“你经历过什么，你获得了什么”的方式去告诉青年：不仅仅知道什么非常重要，同样的经历什么也是一样重要的</p><p>少年，当抛弃前方的名利，当你追随我心时，你又会走向何处呢？</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;故事简介&quot;&gt;&lt;a href=&quot;#故事简介&quot; class=&quot;headerlink&quot; title=&quot;故事简介&quot;&gt;&lt;/a&gt;故事简介&lt;/h3&gt;&lt;p&gt;故事描述一个少年时受到父母虐待而产生心理问题的天才青年威尔，他虽没上过大学，但他却有着过人的天赋，并且狂热于读书。在他做麻省
-      
-    
-    </summary>
-    
-      <category term="随想" scheme="https://jianjustin.github.io/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
   </entry>
