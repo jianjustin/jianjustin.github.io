@@ -179,7 +179,7 @@
         
           <span class="post-category">
             
-              <a href="/categories/spring-notes/">spring-notes</a>
+              <a href="/categories/spring/">spring</a>
             
           </span>
         
@@ -201,11 +201,14 @@
     <div class="post-content">
       
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这个系列文章主要针对Spring框架做一次结构性的认知，了解Spring在软件开发中所涉及到的功能</p>
-<p><a href="https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference" target="_blank" rel="noopener">参考文档-https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference</a></p>
-<p><code>备注:文章主要涉及内容主要来源Spring官网和维基百科；并且所有源码测试依照5.1.4.RELEASE这个版本</code></p>
+<p><a href="https://docs.spring.io/spring-framework/docs/current/spring-framework-reference" target="_blank" rel="noopener">参考文档-https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference</a></p>
+<p><code>备注:文章主要涉及内容主要来源Spring官网和维基百科</code></p>
 <ul>
 <li><p><strong>什么是Spring</strong></p>
 <p><strong>Spring Framework</strong> 是一个开源的Java／Java EE全功能栈的应用程序框架，以Apache License 2.0开源许可协议的形式发布。该框架基于 Expert One-on-One Java EE Design and Development一书中的代码，最初由Rod Johnson和Juergen Hoeller等开发。Spring Framework提供了一个简易的开发方式，这种开发方式，将避免那些可能致使底层代码变得繁杂混乱的大量的属性文件和帮助类。</p>
+</li>
+<li><p><strong>Spirng Framework 5结构图</strong></p>
+<p><img src="/Users/jian/blog/source/assets/img/picture/diagram-boot-reactor.svg" alt="spring-overview"></p>
 </li>
 <li><p><strong>Pivotal公司</strong></p>
 <p><strong>Pivotal</strong>是一家位于美国加州的计算机软件公司，由VMware和EMC合资成立，其前身则是Pivotal Labs实验室；Pivotal目前运营并维护着Spring framework</p>
@@ -223,42 +226,56 @@
 </li>
 <li><p><strong>Spring项目列表</strong></p>
 <ul>
-<li>Spring Boot</li>
-<li>Spring Framework</li>
-<li>Spring Data</li>
-<li>Spring Cloud</li>
-<li>Spring Cloud Data Flow</li>
-<li>Spring Security</li>
-<li>Spring Session</li>
-<li>Spring Integration</li>
-<li>Spring HATEOAS</li>
-<li>Spring REST Docs</li>
-<li>Spring Batch</li>
-<li>Spring IO Platform</li>
-<li>Spring AMQP</li>
-<li>Spring for Android</li>
-<li>Spring CredHub</li>
-<li>Spring for Apache Kafka</li>
-<li>Spring LDAP</li>
-<li>Spring Mobile</li>
-<li>Spring Roo</li>
-<li>Spring Shell</li>
-<li>Spring Statemachine</li>
-<li>Spring Test HtmlUnit</li>
-<li>Spring Vault</li>
-<li>Spring Web Flow</li>
-<li>Spring Web Services</li>
+<li><code>Spring Boot</code></li>
+<li><code>Spring Framework</code></li>
+<li><code>Spring Data</code></li>
+<li><code>Spring Cloud</code></li>
+<li><code>Spring Cloud Data Flow</code></li>
+<li><code>Spring Security</code></li>
+<li><code>Spring Session</code></li>
+<li><code>Spring Integration</code></li>
+<li><code>Spring HATEOAS</code></li>
+<li><code>Spring REST Docs</code></li>
+<li><code>Spring Batch</code></li>
+<li><code>Spring IO Platform</code></li>
+<li><code>Spring AMQP</code></li>
+<li><code>Spring for Android</code></li>
+<li><code>Spring CredHub</code></li>
+<li><code>Spring for Apache Kafka</code></li>
+<li><code>Spring LDAP</code></li>
+<li><code>Spring Mobile</code></li>
+<li><code>Spring Roo</code></li>
+<li><code>Spring Shell</code></li>
+<li><code>Spring Statemachine</code></li>
+<li><code>Spring Test HtmlUnit</code></li>
+<li><code>Spring Vault</code></li>
+<li><code>Spring Web Flow</code></li>
+<li><code>Spring Web Services</code></li>
 </ul>
 </li>
-<li><p><strong>Spirng Framework 5结构图</strong></p>
-<p><img src="/Users/jian/blog/source/assets/img/picture/diagram-boot-reactor.svg" alt="spring-overview"></p>
+<li><p>Spring涉及规范API</p>
+<ul>
+<li>Servlet API（JSR 340）</li>
+<li>WebSocket API（JSR 356）</li>
+<li>并发实用程序（JSR 236）</li>
+<li>JSON绑定API（JSR 367）</li>
+<li>Bean验证（JSR 303）</li>
+<li>JPA（JSR 338）</li>
+<li>JMS（JSR 914） </li>
+<li>依赖注入（JSR 330）</li>
+<li>通用注解（JSR 250）</li>
+</ul>
 </li>
 </ul>
 <h3 id="系列文章目标"><a href="#系列文章目标" class="headerlink" title="系列文章目标"></a>系列文章目标</h3><ul>
-<li>core模快(包括IOC和AOP技术)</li>
-<li>web模块(涉及Spring MVC和Spring Flux框架)</li>
-<li>JPA模块(即数据访问层)</li>
-<li>Spring boot</li>
+<li>Spring核心：依赖注入和面向切面编程</li>
+<li>Spring事务管理机制</li>
+<li>Spring数据访问技术</li>
+<li>Spring Web框架结构</li>
+<li>Spring通用规范集成</li>
+<li>项目快速起步：Spring Boot</li>
+<li>资源访问限制：Spring Security</li>
+<li>分布式基础：Spring Cloud</li>
 </ul>
 
       
@@ -281,9 +298,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2019/02/01/「PHP学习教程」基础语法/">
+      <a class="prev" href="/2019/02/10/如何管理技术书籍/">
         <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">「PHP学习教程」#01基础语法</span>
+        <span class="prev-text nav-default">如何管理技术书籍</span>
         <span class="prev-text nav-mobile">上一篇</span>
       </a>
     
