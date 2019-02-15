@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jianjustin.github.io/"/>
-  <updated>2019-02-11T06:02:30.902Z</updated>
+  <updated>2019-02-15T09:03:09.488Z</updated>
   <id>https://jianjustin.github.io/</id>
   
   <author>
@@ -15,6 +15,111 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>「区块链」比特币白皮书</title>
+    <link href="https://jianjustin.github.io/2019/02/14/%E3%80%8C%E5%8C%BA%E5%9D%97%E9%93%BE%E3%80%8D%E7%99%BD%E7%9A%AE%E4%B9%A6/"/>
+    <id>https://jianjustin.github.io/2019/02/14/「区块链」白皮书/</id>
+    <published>2019-02-13T16:00:00.000Z</published>
+    <updated>2019-02-15T09:03:09.488Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>比特币：点对点的电子数字货币</strong></p><p>文章主要通过阅读比特币白皮书去翻译书中内容以及做一系列理解</p><blockquote><p>抽象地来说，一个点对点的电子数字货币允许线上交易从一个账户直接发送到另一个账户而不需要经过金融机构。数字签名提供了解决方案的一部分，但如果仍然需要受信任的第三方来防止双重支付，则主要的好处就会丢失。我们提出一种解决双重支付的方案—点对点网络。时间戳将线上交易散列到基于hash的工作证明链中。最长的链不仅仅是交易的证明，也说明来源于最大的矿池。当大部分算力由不协作的节点提供，就会产生最长链和算力攻击者。网络本身需要最小的结构。消息是在尽力而为的基础上广播的，节点可以随意离开并重新加入网络，接受最长的工作证明链作为它们消失时发生的事情的证据</p></blockquote><h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>Commerce on the Internet has come to rely almost exclusively on financial institutions serving as trusted third parties to process electronic payments. While the system works well enough for most transactions, it still suffers from the inherent weaknesses of the trust based model. Completely non-reversible transactions are not really possible, since financial institutions cannot avoid mediating disputes. The cost of mediation increases transaction costs, limiting the minimum practical transaction size and cutting off the possibility for small casual transactions, and there is a broader cost in the loss of ability to make non-reversible payments for non- reversible services. With the possibility of reversal, the need for trust spreads. Merchants must be wary of their customers, hassling them for more information than they would otherwise need. A certain percentage of fraud is accepted as unavoidable. These costs and payment uncertainties can be avoided in person by using physical currency, but no mechanism exists to make payments over a communications channel without a trusted party.<br>What is needed is an electronic payment system based on cryptographic proof instead of trust, allowing any two willing parties to transact directly with each other without the need for a trusted third party. Transactions that are computationally impractical to reverse would protect sellers from fraud, and routine escrow mechanisms could easily be implemented to protect buyers. In this paper, we propose a solution to the double-spending problem using a peer-to-peer distributed timestamp server to generate computational proof of the chronological order of transactions. The system is secure as long as honest nodes collectively control more CPU power than any cooperating group of attacker nodes.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;strong&gt;比特币：点对点的电子数字货币&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;文章主要通过阅读比特币白皮书去翻译书中内容以及做一系列理解&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;抽象地来说，一个点对点的电子数字货币允许线上交易从一个账户直接发送到另一个账户而不需要经过金融机
+      
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://jianjustin.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>「SpringBoot基础教程」资源开放授权</title>
+    <link href="https://jianjustin.github.io/2019/02/14/%E3%80%8CSpringBoot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E3%80%8D%E8%B5%84%E6%BA%90%E5%BC%80%E6%94%BE%E6%8E%88%E6%9D%83/"/>
+    <id>https://jianjustin.github.io/2019/02/14/「SpringBoot基础教程」资源开放授权/</id>
+    <published>2019-02-13T16:00:00.000Z</published>
+    <updated>2019-02-14T03:00:47.334Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="spring" scheme="https://jianjustin.github.io/categories/spring/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>「SpringBoot基础教程」设计openAPI服务</title>
+    <link href="https://jianjustin.github.io/2019/02/11/%E3%80%8CSpringBoot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E3%80%8D%E8%AE%BE%E8%AE%A1openAPI%E6%9C%8D%E5%8A%A1/"/>
+    <id>https://jianjustin.github.io/2019/02/11/「SpringBoot基础教程」设计openAPI服务/</id>
+    <published>2019-02-10T16:00:00.000Z</published>
+    <updated>2019-02-13T16:20:29.554Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在前后端分离开发过程中，我们肯定会涉及到API；后端需要通过openAPI标准化数据服务内容，而前端则需要通过openAPI了解服务格式和交互内容，从而提高应用开发的速度；同时在第三方数据源接入中，通过openAPI可以标准化数据的传输</p><h4 id="openAPI标准"><a href="#openAPI标准" class="headerlink" title="openAPI标准"></a>openAPI标准</h4><p>OpenAPI Initiative（OAI）由一个具有前瞻性的行业专家组成的联盟创建,他们认识到标准化REST API如何描述的巨大价值;作为Linux Foundation下的开放式治理结构，OAI专注于创建，发展和推广供应商中立的描述格式;SmartBear Software将Swagger规范直接捐赠给OAI，作为开放规范的基础</p><ul><li><p>openAPI描述API包括：</p><ul><li>有关API的一般信息</li><li>可用路径（/资源）</li><li>每条路径上的可用操作（获取/资源）</li><li>每个操作的输入/输出</li></ul></li></ul><ul><li><p>查询openAPI规范文件</p><ul><li><a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" target="_blank" rel="noopener">参考文档</a></li><li><a href="http://apihandyman.io" target="_blank" rel="noopener">参考教程</a></li><li><a href="https://github.com/DragorWW/awesome-swagger" target="_blank" rel="noopener">资源汇总</a></li><li><a href="https://github.com/OAI/OpenAPI-Specification" target="_blank" rel="noopener">openAPI规范</a></li></ul></li></ul><h4 id="什么是swagger"><a href="#什么是swagger" class="headerlink" title="什么是swagger"></a>什么是swagger</h4><blockquote><p>可能大家在平时的开发中更多的是：使用swagger实现restfulAPI，那么什么是swagger呢？</p></blockquote><p>Swagger 是一款目前世界最流行的API管理工具，是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。文档提供了一个方法，我们可以用指定的 JSON 或者 YAML 摘要来描述你的 API<a href="https://swagger.io" target="_blank" rel="noopener">官网</a></p><ul><li><p>swagger项目组主要包括：</p><ul><li>swagger-js</li><li>swagger-ui</li><li>swagger-tools</li><li>swagger-editor</li><li>swagger-core</li><li>swagger-parser</li><li>swagger-codegen</li><li>swagger-node</li><li>validator-badge</li></ul></li><li><p>什么是Springfox</p><blockquote><p>Springfox项目是用于spring系列项目自动生成JSON API的机器和人类可读规范  </p></blockquote><ul><li><a href="https://springfox.github.io/springfox/docs" target="_blank" rel="noopener">Springfox文档</a></li><li><a href="https://github.com/springfox/springfox-demos" target="_blank" rel="noopener">Springfox demos</a></li><li><a href="https://springfox.github.io/springfox/docs/snapshot/#answers-to-common-questions-and-problems" target="_blank" rel="noopener">springfox和swagger的关系</a></li></ul></li></ul><h4 id="SpringBoot项目添加Springfox支持"><a href="#SpringBoot项目添加Springfox支持" class="headerlink" title="SpringBoot项目添加Springfox支持"></a>SpringBoot项目添加Springfox支持</h4><ul><li><p>添加springfox maven配置</p><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>Springfox基本配置</p><ul><li>启用swagger<code>@EnableSwagger2</code></li><li>配置扫描包路径<code>@ComponentScan(basePackage = {})</code></li><li><p>配置swagger文档信息</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder()</span><br><span class="line">    .title(<span class="string">"openAPI服务"</span>)</span><br><span class="line">    .version(<span class="string">"版本号:"</span>+swaggerVersion)</span><br><span class="line">    .license(<span class="string">"MIT License"</span>)</span><br><span class="line">    .build();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li><li><p>配置API扫描路径</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">memberApi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">    .groupName(<span class="string">"member"</span>)<span class="comment">//设置API分组</span></span><br><span class="line">    .select()</span><br><span class="line">    .paths(PathSelectors.ant(<span class="string">"/member/**"</span>))<span class="comment">//设置URL过滤</span></span><br><span class="line">    .build()</span><br><span class="line">    .apiInfo(apiInfo())</span><br><span class="line">    .enable(swaggerSwitch);<span class="comment">//设置是否启用swagger</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;swagger.switch&#125;"</span>)</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">boolean</span> swaggerSwitch;<span class="comment">//需要在application.properties中设置</span></span><br></pre></td></tr></table></figure></li></ul></li><li><p>Springfox开放API文档配置</p><ul><li><p>实现步骤：</p><ul><li><p>controllor添加API注解</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@Api</span>(tags=<span class="string">"member.user"</span>,value=<span class="string">"用户模块"</span>)</span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/member/user/"</span>,produces = &#123; <span class="string">"application/json"</span> &#125;)</span><br></pre></td></tr></table></figure></li><li><p>处理方法添加API注解</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation</span>(value = <span class="string">"新增用户"</span>)</span><br><span class="line"><span class="meta">@RequestMapping</span>(method = RequestMethod.POST)</span><br><span class="line"><span class="keyword">public</span> ResponseEntity&lt;?&gt; save(</span><br><span class="line">    <span class="meta">@ApiParam</span>(value = <span class="string">"实体数据"</span>, required = <span class="keyword">true</span>) <span class="meta">@RequestBody</span> MemberUser memberUser) &#123;</span><br><span class="line">  memberUserService.save(memberUser);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;MemberUser&gt;(HttpStatus.OK);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul></li><li><p>常用API注解</p><ul><li><code>@ApiParam#value()</code></li><li><code>@ApiImplicitParam#value()</code></li><li><code>@ApiModelProperty#value()</code></li><li><code>@ApiOperation#value()</code></li><li><code>@ApiOperation#notes()</code></li><li><code>@RequestParam#defaultValue()</code></li><li><code>@RequestHeader#defaultValue()</code></li></ul></li></ul></li></ul><ul><li>Springfox安全配置</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h4 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h4&gt;&lt;p&gt;在前后端分离开发过程中，我们肯定会涉及到API；后端需要通过openAPI标准化数据服务内容，而前端则需要通过openAPI了解服务格式和交
+      
+    
+    </summary>
+    
+      <category term="spring" scheme="https://jianjustin.github.io/categories/spring/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>「SpringBoot基础教程」数据持久化</title>
+    <link href="https://jianjustin.github.io/2019/02/11/%E3%80%8CSpringBoot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E3%80%8D%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
+    <id>https://jianjustin.github.io/2019/02/11/「SpringBoot基础教程」数据持久化/</id>
+    <published>2019-02-10T16:00:00.000Z</published>
+    <updated>2019-02-11T13:18:02.111Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>数据持久化，顾名思义就是指将数据持久化到数据库中；所以我们在这一章节中我们会和大家一起讨论数据持久化的一些概念和技术；在以前项目开发中，想到持久化，我们就会思考：用<code>Mybatis</code>还是<code>Hibernate</code>呢？但是我却不会以这两个持久化框架作为讲解的主要内容，而是<code>Spring data</code></p></blockquote><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul><li><strong>什么是Spring Data</strong></li></ul><p>Spring Data是为数据访问提供熟悉且一致的基于Spring的编程模型，同时仍保留底层数据存储的特​​殊特性;它使数据访问技术，关系数据库和非关系数据库，map-reduce框架和基于云的数据服务变得简单易用，其实质数据服务的抽象模型;其中我们会主要讨论<code>Spring Data JPA</code>和<code>Spring Data JDBC</code>两个不同的实现</p><ul><li><strong>JPA规范</strong></li></ul><p>JPA指java持久化API，主要包括对象/关系映射，java持久化查询语言(JPQL)等</p><h4 id="Spring-Data-JDBC集成"><a href="#Spring-Data-JDBC集成" class="headerlink" title="Spring Data JDBC集成"></a>Spring Data JDBC集成</h4><blockquote><p>参考书籍「Domain Driven Design」</p></blockquote><ul><li><p>添加maven配置</p> <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-starter-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure> <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">groupId</span>&gt;</span>mysql<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mysql-connector-java<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.21<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure></li><li><p>配置数据源信息</p> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url=jdbc:mysql:<span class="comment">//localhost:3306/test</span></span><br><span class="line">spring.datasource.username=dbuser</span><br><span class="line">spring.datasource.password=dbpass</span><br><span class="line">spring.datasource.driver-<span class="class"><span class="keyword">class</span>-<span class="title">name</span></span>=com.mysql.jdbc.Driver</span><br></pre></td></tr></table></figure></li><li><p>添加数据库表信息</p> <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="keyword">SELECT</span> * <span class="keyword">FROM</span> test.User;<span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`User`</span> (</span><br><span class="line">  <span class="string">`ID`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`NAME`</span> <span class="built_in">varchar</span>(<span class="number">45</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`AGE`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`ID`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure></li></ul><h4 id="Spring-Data-JPA集成"><a href="#Spring-Data-JPA集成" class="headerlink" title="Spring Data JPA集成"></a>Spring Data JPA集成</h4><h4 id="Springboot集成hibernate"><a href="#Springboot集成hibernate" class="headerlink" title="Springboot集成hibernate"></a>Springboot集成hibernate</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;数据持久化，顾名思义就是指将数据持久化到数据库中；所以我们在这一章节中我们会和大家一起讨论数据持久化的一些概念和技术；在以前项目开发中，想到持久化，我们就会思考：用&lt;code&gt;Mybatis&lt;/code&gt;还是&lt;code&gt;Hibernate&lt;/cod
+      
+    
+    </summary>
+    
+      <category term="spring" scheme="https://jianjustin.github.io/categories/spring/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>区块链理论探索</title>
+    <link href="https://jianjustin.github.io/2019/02/11/%E5%8C%BA%E5%9D%97%E9%93%BE%E7%90%86%E8%AE%BA%E6%8E%A2%E7%B4%A2/"/>
+    <id>https://jianjustin.github.io/2019/02/11/区块链理论探索/</id>
+    <published>2019-02-10T16:00:00.000Z</published>
+    <updated>2019-02-11T14:17:36.707Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="区块链" scheme="https://jianjustin.github.io/categories/%E5%8C%BA%E5%9D%97%E9%93%BE/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>「Spring文档阅读」Spring核心：依赖注入和面向切面编程</title>
@@ -31,30 +136,6 @@
       
         &lt;p&gt;这篇文章中，我主要会围绕core模块进行讲解；&lt;/p&gt;
 &lt;h4 id=&quot;IOC原理&quot;&gt;&lt;a href=&quot;#IOC原理&quot; class=&quot;headerlink&quot; title=&quot;IOC原理&quot;&gt;&lt;/a&gt;IOC原理&lt;/h4&gt;&lt;p&gt;IOC即控制反转，又被称为依赖注入，其目的是解耦Bea
-      
-    
-    </summary>
-    
-      <category term="spring" scheme="https://jianjustin.github.io/categories/spring/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>「SpringBoot基础教程」数据持久化</title>
-    <link href="https://jianjustin.github.io/2019/02/11/%E3%80%8CSpringBoot%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B%E3%80%8D%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96/"/>
-    <id>https://jianjustin.github.io/2019/02/11/「SpringBoot基础教程」数据持久化/</id>
-    <published>2019-02-10T16:00:00.000Z</published>
-    <updated>2019-02-11T11:16:52.751Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>数据持久化，顾名思义就是指将数据持久化到数据库中；所以我们在这一章节中我们会和大家一起讨论数据持久化的一些概念和技术；在以前项目开发中，想到持久化，我们就会思考：用<code>Mybatis</code>还是<code>Hibernate</code>呢？但是我却不会以这两个持久化框架作为讲解的主要内容，而是<code>Spring data</code></p></blockquote><h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul><li><strong>什么是Spring Data</strong></li></ul><p>Spring Data是为数据访问提供熟悉且一致的基于Spring的编程模型，同时仍保留底层数据存储的特​​殊特性;它使数据访问技术，关系数据库和非关系数据库，map-reduce框架和基于云的数据服务变得简单易用，其实质数据服务的抽象模型;其中我们会主要讨论<code>Spring Data JPA</code>和<code>Spring Data JDBC</code>两个不同的实现</p><ul><li><strong>JPA规范</strong></li></ul><p>JPA指java持久化API，主要包括对象/关系映射，java持久化查询语言(JPQL)等</p><h4 id="Spring-Data-JDBC集成"><a href="#Spring-Data-JDBC集成" class="headerlink" title="Spring Data JDBC集成"></a>Spring Data JDBC集成</h4><blockquote><p>参考书籍「Domain Driven Design」</p></blockquote><ul><li><p>添加maven配置</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;spring-boot-starter-jdbc&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;5.1.21&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></li><li><p>配置数据源信息</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">spring.datasource.url=jdbc:mysql://localhost:3306/test</span><br><span class="line">spring.datasource.username=dbuser</span><br><span class="line">spring.datasource.password=dbpass</span><br><span class="line">spring.datasource.driver-class-name=com.mysql.jdbc.Driver</span><br></pre></td></tr></table></figure></li><li><p>添加数据库表信息</p> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  SELECT * FROM test.User;CREATE TABLE `User` (</span><br><span class="line">  `ID` int(11) NOT NULL,</span><br><span class="line">  `NAME` varchar(45) DEFAULT NULL,</span><br><span class="line">  `AGE` int(11) DEFAULT NULL,</span><br><span class="line">  PRIMARY KEY (`ID`)</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure></li></ul><h4 id="Spring-Data-JPA集成"><a href="#Spring-Data-JPA集成" class="headerlink" title="Spring Data JPA集成"></a>Spring Data JPA集成</h4>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;数据持久化，顾名思义就是指将数据持久化到数据库中；所以我们在这一章节中我们会和大家一起讨论数据持久化的一些概念和技术；在以前项目开发中，想到持久化，我们就会思考：用&lt;code&gt;Mybatis&lt;/code&gt;还是&lt;code&gt;Hibernate&lt;/cod
       
     
     </summary>
@@ -403,101 +484,6 @@
     </summary>
     
       <category term="技术" scheme="https://jianjustin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>如何科学上网</title>
-    <link href="https://jianjustin.github.io/2018/12/02/%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/"/>
-    <id>https://jianjustin.github.io/2018/12/02/如何科学上网/</id>
-    <published>2018-12-01T16:00:00.000Z</published>
-    <updated>2019-01-28T10:27:07.153Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>今天主要讲述一下如何科学上网，后面我会用FQ进行指代一系列词汇，降低关键字命中率的可能。并且本篇文章不涉及具体教程，只讲述基本概念</p><h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul><li>GFW</li></ul><blockquote><p>大家可以在维基百科中查询关键字获得，其主要使用域名解析服务缓存污染，IP地址封锁等方式对国外大部分网站进行过滤；目的是实现网络“白名单”制</p></blockquote><ul><li>VPN</li></ul><blockquote><p>它利用已加密的隧道协议（Tunneling Protocol）来达到保密、发送端认证、消息准确性等私人消息安全效果。这种技术可以用不安全的网络（例如：互联网）来发送可靠、安全的消息。需要注意的是，加密消息与否是可以控制的</p></blockquote><ul><li>隧道协议</li></ul><blockquote><p>是一种网络协议，在其中，使用一种网络协议（发送协议），将另一个不同的网络协议，封装]在负载部分。使用隧道的原因是在不兼容的网络上传输数据，或在不安全网络上提供一个安全路径。隧道则是<strong>对比分层式</strong>的模型，如OSI模型或TCP/IP。隧道协议通常（但并非总是）在一个比负载协议还高的层级，或同一层</p></blockquote><h3 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h3><blockquote><p>以分层模型划分的话，VPN主要包括这几种：</p><ul><li><code>数据链路层</code>这包括点到点隧道协议(PPTP)、第二层转发协议(L2F)，第二层隧道协议(L2TP)、多协议标记交换(MPLS)等</li><li><code>网络层</code>：这包括通用路由封装协议(GRE)、IP安全(IPSec)，这是目前最流行的两种三层协议</li><li><code>会话层</code>：主要包括Sock4协议和Sock5协议，为用户提供了一个无需认证的防火墙</li></ul></blockquote><p>上面我主要讲了FQ的一些相关概念，而下面我主要会从几个方法讲一下FQ的一下方式：</p><ul><li>修改本机 hosts文件</li><li>使用 VPN客户端软件</li><li>使用特殊 DNS + SNI 代理，或代理软件（如 HTTP 代理、<a href="https://zh.wikipedia.org/wiki/SOCKS" target="_blank" rel="noopener">SOCKS</a> 代理等)</li></ul><h3 id="修改host文件"><a href="#修改host文件" class="headerlink" title="修改host文件"></a>修改host文件</h3><p>因为我们知道FQ有一点，就是在域名解析的过程中增加干扰，而host文件的作用就是加快域名解析这个过程，将这一步跳过，例如我们将下面这一条加入host文件中：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">74.125.31.103 www.google.com</span><br></pre></td></tr></table></figure><p>那么我们在访问谷歌时就会直接访问74这台服务器，当然，谷歌是集群服务器，它的ip是经常变换的，所以大家先测试最近谷歌服务器ip再进行尝试。并且因为ip封锁等原因，可能这种方式已经成为过往了。如果想学习如何使用，请点击<a href="https://anjingwd.github.io/AnJingwd.github.io/2017/08/02/%E4%BF%AE%E6%94%B9host%E6%96%87%E4%BB%B6-%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/" target="_blank" rel="noopener">具体教程</a></p><h3 id="使用-VPN客户端软件"><a href="#使用-VPN客户端软件" class="headerlink" title="使用 VPN客户端软件"></a>使用 VPN客户端软件</h3><p>VPN目前主要用于一些跨国公司进行内网资源共享，其原理是通过建立加密隧道进行数据传输。主要包括Express VPN，Green VPN，Vypr VPN，Pure VPN等，但是目前在国内你可能很难找到一个比较稳定的VPN用于使用，所以我不建议大家去购买；并且就目前来看，vpn协议就存在诸多问题。最严重的一个就是流量特征过于明显，FQ可以根据流量特征进行批量干扰</p><h3 id="shadowsocks"><a href="#shadowsocks" class="headerlink" title="shadowsocks"></a>shadowsocks</h3><p>这种方式是小编目前所使用的方式之一。shadowsocks俗称<code>ss梯子</code>,其依赖的shadowsocks协议也是加密协议的一种，并且shadowsocks的实现非常多样化，包括python，c++，go等语言。这种方式的优点主要有以下几点：</p><ol><li>相对于VPN，shadowsocks具有更强的隐蔽性；因为VPN走的是专门通道，目的是安全性，而ss梯子则只是对数据包的加密而不设置专门通道，专注于抗干扰性</li><li>shadowsocks的安装配置较为简单</li></ol><p>有人就会问，ss梯子就十全十美了吗？当然不，当你想要拥有shadowsocks时，首先你需要有一台代理服务器！这就难到很多人了，因为很多人对服务器命令和韵味不是特别了解；其次，从2018年开始，app store就开始下架很多ss客户端了，这可能只是开始，后面当ss流量检测算法成熟后，可能也会成为过往吧</p><p><a href="https://blog.pika666.cn/%E6%8A%80%E6%9C%AF/2018-06-10.html" target="_blank" rel="noopener">shadowsocks客户端列表</a></p><p><a href="https://teddysun.com/342.html" target="_blank" rel="noopener">shadowsocks参考教程</a></p><h3 id="wireguard"><a href="#wireguard" class="headerlink" title="wireguard"></a>wireguard</h3><blockquote><p>WireGuard® is an extremely simple yet fast and modern VPN that utilizes <strong>state-of-the-art cryptography</strong>. It aims to be faster, simpler, leaner, and more useful than IPSec, while avoiding the massive headache. It intends to be considerably more performant than OpenVPN. WireGuard is designed as a general purpose VPN for running on embedded interfaces and super computers alike, fit for many different circumstances. Initially released for the Linux kernel, it is now cross-platform and widely deployable. It is currently under heavy development, but already it might be regarded as the most secure, easiest to use, and simplest VPN solution in the industry.</p></blockquote><p>上面是对wrieguard官网上的定义，简单来说wireguard是一种更简单，更快速的加密协议，和shadowsock相比，主要包括两点区别：</p><ol><li>wireguard是内核级的加密方式，据说准备并入linux内核中，这就降低了wireguard的资源消耗，同时网上传wireguard可以抵御量子攻击，但是我对量子没了解，所以不做评价</li><li>因为wireguard极低的资源消耗，所以wirguard的稳定性和上行/下行速度会快很多；根据小编的测试，主要体现在上行速度上，具体大家可以自行测试</li></ol><h6 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h6><ul><li>启动：/etc/init.d/shadowsocks start</li><li>停止：/etc/init.d/shadowsocks stop</li><li>重启：/etc/init.d/shadowsocks restart</li><li>状态：/etc/init.d/shadowsocks status</li><li>配置信息查询：vim /etc/shadowsocks.json</li></ul><p>######wrieguard 安装</p><blockquote><p>只讲述大致的安装流程，具体的实施步骤和大家的系统有关，可自行百度；而同样地，wireguard只是加密协议，所以需要一台代理服务器</p></blockquote><p>将本地主机和远程代理主机安装wrieguard-tools,并配置公钥和私钥；虽然wireguard并没有区分客户端和服务端，只是将每台主机称为节点，但是我们还是按照习惯，将本地主机称为客户端；客户端需要配置服务端开放出来的端口，用于流量代理</p><ul><li><p><a href="https://www.wireguard.com/" target="_blank" rel="noopener">wireguard官网</a></p></li><li><p><a href="https://www.atrandys.com/2018/886.html" target="_blank" rel="noopener">centos节点安装教程</a></p></li><li><p><a href="https://chenshaoju.github.io/post/tunsafe-wireguard/" target="_blank" rel="noopener">客户端配置教程</a></p></li><li><p><a href="https://www.zaije.com/?p=200" target="_blank" rel="noopener">macOS客户端配置教程</a></p></li></ul><blockquote><p>备注：以上网站可能也处于FQ范围内，所以大家需要临时FQ；如果大家希望得到帮助的，可发送邮件到<a href="mailto:janine.jian.chen@gmail.com" target="_blank" rel="noopener">janine.jian.chen@gmail.com</a></p></blockquote><h6 id="mac启动教程"><a href="#mac启动教程" class="headerlink" title="mac启动教程"></a>mac启动教程</h6><ul><li><code>sudo wg-quick up wg0</code>————启动</li><li><code>sudo wg-quick down wg0</code>————暂停</li><li><code>sudo wg</code> ————状态查看</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;今天主要讲述一下如何科学上网，后面我会用FQ进行指代一系列词汇，降低关键字命中率的可能。并且本篇文章不涉及具体教程，只讲述基本概念&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://jianjustin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>什么是Docker</title>
-    <link href="https://jianjustin.github.io/2018/11/29/%E4%BB%80%E4%B9%88%E6%98%AFDocker/"/>
-    <id>https://jianjustin.github.io/2018/11/29/什么是Docker/</id>
-    <published>2018-11-28T16:00:00.000Z</published>
-    <updated>2019-01-28T08:25:49.296Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>最近因为安装sqlserver时涉及到Docker，所以希望能够了解Docker是如何虚拟化物理资源的，提高自己对运维这块的了解</p><p><a href="https://www.docker.com/" target="_blank" rel="noopener">Docker官网：https://www.docker.com/</a></p><h3 id="Docker简介"><a href="#Docker简介" class="headerlink" title="Docker简介"></a>Docker简介</h3><blockquote><p>Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly</p></blockquote><p>上面这一段是官网对Docker的描述：Docker是一个用于开发,运行并管理应用程序的开放平台.Docker能够分离你的应用程序和基础架构,使你能够快速交付.</p><blockquote><p>备注：Docker许可证————<strong>open source Apache 2.0 license</strong></p></blockquote><h6 id="Docker解决什么问题"><a href="#Docker解决什么问题" class="headerlink" title="Docker解决什么问题"></a>Docker解决什么问题</h6><p>软件开发最大的麻烦事之一，就是环境配置；我们在平时的开发过程中，经常出现在本地或者测试环境测试通过了，但是却在正式环境跪了的情况；然后我们就会去比较两者的环境差别。</p><h6 id="Docker技术实现"><a href="#Docker技术实现" class="headerlink" title="Docker技术实现"></a>Docker技术实现</h6><p>Docker 基于Linux容器技术,使用Go开发实现;</p><h6 id="Docker用途"><a href="#Docker用途" class="headerlink" title="Docker用途"></a>Docker用途</h6><ol><li>提供一次性的环境</li><li>提供弹性的云服务</li><li>组建微服务架构</li></ol><h6 id="Docker基本概念"><a href="#Docker基本概念" class="headerlink" title="Docker基本概念"></a>Docker基本概念</h6><p><img src="https://jianjustin.github.io/blog/assets/img/picture/engine-components-flow.png" alt="Docker基本结构"></p><h3 id="Docker-objects"><a href="#Docker-objects" class="headerlink" title="Docker objects"></a>Docker objects</h3><h6 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h6><blockquote><p>An <em>image</em> is a read-only template with instructions for creating a Docker container. Often, an image is <em>based on</em>another image, with some additional customization. </p></blockquote><p>以上是官网对镜像的定义：镜像是一个用于创建容器的只读模板，而镜像是存在依赖关系的，你可以在基础镜像上构建自定义镜像</p><h6 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h6><blockquote><p>A container is a runnable instance of an image. You can create, start, stop, move, or delete a container using the Docker API or CLI. </p></blockquote><p>容器则是镜像所创建出的可运行实例，你可以通过Docker API等对容器进行操作。所以说在实际中我们主要会操作容器</p><h6 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h6><p>我们在自定义镜像进行构建后可能会在不同的物理机进行使用，所以就需要一个集中的存储、分发镜像的服务；常用是：<code>Docker Hub</code></p><h3 id="Docker使用"><a href="#Docker使用" class="headerlink" title="Docker使用"></a>Docker使用</h3><blockquote><p>Docker的安装比较简单，和正常的程序安装基本一致</p></blockquote><ul><li>mac：<a href="https://docs.docker.com/docker-for-mac/install/" target="_blank" rel="noopener">https://docs.docker.com/docker-for-mac/install/</a></li><li>window：<a href="https://docs.docker.com/docker-for-windows/install/" target="_blank" rel="noopener">https://docs.docker.com/docker-for-windows/install/</a></li></ul><blockquote><p>验证Docker是否成功安装：<code>docker version</code></p></blockquote><h6 id="镜像操作"><a href="#镜像操作" class="headerlink" title="镜像操作"></a>镜像操作</h6><ul><li><p>镜像拉取：<code>docker pull [OPTIONS] NAME[:TAG|@DIGEST]</code></p><p>eg:<code>docker pull centos</code></p></li><li><p>镜像搜索：<code>docker search [OPTIONS] TERM</code></p></li><li><p>列出本地镜像：<code>docker images [OPTIONS] [REPOSITORY[:TAG]]</code></p></li><li>本地镜像构建：<code>docker build [OPTIONS] PATH | URL |</code></li></ul><h6 id="容器操作"><a href="#容器操作" class="headerlink" title="容器操作"></a>容器操作</h6><ul><li>显示本地容器：<code>docker ps [OPTIONS]</code></li><li>连接运行中容器：<code>docker attach [OPTIONS] CONTAINER</code></li><li>容器端口映射信息：<code>docker port [OPTIONS] CONTAINER [PRIVATE_PORT[/PROTO]]</code></li><li>容器启动：<code>docker start</code></li><li>容器停止：<code>docker stop</code></li><li>容器重启：<code>docker restart</code></li><li>创建新容器并运行：<code>docker run</code></li><li>清理已终止容器：<code>docker container prune</code></li></ul><h3 id="Docker使用案例"><a href="#Docker使用案例" class="headerlink" title="Docker使用案例"></a>Docker使用案例</h3><h6 id="Docker安装MYSQL"><a href="#Docker安装MYSQL" class="headerlink" title="Docker安装MYSQL"></a>Docker安装MYSQL</h6><ul><li>查询mysql镜像：<code>docker search mysql</code></li><li>拉取mysql镜像：<code>docker pull mysql</code></li><li>创建容器：<code>docker run -p 33060:3306 --name mymysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql</code></li><li>查看本地容器：<code>docker ps [container_id]</code></li></ul><h6 id="Docker安装mongoDB"><a href="#Docker安装mongoDB" class="headerlink" title="Docker安装mongoDB"></a>Docker安装mongoDB</h6><ul><li>查询mongoDB镜像：<code>docker search mongo</code></li><li>拉取mongoDB镜像：<code>docker pull mongo</code></li><li>创建mongoDB容器：<code>docker run --name mymongo -p 27017:27017 -v /data/db:/data/db -d mongo --auth</code></li><li>进入mongo容器：<code>docker exec -it mymongo mongo admin</code></li><li>创建管理员账号：<code>db.createUser({ user: &#39;&lt;USER&gt;&#39;, pwd: &#39;&lt;PASSWORD&gt;&#39;, roles: [ { role: &#39;userAdminAnyDatabase&#39;, db: &#39;admin&#39; } ]})</code></li><li>退出mongo容器，以校验方式进入：<code>docker exec -it &lt;YOUR-NAME&gt; mongo -u &lt;USER&gt; -p &lt;PASSWORD&gt; --authenticationDatabase admin</code></li></ul><p><a href="https://brickyang.github.io/2017/03/15/%E5%88%A9%E7%94%A8-Docker-%E8%BF%90%E8%A1%8C-MongoDB/" target="_blank" rel="noopener">参考链接</a></p><p>Docker安装redis</p><ul><li>查询redis镜像：<code>docker search redis</code></li><li>拉取redis镜像：<code>docker pull redis</code></li><li>创建redis容器并运行：<code>docker run -d --name myredis -p 6379:6379 redis --requirepass &quot;mypassword&quot;</code></li><li>进入redis容器中并执行redis-cli：<code>docker exec -it b98b0c0e3797 redis-cli -a &quot;jian031018&quot;</code></li></ul><p>Docker安装sqlserver</p><ul><li><h3 id="Docker图形化管理"><a href="#Docker图形化管理" class="headerlink" title="Docker图形化管理"></a>Docker图形化管理</h3></li><li><p>配置portainer目录：<code>docker volume create portainer_data</code></p></li><li>拉取Docker镜像：<code>docker pull portainer/portainer</code></li><li>安装portainer容器：<code>docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer</code></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;最近因为安装sqlserver时涉及到Docker，所以希望能够了解Docker是如何虚拟化物理资源的，提高自己对运维这块的了解&lt;/p&gt;
-&lt;
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://jianjustin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>ECMAScript-Introduction</title>
-    <link href="https://jianjustin.github.io/2018/11/21/ECMAScript-Introduction/"/>
-    <id>https://jianjustin.github.io/2018/11/21/ECMAScript-Introduction/</id>
-    <published>2018-11-20T16:00:00.000Z</published>
-    <updated>2019-01-24T05:33:39.726Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>该文章主要作为一个导读，对javaScript的学习知识点，ES6主要特性以及一些常用方式做大致了解;同时可以防止后续编码时忘记</p><h3 id="内容清单"><a href="#内容清单" class="headerlink" title="内容清单"></a>内容清单</h3><ul><li style="list-style: none"><input type="checkbox"> ECMAScript语法特性<ul><li style="list-style: none"><input type="checkbox"> javaScript运行机制</li></ul></li><li style="list-style: none"><input type="checkbox"> ECMAScript6特性</li><li style="list-style: none"><input type="checkbox"> CommonJS规范</li><li style="list-style: none"><input type="checkbox"> AMD规范</li><li style="list-style: none"><input type="checkbox"> CMD规范</li><li style="list-style: none"><input type="checkbox"> Node服务端编程</li><li style="list-style: none"><input type="checkbox"> 源码阅读列表<ul><li style="list-style: none"><input type="checkbox"> Dojo</li><li style="list-style: none"><input type="checkbox"> SeaJS</li><li style="list-style: none"><input type="checkbox"> base.js</li><li style="list-style: none"><input type="checkbox"> jsoo</li><li style="list-style: none"><input type="checkbox"> jquery</li><li style="list-style: none"><input type="checkbox"> vue</li><li style="list-style: none"><input type="checkbox"> Gatsby.js</li></ul></li><li style="list-style: none"><input type="checkbox"> 书籍<ul><li style="list-style: none"><input type="checkbox"> 基于MVC的javaScript富应用开发</li><li style="list-style: none"><input type="checkbox"> javaScript语言精粹</li></ul></li></ul><h3 id="JavaScript特性"><a href="#JavaScript特性" class="headerlink" title="JavaScript特性"></a>JavaScript特性</h3><blockquote><p>有人会问，为什么我要针对javaScript做一系列文章去描述它呢？原因有两个，一个是github关于javaScript的仓库越来越多了，说明了javaScript的蓬勃发展，虽然可能是ECMAScript和node所带来的；第二个则是因为javaScript的起源是脚本语言，这就奠定了它做出一点东西会比较快的基础</p></blockquote><p><img src="../assets/img/picture/Githut语言图.png" alt="Githut语言图"></p><h5 id="JavaScript数据类型"><a href="#JavaScript数据类型" class="headerlink" title="JavaScript数据类型"></a>JavaScript数据类型</h5><blockquote><p>编程语言都具有内建的数据结构，但各种编程语言的数据结构常有不同之处,JavaScript 是一种<strong>弱类型</strong>或者说<strong>动态</strong>语言。这意味着你不用提前声明变量的类型，在程序运行过程中，类型会被自动确定.</p></blockquote><blockquote><p>本节主要通过<span style="color:red">原始类型</span>和<span style="color:red">原型对象</span>两个点，针对javaScript数据的一系列问题做一次详解，理解数据在javaScript内部的存储(<span style="color:red">前提是需要读者了解javascript基础的一些数据类型和高阶的数据类型</span>)：</p><ol><li>javaScript有哪些原始类型</li><li>原型继承与原型链</li><li>new 关键字的内部实现机制</li><li>值类型和引用类型的区别</li><li>== 与 ===, typeof 与 instanceof的区别</li><li>map, reduce, filter 等高阶函数</li><li>new 与构造函数, instanceof 与实例</li><li>Object.create 和 Object.assign</li><li>二进制, 十进制, 十六进制, 科学记数法</li></ol></blockquote><ul><li><p>javaScript有哪些原始类型</p><p>javaScript中共有6种原始类型：<code>string</code>，<code>number</code>，<code>boolean</code>，<code>null</code>，<code>undefined</code>，<code>symbol</code></p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> <span class="string">"abc"</span>; <span class="comment">//"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="built_in">String</span>(<span class="string">"abc"</span>); <span class="comment">//"string"</span></span><br><span class="line"><span class="keyword">typeof</span> <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"abc"</span>); <span class="comment">//"object"</span></span><br><span class="line"><span class="keyword">typeof</span> (<span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">"abc"</span>)).valueOf(); <span class="comment">//"string"</span></span><br></pre></td></tr></table></figure><p><span style="color:red"> <code>&quot;abc&quot;.length</code> 为什么会有返回值？</span></p><p>因为javaScript在运算过程中会发生原始类型和对象之间强制转换</p><p><span style="color:red"> 原始类型是否可添加属性进行访问？</span></p><p>不可行，在向原始类型手动添加属性时，会将原始类型强制转换为对象，但是因为并没有引用指向对象，这导致对象在创建后会被垃圾回收导致不可用。</p><p><a href="https://javascriptweblog.wordpress.com/2010/09/27/the-secret-life-of-javascript-primitives/" target="_blank" rel="noopener">参考链接</a></p></li><li><p>原型继承和原型链</p><p>当谈到继承时，JavaScript 只有一种结构：对象。每个实例对象都有一个私有属性指向它的原型对象（<strong>prototype</strong>）。该原型对象也有一个自己的原型对象，层层向上直到一个对象的原型对象为 <code>null</code>。同时对象可通过<code>Object.create</code>实现属性继承</p></li></ul><p>  prototype属性： 每一个函数都有一个 <code>prototype</code> 属性</p><p>  constructor属性：自定义构造函数，用于判断实例由哪个构造函数创建</p><p>  <strong>proto</strong>属性：指向实例的原型对象</p><ul><li>new 关键字的内部实现机制<ul><li>创建一个新对象；</li><li>将构造函数的作用域赋值给新对象；</li><li>执行构造函数中的代码；</li><li>返回新对象</li></ul></li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;&#125;; <span class="comment">// 创建一个空对象</span></span><br><span class="line">obj.__proto__ = <span class="keyword">constructor</span>.prototype; // 添加__proto__属性，并指向构造函数的 prototype 属性。</span><br><span class="line"><span class="keyword">constructor</span>.call(this); // 绑定this</span><br><span class="line">return obj;</span><br></pre></td></tr></table></figure><ul><li><p>Object.create 和 Object.assign</p><p>Object.create :使用现有的对象来提供新创建的对象的<strong>proto</strong></p><p>Object.assign:所有可枚举属性的值从一个或多个源对象复制到目标对象</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;该文章主要作为一个导读，对javaScript的学习知识点，ES6主要特性以及一些常用方式做大致了解;同时可以防止后续编码时忘记&lt;/p&gt;
-&lt;
-      
-    
-    </summary>
-    
-      <category term="技术" scheme="https://jianjustin.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>电影心灵捕手小记</title>
-    <link href="https://jianjustin.github.io/2018/11/12/%E7%94%B5%E5%BD%B1%E5%BF%83%E7%81%B5%E6%8D%95%E6%89%8B%E5%B0%8F%E8%AE%B0/"/>
-    <id>https://jianjustin.github.io/2018/11/12/电影心灵捕手小记/</id>
-    <published>2018-11-11T16:00:00.000Z</published>
-    <updated>2019-01-24T05:33:39.737Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="故事简介"><a href="#故事简介" class="headerlink" title="故事简介"></a>故事简介</h3><p>故事描述一个少年时受到父母虐待而产生心理问题的天才青年威尔，他虽没上过大学，但他却有着过人的天赋，并且狂热于读书。在他做麻省理工学院的清洁工时解开了一位著名数学教授公开给学生出的难题。在一次斗殴后威尔被法庭宣判送进少年观护所。数学教授向法官求情并保释了威尔，希望能和他一起研究数学，可是威尔却不愿意与他合作，他为威尔找了心理医生做心理辅导，但这些心理医生均被智商极高的威尔羞辱，不愿再为威尔做心理辅导。教授无奈请大学同学及好友西恩·麦克奎尔帮忙，而西恩终于消除了威尔的心理痼疾，在朋友查克的鼓励劝告下，威尔最终找到了自我和爱情</p><h3 id="什么是良好的友谊？"><a href="#什么是良好的友谊？" class="headerlink" title="什么是良好的友谊？"></a>什么是良好的友谊？</h3><p>“我每天到你家接你，我们出去喝酒笑闹，那很棒。但我一天中最棒的时刻，只有十秒，从停车到你家门口，每次我敲门，都希望你不在了，不说再见，什么都没有，你就走了，我懂得不多，但我很清楚。”</p><p>这是查克在建筑工地上对威尔说的；当威尔表示希望和查克一直当邻居时，查克则表示不希望威尔握着彩票却不去开奖。</p><p>这是朋友间的对话，却让我反思朋友间应该是怎样的状态呢？</p><p>其实在生活中，我们和大部分朋友并不会经常见面，而是和几个生活状态相差无几的朋友接触的比较多。而在和朋友的接触中，会有两个问题需要我们去思考，一是我们应该怎样在相处中保持自我的完整，即给予自己较完整的思考空间；二则是如何看待朋友对自身的影响，因为近朱者赤，近墨者黑；我们不能保证自我的隔离性，所以我们不能仅仅在择友上去判断，我们更应该学会去观察每个人的闪光店。</p><p>电影最后：查克还是去威尔家敲门，却发现好友已经离去了，先是有些小伤感，接着便带着欣喜离去。获取他欣慰于威尔的决定。</p><h3 id="我们在追求什么？"><a href="#我们在追求什么？" class="headerlink" title="我们在追求什么？"></a>我们在追求什么？</h3><p>电影中有一个场景“查克每天早晨开着车来到威尔门前，敲敲门；然后两人十分默契，开车离去。”，我不是驻足于好友间的默契，而是惊讶于威尔生活的不羁</p><p>我们在生活，拼命读书，拼命工作；然后结婚生子，然后周而复始；可是，我们并不知道我们真正想要的是什么，所以我们跟随大众是最简单的，也是最不会被当作异类的，我们呼喊着自己混的很好，想象着自己是一个成功人士；</p><p>这部电影中还有一个对立，就是教授和罗宾·威廉斯对待戴蒙的态度上。教授在意的只是一个天才和他可以取得的成就，而罗宾在意的是那个叫威尔的年轻人</p><p>这里面抛出一个点：我们生命的价值是否等同于成就？我个人觉得是NO，如果这样，那社会上乞丐,残疾人是否应该消失呢？当然不应该！我们每个人都是一个个体，从我们有意识开始，我们就在探索世界，探索自我；探索个体的价值和快乐所在；我们不应该通过普世价值去衡量一个人的价值，而是应该去追求自我的快乐，即使那是无用的快乐</p><p>这也是为什么西方教育区别于国内教育，并不会通过一刀切的方式去划分等级，而是通过“你经历过什么，你获得了什么”的方式去告诉青年：不仅仅知道什么非常重要，同样的经历什么也是一样重要的</p><p>少年，当抛弃前方的名利，当你追随我心时，你又会走向何处呢？</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;故事简介&quot;&gt;&lt;a href=&quot;#故事简介&quot; class=&quot;headerlink&quot; title=&quot;故事简介&quot;&gt;&lt;/a&gt;故事简介&lt;/h3&gt;&lt;p&gt;故事描述一个少年时受到父母虐待而产生心理问题的天才青年威尔，他虽没上过大学，但他却有着过人的天赋，并且狂热于读书。在他做麻省
-      
-    
-    </summary>
-    
-      <category term="随想" scheme="https://jianjustin.github.io/categories/%E9%9A%8F%E6%83%B3/"/>
     
     
   </entry>

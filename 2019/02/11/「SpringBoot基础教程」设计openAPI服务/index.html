@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="EN">
+  <head><meta name="generator" content="Hexo 3.8.0">
+    
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+<meta name="theme-color" content="#f8f5ec">
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+
+  <meta name="description" content="「SpringBoot基础教程」设计openAPI服务">
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="JIAN">
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.jpg?v=2.10.2">
+
+
+
+<link rel="canonical" href="https://jianjustin.github.io/2019/02/11/「SpringBoot基础教程」设计openAPI服务/">
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css">
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/lib/nprogress/nprogress.min.css">
+
+
+
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.10.2">
+
+
+
+  
+
+
+
+  <script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+
+
+
+
+
+
+
+<script>
+  window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":true};
+</script>
+
+    <title> 「SpringBoot基础教程」设计openAPI服务 - JIAN </title>
+  </head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">JIAN</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    
+      <a href="/">
+        <li class="mobile-menu-item">
+          
+          
+            首页
+          
+        </li>
+      </a>
+    
+      <a href="/about">
+        <li class="mobile-menu-item">
+          
+          
+            关于
+          
+        </li>
+      </a>
+    
+  </ul>
+</nav>
+
+    <div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">JIAN</a>
+</div>
+
+<nav class="site-navbar">
+  
+    <ul id="menu" class="menu">
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/">
+            
+            
+              首页
+            
+          </a>
+        </li>
+      
+        <li class="menu-item">
+          <a class="menu-item-link" href="/about">
+            
+            
+              关于
+            
+          </a>
+        </li>
+      
+    </ul>
+  
+</nav>
+
+      </header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content">
+            
+  
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">
+        
+          「SpringBoot基础教程」设计openAPI服务
+        
+      </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2019-02-11
+        </span>
+        
+          <span class="post-category">
+            
+              <a href="/categories/spring/">spring</a>
+            
+          </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#openAPI标准"><span class="toc-text">openAPI标准</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是swagger"><span class="toc-text">什么是swagger</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SpringBoot项目添加Springfox支持"><span class="toc-text">SpringBoot项目添加Springfox支持</span></a></li></ol>
+    </div>
+  </div>
+
+
+
+    <div class="post-content">
+      
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>在前后端分离开发过程中，我们肯定会涉及到API；后端需要通过openAPI标准化数据服务内容，而前端则需要通过openAPI了解服务格式和交互内容，从而提高应用开发的速度；同时在第三方数据源接入中，通过openAPI可以标准化数据的传输</p>
+<h4 id="openAPI标准"><a href="#openAPI标准" class="headerlink" title="openAPI标准"></a>openAPI标准</h4><p>OpenAPI Initiative（OAI）由一个具有前瞻性的行业专家组成的联盟创建,他们认识到标准化REST API如何描述的巨大价值;作为Linux Foundation下的开放式治理结构，OAI专注于创建，发展和推广供应商中立的描述格式;SmartBear Software将Swagger规范直接捐赠给OAI，作为开放规范的基础</p>
+<ul>
+<li><p>openAPI描述API包括：</p>
+<ul>
+<li>有关API的一般信息</li>
+<li>可用路径（/资源）</li>
+<li>每条路径上的可用操作（获取/资源）</li>
+<li>每个操作的输入/输出</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>查询openAPI规范文件</p>
+<ul>
+<li><a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md" target="_blank" rel="noopener">参考文档</a></li>
+<li><a href="http://apihandyman.io" target="_blank" rel="noopener">参考教程</a></li>
+<li><a href="https://github.com/DragorWW/awesome-swagger" target="_blank" rel="noopener">资源汇总</a></li>
+<li><a href="https://github.com/OAI/OpenAPI-Specification" target="_blank" rel="noopener">openAPI规范</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="什么是swagger"><a href="#什么是swagger" class="headerlink" title="什么是swagger"></a>什么是swagger</h4><blockquote>
+<p>可能大家在平时的开发中更多的是：使用swagger实现restfulAPI，那么什么是swagger呢？</p>
+</blockquote>
+<p>Swagger 是一款目前世界最流行的API管理工具，是一个规范和完整的框架，用于生成、描述、调用和可视化 RESTful 风格的 Web 服务。文档提供了一个方法，我们可以用指定的 JSON 或者 YAML 摘要来描述你的 API<a href="https://swagger.io" target="_blank" rel="noopener">官网</a></p>
+<ul>
+<li><p>swagger项目组主要包括：</p>
+<ul>
+<li>swagger-js</li>
+<li>swagger-ui</li>
+<li>swagger-tools</li>
+<li>swagger-editor</li>
+<li>swagger-core</li>
+<li>swagger-parser</li>
+<li>swagger-codegen</li>
+<li>swagger-node</li>
+<li>validator-badge</li>
+</ul>
+</li>
+<li><p>什么是Springfox</p>
+<blockquote>
+<p>Springfox项目是用于spring系列项目自动生成JSON API的机器和人类可读规范  </p>
+</blockquote>
+<ul>
+<li><a href="https://springfox.github.io/springfox/docs" target="_blank" rel="noopener">Springfox文档</a></li>
+<li><a href="https://github.com/springfox/springfox-demos" target="_blank" rel="noopener">Springfox demos</a></li>
+<li><a href="https://springfox.github.io/springfox/docs/snapshot/#answers-to-common-questions-and-problems" target="_blank" rel="noopener">springfox和swagger的关系</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="SpringBoot项目添加Springfox支持"><a href="#SpringBoot项目添加Springfox支持" class="headerlink" title="SpringBoot项目添加Springfox支持"></a>SpringBoot项目添加Springfox支持</h4><ul>
+<li><p>添加springfox maven配置</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.9.2<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Springfox基本配置</p>
+<ul>
+<li>启用swagger<code>@EnableSwagger2</code></li>
+<li>配置扫描包路径<code>@ComponentScan(basePackage = {})</code></li>
+<li><p>配置swagger文档信息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> ApiInfoBuilder()</span><br><span class="line">    .title(<span class="string">"openAPI服务"</span>)</span><br><span class="line">    .version(<span class="string">"版本号:"</span>+swaggerVersion)</span><br><span class="line">    .license(<span class="string">"MIT License"</span>)</span><br><span class="line">    .build();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置API扫描路径</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Docket <span class="title">memberApi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2)</span><br><span class="line">    .groupName(<span class="string">"member"</span>)<span class="comment">//设置API分组</span></span><br><span class="line">    .select()</span><br><span class="line">    .paths(PathSelectors.ant(<span class="string">"/member/**"</span>))<span class="comment">//设置URL过滤</span></span><br><span class="line">    .build()</span><br><span class="line">    .apiInfo(apiInfo())</span><br><span class="line">    .enable(swaggerSwitch);<span class="comment">//设置是否启用swagger</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value</span>(<span class="string">"$&#123;swagger.switch&#125;"</span>)</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">boolean</span> swaggerSwitch;<span class="comment">//需要在application.properties中设置</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>Springfox开放API文档配置</p>
+<ul>
+<li><p>实现步骤：</p>
+<ul>
+<li><p>controllor添加API注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@Api</span>(tags=<span class="string">"member.user"</span>,value=<span class="string">"用户模块"</span>)</span><br><span class="line"><span class="meta">@RequestMapping</span>(value = <span class="string">"/member/user/"</span>,produces = &#123; <span class="string">"application/json"</span> &#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>处理方法添加API注解</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation</span>(value = <span class="string">"新增用户"</span>)</span><br><span class="line"><span class="meta">@RequestMapping</span>(method = RequestMethod.POST)</span><br><span class="line"><span class="keyword">public</span> ResponseEntity&lt;?&gt; save(</span><br><span class="line">    <span class="meta">@ApiParam</span>(value = <span class="string">"实体数据"</span>, required = <span class="keyword">true</span>) <span class="meta">@RequestBody</span> MemberUser memberUser) &#123;</span><br><span class="line">  memberUserService.save(memberUser);</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> ResponseEntity&lt;MemberUser&gt;(HttpStatus.OK);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>常用API注解</p>
+<ul>
+<li><code>@ApiParam#value()</code></li>
+<li><code>@ApiImplicitParam#value()</code></li>
+<li><code>@ApiModelProperty#value()</code></li>
+<li><code>@ApiOperation#value()</code></li>
+<li><code>@ApiOperation#notes()</code></li>
+<li><code>@RequestParam#defaultValue()</code></li>
+<li><code>@RequestHeader#defaultValue()</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Springfox安全配置</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+      
+
+
+
+      
+      
+    
+
+    
+      <footer class="post-footer">
+        
+        
+        
+  <nav class="post-nav">
+    
+      <a class="prev" href="/2019/02/14/「SpringBoot基础教程」资源开放授权/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text nav-default">「SpringBoot基础教程」资源开放授权</span>
+        <span class="prev-text nav-mobile">上一篇</span>
+      </a>
+    
+    
+      <a class="next" href="/2019/02/11/「SpringBoot基础教程」数据持久化/">
+        <span class="next-text nav-default">「SpringBoot基础教程」数据持久化</span>
+        <span class="prev-text nav-mobile">下一篇</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    
+  </nav>
+
+
+      </footer>
+    
+
+  </article>
+
+
+          </div>
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+      </main>
+
+      <footer id="footer" class="footer">
+
+  <div class="social-links">
+    
+      
+        
+          <a href="mailto:janine.jian.chen@email.com" class="iconfont icon-email" title="email"></a>
+        
+      
+    
+      
+        
+          <a href="https://github.com/jianjustin" class="iconfont icon-github" title="github"></a>
+        
+      
+    
+
+    
+      <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    
+  </div>
+
+
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://hexo.io/">Hexo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    
+    &copy; 
+     
+      2016 - 
+    
+    2019
+
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">jianjustin</span>
+  </span>
+</div>
+
+      </footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div>
+
+    
+  
+  
+
+  
+
+
+
+    
+  
+
+
+
+  
+  
+
+
+
+
+
+  
+    <script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/pjax/jquery.pjax.min.js"></script>
+  
+
+  
+    <script type="text/javascript" src="/lib/nprogress/nprogress.min.js"></script>
+  
+
+
+    <script type="text/javascript" src="/js/src/even.js?v=2.10.2"></script>
+
+  </body>
+</html>

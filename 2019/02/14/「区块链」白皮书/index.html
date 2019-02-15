@@ -17,7 +17,7 @@
 
 
 
-  <meta name="description" content="如何管理技术书籍">
+  <meta name="description" content="「区块链」比特币白皮书">
 
 
 
@@ -40,7 +40,7 @@
 
 
 
-<link rel="canonical" href="https://jianjustin.github.io/2019/02/10/如何管理技术书籍/">
+<link rel="canonical" href="https://jianjustin.github.io/2019/02/14/「区块链」白皮书/">
 
 
 
@@ -88,7 +88,7 @@
   window.config = {"leancloud":"","toc":true,"fancybox":true,"pjax":true};
 </script>
 
-    <title> 如何管理技术书籍 - JIAN </title>
+    <title> 「区块链」比特币白皮书 - JIAN </title>
   </head>
 
   <body><div id="mobile-navbar" class="mobile-navbar">
@@ -168,18 +168,18 @@
     <header class="post-header">
       <h1 class="post-title">
         
-          如何管理技术书籍
+          「区块链」比特币白皮书
         
       </h1>
 
       <div class="post-meta">
         <span class="post-time">
-          2019-02-10
+          2019-02-14
         </span>
         
           <span class="post-category">
             
-              <a href="/categories/工具/">工具</a>
+              <a href="/categories/区块链/">区块链</a>
             
           </span>
         
@@ -189,27 +189,23 @@
 
     
     
+  <div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+      <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li></ol>
+    </div>
+  </div>
+
 
 
     <div class="post-content">
       
-        <p>为什么我会讲述这个话题呢？</p>
-<p>主要因为最近身边有许多人在学习过程中，总是喜欢问我XX书有吗？可以帮忙找一下什么资源吗？说真的，这种忙帮一次就算了，一次接一次就令我心烦咯～</p>
-<p>刚好以前维护了一个相关的小项目，索性就以这个项目为主要内容讲解一下如何去管理我们的资源呢？毕竟程序员这个群体花在找资源的时间也不会少</p>
-<p><strong>❶使用技术</strong></p>
-<p><code>GitHub + git-lfs</code></p>
+        <p><strong>比特币：点对点的电子数字货币</strong></p>
+<p>文章主要通过阅读比特币白皮书去翻译书中内容以及做一系列理解</p>
 <blockquote>
-<p>简单介绍一下<code>git-lfs</code>,其全称为<code>Git Large File Storage</code>,推出的主要目的就是针对大文件的储存；大致原理就是将大型文件引导到文件服务器中，然后通过索引的方式将项目和文件进行关联，减少Git项目的size</p>
+<p>抽象地来说，一个点对点的电子数字货币允许线上交易从一个账户直接发送到另一个账户而不需要经过金融机构。数字签名提供了解决方案的一部分，但如果仍然需要受信任的第三方来防止双重支付，则主要的好处就会丢失。我们提出一种解决双重支付的方案—点对点网络。时间戳将线上交易散列到基于hash的工作证明链中。最长的链不仅仅是交易的证明，也说明来源于最大的矿池。当大部分算力由不协作的节点提供，就会产生最长链和算力攻击者。网络本身需要最小的结构。消息是在尽力而为的基础上广播的，节点可以随意离开并重新加入网络，接受最长的工作证明链作为它们消失时发生的事情的证据</p>
 </blockquote>
-<p><strong>❷如何使用git-lfs</strong></p>
-<ol>
-<li>安装git-lfs命令扩展</li>
-<li>添加git-lfs管理文件<code>git lfs track“* .psd”</code></li>
-<li>添加配置信息到Git仓库中<code>git add .gitattributes</code></li>
-</ol>
-<p><strong>❸如何参与到维护项目</strong></p>
-<p>项目地址：<a href="https://github.com/jianjustin/books" target="_blank" rel="noopener">https://github.com/jianjustin/books</a><br>邮箱地址：<a href="mailto:janine.jian.chen@gmail.com" target="_blank" rel="noopener">janine.jian.chen@gmail.com</a></p>
-<p>大家可以通过提交<code>issues</code>的方式把希望看到的书籍名称提出来，我会尽全力寻找并上传上去；当然，如果你希望成为项目维护者之一，也可以通过发邮件的方式进行说明，我会尽快回复</p>
+<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>Commerce on the Internet has come to rely almost exclusively on financial institutions serving as trusted third parties to process electronic payments. While the system works well enough for most transactions, it still suffers from the inherent weaknesses of the trust based model. Completely non-reversible transactions are not really possible, since financial institutions cannot avoid mediating disputes. The cost of mediation increases transaction costs, limiting the minimum practical transaction size and cutting off the possibility for small casual transactions, and there is a broader cost in the loss of ability to make non-reversible payments for non- reversible services. With the possibility of reversal, the need for trust spreads. Merchants must be wary of their customers, hassling them for more information than they would otherwise need. A certain percentage of fraud is accepted as unavoidable. These costs and payment uncertainties can be avoided in person by using physical currency, but no mechanism exists to make payments over a communications channel without a trusted party.<br>What is needed is an electronic payment system based on cryptographic proof instead of trust, allowing any two willing parties to transact directly with each other without the need for a trusted third party. Transactions that are computationally impractical to reverse would protect sellers from fraud, and routine escrow mechanisms could easily be implemented to protect buyers. In this paper, we propose a solution to the double-spending problem using a peer-to-peer distributed timestamp server to generate computational proof of the chronological order of transactions. The system is secure as long as honest nodes collectively control more CPU power than any cooperating group of attacker nodes.</p>
 
       
     </div>
@@ -231,15 +227,9 @@
         
   <nav class="post-nav">
     
-      <a class="prev" href="/2019/02/11/「spring文档阅读」Spring核心：依赖注入和面向切面编程/">
-        <i class="iconfont icon-left"></i>
-        <span class="prev-text nav-default">「Spring文档阅读」Spring核心：依赖注入和面向切面编程</span>
-        <span class="prev-text nav-mobile">上一篇</span>
-      </a>
     
-    
-      <a class="next" href="/2019/02/01/「Spring文档阅读」导论/">
-        <span class="next-text nav-default">「Spring文档阅读」导论</span>
+      <a class="next" href="/2019/02/14/「SpringBoot基础教程」资源开放授权/">
+        <span class="next-text nav-default">「SpringBoot基础教程」资源开放授权</span>
         <span class="prev-text nav-mobile">下一篇</span>
         <i class="iconfont icon-right"></i>
       </a>
