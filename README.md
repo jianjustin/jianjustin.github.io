@@ -6,4 +6,4 @@
 
 目前运营个人博客，公众号「**极北之地**」以及一些个人开源项目
 
-如果你想要联系我，邮箱「**janine.jian.chen@gmail.com**」
+如果你想要联系我，邮箱「**jerry.jian.chen@outlook.com**」
