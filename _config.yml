@@ -1,4 +1,4 @@
-title: Jian's Blog
+title: 极北之地
 subtitle: ''
 description: ''
 keywords:
@@ -85,9 +85,11 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: fexo
+theme: cactus
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/jianjustin/jianjustin.github.io # https://bitbucket.org/JohnSmith/johnsmith.bitbucket.io
+  branch: master
