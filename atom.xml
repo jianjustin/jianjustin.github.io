@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>极北之地</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://jianjustin.github.io/"/>
+  <updated>2020-04-29T07:33:24.283Z</updated>
+  <id>http://jianjustin.github.io/</id>
+  
+  <author>
+    <name>jianjustin</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库原理01｜导论</title>
+    <link href="http://jianjustin.github.io/2020/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%8601%EF%BD%9C%E5%AF%BC%E8%AE%BA/"/>
+    <id>http://jianjustin.github.io/2020/03/01/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%8601%EF%BD%9C%E5%AF%BC%E8%AE%BA/</id>
+    <published>2020-03-01T07:13:37.000Z</published>
+    <updated>2020-04-29T07:33:24.283Z</updated>
+    
+    <content type="html"><![CDATA[<p>💡 本小节主要对数据库系统做简要描述，了解数据库相关的基本概念，欢迎各位读者指正；如果想要了解更多关于数据库的内容，可以翻阅<a href="《数据库系统实现》" title="相关书籍">书籍</a></p><p><strong>1. 什么是 DBMS？</strong></p><ul><li>数据库管理系统由一个互相关联的数据集合和一组用以访问这些数据的程序组成。</li></ul><p><strong>2. 如何操纵数据库？</strong></p><p><code>数据库系统提供数据定义语言来定义数据库模式，以及数据操纵语言来表达数据库的更新。</code></p><ul><li>数据定义语言 DDL：通过 DDL 编译 DDL 命令并使执行引擎执行修改元数据</li><li>数据操纵语言 DML<ul><li>查询响应：由查询编译器对查询进行分析和优化，并由执行引擎发起请求完成数据查询。</li><li>事务处理：完成若干个动作完成的原子操作，事务处理器包括并发控制管理器和日志恢复管理器</li></ul></li></ul><p><strong>3. 什么是事务？</strong></p><p><code>事务指的是构成单一逻辑工作单元的操作集合，事务要么全部完成，要么全部回滚；事务具有ACID特性。</code></p><ul><li>原子性：一个事务对状态的改变是基元的</li><li>一致性：事务应确保数据库的状态从一个一致状态转变为另一个一致状态，保证完整性约束</li><li>隔离性：多个事务并发执行时，一个事务的执行不应影响其他事务的执行</li><li>持久性：一个事务一旦提交，他对数据库的修改应该永久保存在数据库中</li></ul><p><strong>4. 事务处理器的结构</strong></p><ul><li>日志记录：能够通过数据库日志将数据库恢复到某个一致状态</li><li>并发控制：并发控制管理器能够使得多个事务按照指定顺序执行</li><li>死锁解决：解决多个事务竞争资源产生的思索问题</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;💡 本小节主要对数据库系统做简要描述，了解数据库相关的基本概念，欢迎各位读者指正；如果想要了解更多关于数据库的内容，可以翻阅&lt;a href=&quot;《数据库系统实现》&quot; title=&quot;相关书籍&quot;&gt;书籍&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 什么是 DBMS？&lt;/stron
+      
+    
+    </summary>
+    
+    
+    
+      <category term="数据库原理" scheme="http://jianjustin.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据库原理02｜索引</title>
+    <link href="http://jianjustin.github.io/2020/02/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%8602%EF%BD%9C%E7%B4%A2%E5%BC%95/"/>
+    <id>http://jianjustin.github.io/2020/02/16/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%8602%EF%BD%9C%E7%B4%A2%E5%BC%95/</id>
+    <published>2020-02-16T09:07:37.000Z</published>
+    <updated>2020-04-29T12:29:22.668Z</updated>
+    
+    <content type="html"><![CDATA[<p>索引是关系数据库中对某一列或多个列的值进行预排序的数据结构；通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就大大加快了查询速度。</p><h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p><strong>聚集索引和辅助索引</strong></p><ul><li>聚集索引是指数据库表行中数据的物理顺序与搜索码索引顺序相同；一个表只能有一个聚集索引，因为一个表的物理顺序只有一种情况</li><li>辅助索引则是索引项指向一个或多个匹配数据记录，并且辅助索引必须是稠密索引；辅助索引能偶提高非主码的查询效率</li></ul><p><strong>稠密索引和稀疏索引</strong></p><ul><li>稠密索引：每个数据记录都有索引项指向，而在稠密非聚集索引中索引项会指向一条或多条数据记录</li><li>稀疏索引：索引项指向部分数据记录，并且只有聚集索引才能使用稀疏索引</li></ul><p><strong>什么是覆盖索引？</strong></p><ul><li>如果数据库索引包括被查询字段的值，则被称为覆盖索引；通过这种方式能够减少数据访问量从而提高查询效率，而不需要进行回表操作。</li></ul><p><strong>联合索引</strong></p><ul><li>两列或多列上的索引被成为联合索引，并且联合索引符合最左匹配原则；所以我们通常将使用最频繁的字段放在最左侧。</li></ul><p><strong>延迟关联</strong></p><ul><li>对于延迟关联这一SQL优化方式，比较常见是排序+分页查询，特别是起始记录比较大的时候；这时候可以先通过覆盖索引返回需要的主键，然后再通过索引获取对应的表数据。</li></ul><h2 id="Explain查询优化"><a href="#Explain查询优化" class="headerlink" title="Explain查询优化"></a>Explain查询优化</h2><p>通过Explain语句能够查询SQL语句的执行计划，了解数据库是如何处理SQL的。</p><p><strong>Explain参数说明</strong></p><ul><li>id：查询顺序</li><li>select_type：查询类型</li><li>table：查询目标表</li><li>type：访问类型</li><li>possible_keys：查询可能使用的索引</li><li>key：查询实际使用索引</li><li>key_len：索引字段的最可能长度</li><li>ref：显示索引的哪一列或常量被用于查找索引列上的值</li><li>rows：受影响行数</li><li>Extra：其他信息</li></ul><p><strong>select_type字段取值说明</strong></p><ul><li><p>SIMPLLE：简单查询，该查询不包含 UNION 或子查询</p></li><li><p>PRIMARY：如果查询包含UNION 或子查询，则最外层的查询被标识为PRIMARY</p></li><li><p>UNION：表示此查询是 UNION 中的第二个或者随后的查询</p></li><li><p>DEPENDENT：UNION 满足 UNION 中的第二个或者随后的查询，其次取决于外面的查询</p></li><li><p>UNION RESULT：UNION 的结果</p></li><li><p>SUBQUERY：子查询中的第一个select语句(该子查询不在from子句中)</p></li><li><p>DEPENDENT SUBQUERY：子查询中的 第一个 select，同时取决于外面的查询</p></li><li><p>DERIVED：包含在from子句中子查询(也称为派生表)</p></li><li><p>UNCACHEABLE SUBQUERY：满足是子查询中的第一个 select 语句，同时意味着 select 中的某些特性阻止结果被缓存于一个 Item_cache 中</p></li><li><p>UNCACHEABLE UNION：满足此查询是 UNION 中的第二个或者随后的查询，同时意味着 select 中的某些特性阻止结果被缓存于一个 Item_cache 中</p></li></ul><p><strong>type字段取值说明</strong></p><ul><li><p>ALL：全表扫描，这个类型是性能最差的查询之一。通常来说，我们的查询不应该出现 ALL 类型，因为这样的查询，在数据量最大的情况下，对数据库的性能是巨大的灾难。</p></li><li><p>index：全索引扫描，和 ALL 类型类似，只不过 ALL 类型是全表扫描，而 index 类型是扫描全部的索引，主要优点是避免了排序，但是开销仍然非常大。如果在 Extra 列看到 Using index，说明正在使用覆盖索引，只扫描索引的数据，它比按索引次序全表扫描的开销要少很多。</p></li><li><p>range：范围扫描，就是一个有限制的索引扫描，它开始于索引里的某一点，返回匹配这个值域的行。这个类型通常出现在 =、&lt;&gt;、&gt;、&gt;=、&lt;、&lt;=、IS NULL、&lt;=&gt;、BETWEEN、IN() 的操作中，key 列显示使用了哪个索引，当 type 为该值时，则输出的 ref 列为 NULL，并且 key_len 列是此次查询中使用到的索引最长的那个。</p></li><li><p>ref：一种索引访问，也称索引查找，它返回所有匹配某个单个值的行。此类型通常出现在多表的 join 查询, 针对于非唯一或非主键索引, 或者是使用了最左前缀规则索引的查询。</p></li><li><p>eq_ref：使用这种索引查找，最多只返回一条符合条件的记录。在使用唯一性索引或主键查找时会出现该值，非常高效。</p></li><li><p>const、system：该表至多有一个匹配行，在查询开始时读取，或者该表是系统表，只有一行匹配。其中 const 用于在和 primary key 或 unique 索引中有固定值比较的情形。</p></li><li><p>NULL：在执行阶段不需要访问表。</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;索引是关系数据库中对某一列或多个列的值进行预排序的数据结构；通过使用索引，可以让数据库系统不必扫描整个表，而是直接定位到符合条件的记录，这样就大大加快了查询速度。&lt;/p&gt;
+&lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; ti
+      
+    
+    </summary>
+    
+    
+    
+      <category term="数据库原理" scheme="http://jianjustin.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>事务管理｜数据库原理</title>
+    <link href="http://jianjustin.github.io/2020/02/15/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/"/>
+    <id>http://jianjustin.github.io/2020/02/15/%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86%EF%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/</id>
+    <published>2020-02-15T08:35:30.000Z</published>
+    <updated>2020-02-15T08:44:58.052Z</updated>
+    
+    <content type="html"><![CDATA[<p>事务指的是构成单一逻辑工作单元的操作集合，事务处理是被设计用来维持系统的完整性在一个已知的，一致的状态</p><p><strong>事务的ACID特性：</strong></p><ul><li><strong>原子性(Atomicity) :</strong> 一个事务对状态的改变是基元的</li><li><strong>一致性(Consistency)</strong> : 事务应确保数据库的状态从一个一致状态转变为另一个一致状态，保证完整性约束</li><li><strong>隔离性(Isolation) :</strong> 多个事务并发执行时，一个事务的执行不应影响其他事务的执行</li><li><strong>持久性(Durability) :</strong> 一个事务一旦提交，他对数据库的修改应该永久保存在数据库中</li></ul><h2 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h2><hr><ul><li><strong>Read Uncommitted(读取未提交内容)</strong><br>  这一隔离级别指的是“事务可以看到其他事务尚未提交的修改“，但可能会引发“<strong>脏读</strong>”现象</li><li><strong>Read Committed(读取提交内容)</strong><br>  这一隔离级别指的是“对选定对象的写锁一直保持到事务结束，但是读锁在操作完成后马上释放”，可能会引发“<strong>不可重复读</strong>”现象</li><li><strong>Repeatable Read(可重读)</strong><br>  这一隔离级别指的是“对选定对象的读锁和写锁一直保持到事务结束”，可能会引发“<strong>幻读</strong>”现象</li><li><strong>Serializable(可串行化)</strong><br>  这一隔离级别指的是“要求在选定对象上的读锁和写锁保持直到事务结束后才能释放”，并通过范围锁防止幻读现象的产生</li></ul><h3 id="不可重复读和幻读的区别"><a href="#不可重复读和幻读的区别" class="headerlink" title="不可重复读和幻读的区别"></a><strong>不可重复读和幻读的区别</strong></h3><p>不可重复读重点在于update和delete，而幻读的重点在于insert；</p><p>在可重读隔离级别中，事务A在读取数据的同时对数据进行加锁，使得其他事务无法修改该部分数据；但是依然可以insert数据；导致事务A会出现“幻读”的现象；</p><p>通过可串行化隔离级别能够解决“幻读”现象，但是同时会导致数据库性能的下降；而MySQL、ORACLE、PostgreSQL等成熟的数据库，出于性能考虑，都是使用了以乐观锁为理论基础的<strong>MVCC</strong>（多版本并发控制）来避免这两种问题。</p><h3 id="MVCC多版本并发控制-基于InnoDB实现讲解"><a href="#MVCC多版本并发控制-基于InnoDB实现讲解" class="headerlink" title="MVCC多版本并发控制(基于InnoDB实现讲解)"></a><strong>MVCC多版本并发控制(基于InnoDB实现讲解)</strong></h3><ul><li>在「读」数据方面，通过对数据行添加版本号，事务执行只能获取到当前版本及旧版本数据；通过这种方式而不需要对数据行加锁，简称<strong>快照读</strong>；</li><li>而在「写」数据方面，InnoDB则是通过行锁和间隙锁(GAP锁)实现Next-Key锁；GAP锁利用数据库B+树索引结构，对数据区间进行上锁，使得事务无法向该区间插入数据，解决了幻读的问题</li></ul><h2 id="数据库锁"><a href="#数据库锁" class="headerlink" title="数据库锁"></a>数据库锁</h2><hr><ul><li><p><strong>乐观锁</strong></p><p>  乐观锁假设多用户并发的事务在处理时不会彼此互相影响，在提交数据更新之前该数据是否被其他事务更改。  </p><ul><li><strong>读取</strong>：事务将数据读入缓存，这时系统会给事务分派一个时间戳</li><li><strong>校验</strong>：校验所读取的数据在读取之后又被其他事务修改，如产生冲突则事务被中断回滚，反之事务成功提交</li><li><strong>写入</strong>：通过校验阶段后，将更新的数据写入数据库</li></ul></li><li><p><strong>悲观锁</strong></p><p>  如果一个事务执行的操作读某行数据应用了锁，那只有当这个事务把锁释放，其他事务才能够执行与该锁冲突的操作。但是可能会产生<strong>死锁</strong>现象 </p><ul><li><strong>加锁</strong>：将锁加到需要操作的数据上，如果存在锁则进入等待队列</li><li><strong>读写</strong>：只想数据读写操作，并在操作完成后释放锁</li></ul></li></ul><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><hr><p><a href="https://tech.meituan.com/2014/08/20/innodb-lock.html" target="_blank" rel="noopener">Innodb中的事务隔离级别和锁的关系</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;事务指的是构成单一逻辑工作单元的操作集合，事务处理是被设计用来维持系统的完整性在一个已知的，一致的状态&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;事务的ACID特性：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;原子性(Atomicity) :&lt;/strong&gt; 一个事
+      
+    
+    </summary>
+    
+    
+    
+      <category term="数据库原理" scheme="http://jianjustin.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前言｜计算机网络基础</title>
+    <link href="http://jianjustin.github.io/2020/01/01/%E5%89%8D%E8%A8%80%EF%BD%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    <id>http://jianjustin.github.io/2020/01/01/%E5%89%8D%E8%A8%80%EF%BD%9C%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/</id>
+    <published>2020-01-01T11:32:44.000Z</published>
+    <updated>2020-02-16T12:15:29.887Z</updated>
+    
+    <content type="html"><![CDATA[<p>计算机网络是利用通信设备和线路将地理位置不同的、功能独立的多个计算机系统连接起来，以功能完善的网络软件实现网络的硬件、软件及资源共享和信息传递的系统。简单的说即连接两台或多台计算机进行通信的系统。</p><p><strong>计算机网络3个基本要素</strong></p><ul><li>至少有两个独立操作系统的计算机，且它们之间有相互共享某种资源的需求</li><li>两个独立的计算机之间必须有某种通信手段将其连接</li><li>网络中的各个独立的计算机之间要相互通信，必须制定相互可确认的规范标准或协议</li></ul><h2 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构"></a>计算机网络体系结构</h2><hr><ul><li><strong>ISO/OSI协议模型 ———</strong> 物理层｜数据链路层｜网络层｜传输层｜会话层｜表示层｜应用层</li><li><strong>TCP/IP协议模型 ———</strong> 网络接口层｜网际层｜运输层｜应用层</li><li><strong>五层协议模型</strong> ——— 物理层｜数据链路层｜网络层｜运输层｜应用层</li></ul><p><img src="/images/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" alt="计算机网络体系结构"></p><h2 id="协议层作用"><a href="#协议层作用" class="headerlink" title="协议层作用"></a>协议层作用</h2><hr><ul><li><strong>物理层：</strong>通过媒介传输比特,确定机械及电气规范（比特Bit）</li><li><strong>数据链路层</strong>：将比特组装成帧和点到点的传递（帧Frame）</li><li><strong>网络层</strong>：负责数据包从源到宿的传递和网际互连（包PackeT）</li><li><strong>传输层</strong>：提供端到端的可靠报文传递和错误恢复（段Segment）</li><li><strong>会话层</strong>：建立、管理和终止会话（会话协议数据单元SPDU）</li><li><strong>表示层</strong>：对数据进行翻译、加密和压缩（表示协议数据单元PPDU）</li><li><strong>应用层</strong>：允许访问OSI环境的手段（应用协议数据单元APDU）</li></ul><h2 id="协议层具体实现"><a href="#协议层具体实现" class="headerlink" title="协议层具体实现"></a>协议层具体实现</h2><hr><ul><li><strong>物理层</strong>：RJ45、CLOCK、IEEE802.3 （中继器，集线器，网关）</li><li><strong>数据链路</strong>：PPP、FR、HDLC、VLAN、MAC （网桥，交换机）</li><li><strong>网络层</strong>：IP、ICMP、ARP、RARP、OSPF、IPX、RIP、IGRP、 （路由器）</li><li><strong>传输层</strong>：TCP、UDP、SPX</li><li><strong>会话层</strong>：NFS、SQL、NETBIOS、RPC</li><li><strong>表示层</strong>：JPEG、MPEG、ASII</li><li><strong>应用层</strong>：FTP、DNS、Telnet、SMTP、HTTP、WWW、NFS</li></ul><p><img src="/images/%E5%8D%8F%E8%AE%AE%E5%B1%82%E5%AE%9E%E7%8E%B0.png" alt="协议层实现"></p><h2 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h2><hr><ul><li>《计算机网络—自顶向下法》</li><li>《TCP/IP详解卷一：协议》</li><li>《TCP/IP详解卷二：实现》</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;计算机网络是利用通信设备和线路将地理位置不同的、功能独立的多个计算机系统连接起来，以功能完善的网络软件实现网络的硬件、软件及资源共享和信息传递的系统。简单的说即连接两台或多台计算机进行通信的系统。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;计算机网络3个基本要素&lt;/strong&gt;&lt;/p
+      
+    
+    </summary>
+    
+    
+    
+      <category term="计算机网络基础" scheme="http://jianjustin.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+</feed>
