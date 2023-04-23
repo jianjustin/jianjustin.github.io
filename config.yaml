@@ -1,7 +1,7 @@
 baseURL: 'http://jianjustin.github.io/'
 languageCode: 'zh-CN'
 title: '极北之地'
-theme: 'hugo-book'
+theme: 'paper'
 
 params:
   # (Optional, default light) Sets color theme: light, dark or auto.
