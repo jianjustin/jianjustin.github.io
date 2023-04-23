@@ -1,4 +1,4 @@
-baseURL: 'http://jianjustin.github.io/'
+baseURL: 'https://jianjustin.github.io/'
 languageCode: 'zh-CN'
 title: '极北之地'
 theme: 'paper'
