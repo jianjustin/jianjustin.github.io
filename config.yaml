@@ -1,9 +1,0 @@
-baseURL: 'https://jianjustin.github.io/'
-languageCode: 'zh-CN'
-title: '极北之地'
-theme: 'paper'
-
-params:
-  # (Optional, default light) Sets color theme: light, dark or auto.
-  # Theme 'auto' switches between dark and light modes based on browser/os preferences
-  BookTheme: "light"
