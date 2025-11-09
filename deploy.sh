@@ -40,6 +40,21 @@ echo "更新后提交: $(git log -1 --oneline)"
 
 # 步骤2: 备份现有网站
 echo "步骤2: 备份现有网站..."
+
+# 删除旧备份 (保留最近3个备份)
+echo "清理旧备份..."
+OLD_BACKUPS=$(sudo find /www/ -name "backup_*" -type d 2>/dev/null | sort -r | tail -n +4)
+if [ -n "$OLD_BACKUPS" ]; then
+    echo "删除旧备份目录:"
+    echo "$OLD_BACKUPS" | while read backup_dir; do
+        echo "  - $backup_dir"
+        sudo rm -rf "$backup_dir"
+    done
+    echo "✅ 旧备份清理完成"
+else
+    echo "ℹ️  没有需要删除的旧备份"
+fi
+
 if [ -d "/www/data" ]; then
     sudo mkdir -p "$BACKUP_DIR"
     sudo cp -r /www/data/* "$BACKUP_DIR/" 2>/dev/null || true
