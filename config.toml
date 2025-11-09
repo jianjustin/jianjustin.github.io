@@ -3,6 +3,9 @@ languageCode = 'zh-CN'
 title = '极北之地'
 theme = 'paper'
 
+[services.googleAnalytics]
+id = ""
+
 [params]
   # color style
   color = 'linen'                           # linen, wheat, gray, light
