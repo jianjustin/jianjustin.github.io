@@ -1,4 +1,4 @@
-baseURL = 'https://blog.jianjustin.fun/'
+baseURL = 'https://jianjustin.fun/'
 languageCode = 'zh-CN'
 title = '极北之地'
 theme = 'paper'
